@@ -1,0 +1,165 @@
+:root {
+    --vid-overlay: 0, 0, 0, 0.2;
+    --white: 255, 255, 255, 1;
+    --black: 0, 0, 0, 1;
+    --side-padding: 2rem;
+    --transition-quint: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+    --transition-quart: all 0.8s cubic-bezier(0.76, 0.00, 0.24, 1);
+  
+}
+/* Hero */
+.home-hero{
+    font-size: 1rem;
+
+    overflow-y: hidden;
+    position: relative;
+    padding: 6rem 2rem 30rem 2rem;
+}
+.home-hero-vid-main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+}
+.home-hero-vid-inner-wrap {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.home-hero-vid-inner-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(var(--vid-overlay));
+    z-index: 10;
+}
+.home-hero-vid {
+    height: 100%;
+    width: 100%;
+}
+.home-hero-vid > video {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.home-hero-title {
+    z-index: 10;
+    /* width: 40em; */
+    width: 43%;
+}
+.home-hero-title > h1 {
+    letter-spacing:  -0.08rem;
+}
+/* Hero End */
+
+/* Home Brief */
+.home-brief {
+    font-size: 1rem;
+    padding: 1.75rem var(--side-padding) 4rem var(--side-padding);
+    background: rgba(var(--white));
+    color: rgba(var(--black));
+}
+.home-brief-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.home-brief-title {
+    width: 55%;
+}
+.home-brief-desc-wrapper {
+    width: 45%;
+}
+.home-brief-desc {
+    width: 85%;
+}
+.home-brief-desc > p {
+    line-height: 144%;
+    letter-spacing: -0.022rem;
+}
+.home-brief-desc-CTA {
+    margin-top: 1em;
+    transition: all 0.8s ease;
+}
+/* Home Brief End */
+
+/* Featured Works */
+.fw-showcase {
+    font-size: 1rem;
+    padding: 2rem var(--side-padding) 8rem var(--side-padding);
+}
+.eyebrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.eyebrow-cta {
+    margin-top: 1.8em;
+}
+.fw-showcase-item-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 28em;
+    margin-top: 2em;
+}
+.fw-showcase-item.curtain {
+    width: 33%;
+}
+.fw-showcase-item.curtain-reveal {
+    width: 27%;
+}
+.fw-showcase-item {
+    position: relative;
+    width: 27%;
+    height: 16.25em;
+    transition: var(--transition-quart);
+    
+    transition-delay: 500ms;
+} 
+.fw-showcase-item.expand-fw-showcase-item{
+    height: 28em;
+    width: 45%;
+    transition: var(--transition-quart);  
+    transition-delay: 500ms;
+}
+.fw-showcase-item-text-wrapper {
+    position: absolute;
+    bottom: -12%;
+    color: rgba(var(--black));
+    transition: var(--transition-quint);
+    overflow: hidden;
+}
+.fw-showcase-item-text-inner-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: var(--transition-quint);
+    position: relative;
+    transform: translateY(-100%);
+}
+.fw-showcase-item-text-inner-wrapper.active-inner-wrapper {
+    transform: translate(0);
+    transition-delay: 1000ms;
+}
+.fw-showcase-item-c-name {
+    width: 25%;
+}
+.fw-showcase-item-desc {
+    width: 75%;
+}
+.fw-showcase-item-desc > p {
+    width: 95%;
+}
+/* Featured Works end */
+
+
+@media(max-width: 780px) {
+
+}
