@@ -17,7 +17,7 @@ export default function HomeHero({ slice }){
       <div className="home-hero-vid-main">
         <div className="home-hero-vid-inner-wrap">
           <div className="home-hero-vid">
-            <video autoPlay="true" muted="true" loop="true" preload="auto" playsInline="true">
+            <video  autoPlay="true" muted="true" loop="true" preload="auto" playsInline="true">
               <source src="/video/home/home_hero_vid.mp4" type="video/mp4" />
             </video>
           </div>

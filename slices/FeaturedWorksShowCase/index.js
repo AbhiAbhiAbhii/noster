@@ -36,7 +36,7 @@ export default function FeaturedWorksShowCase({ slice }){
   });
 
   return(
-    <section className="fw-showcase snow">
+    <section className="fw-showcase snow" id="fwShowcase">
       {/* Eyebrow */}
       <div className="eyebrow black-txt">
         <div className="eyebrow-title">

@@ -1,3 +1,7 @@
+'use client'
+
+import { useEffect } from 'react'
+import Lenis from '@studio-freight/lenis'
 import './globals.css'
 
 // Home Style
@@ -14,8 +18,91 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
+
+  useEffect(() => {
+
+    let myNav = document.querySelector('.test-nav')
+    
+
+    // window.addEventListener("wheel", (e) => {
+
+    //   if(e.deltaY >= 0) {
+    //     console.log("Scrolling down")
+    //     myNav.style.top = "-15%"
+    //   } else {
+    //     console.log("Scrolling up")
+    //     myNav.style.top = "0"
+    //   }
+
+    // }) not accurate
+
+
+    // var oldY = window.scrollY;
+
+    // window.onscroll = (e) => {
+
+    //   if(oldY < window.scrollY) {
+    //     console.log("Scroll down")
+    //     myNav.style.top = "-15%"
+    //   } else  {
+    //     console.log("scroll up")
+    //     myNav.style.top = "0"
+    //   }
+    //   oldY = window.scrollY
+    // }
+
+  //   const lenis = new Lenis()
+
+  // lenis.on('scroll', (e) => {
+  //   console.log(e)
+  // })
+
+  // function raf(time) {
+  //   lenis.raf(time)
+  //   requestAnimationFrame(raf)
+  // }
+
+  // requestAnimationFrame(raf)
+  
+  let lenis;
+
+  if (typeof window !== "undefined") {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      direction: 'vertical', // vertical, horizontal
+      gestureDirection: 'vertical', // vertical, horizontal, both
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: true,
+      touchMultiplier: 2,
+      infinite: false,
+    })
+
+    // lenis.on('scroll', (e) => {
+    //   console.log(e, "Lenis Scrolling")
+
+    // })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+    requestAnimationFrame(raf)
+
+  }
+
+
+  })
+
   return (
     <html lang="en">
+      {/* <div className='test-nav' style={{position:'fixed', top:'0', left:'0', border:'1px red solid', height:'90px', width:'100vw', transition:'all 2s ease'}}>
+        <p>
+          NOSTER
+        </p>
+      </div> */}
       <body className={inter.className}>{children}</body>
     </html>
   )
