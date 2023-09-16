@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
 
-    let myNav = document.querySelector('.test-nav')
+    // let myNav = document.querySelector('.test-nav')
     
 
     // window.addEventListener("wheel", (e) => {
