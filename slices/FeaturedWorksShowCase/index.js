@@ -4,7 +4,6 @@
  * @typedef {import("@prismicio/react").SliceComponentProps<FeaturedWorksShowCaseSlice>} FeaturedWorksShowCaseProps
  * @param {FeaturedWorksShowCaseProps}
  */
-
 import CTA from "@/app/Component/CTA/CTA";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
@@ -21,10 +20,10 @@ export default function FeaturedWorksShowCase({ slice }){
   }
 
   useEffect(() => {
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
+          
           setAnimate(true)
 
           setTimeout(() => {
@@ -32,12 +31,9 @@ export default function FeaturedWorksShowCase({ slice }){
           }, 2000)
         }
       })
-    }, {threshold: 0.7})
+    }, {threshold: 0.8})
     observer.observe(document.querySelector('.fw-showcase'));
   });
-
-
-
 
   return(
     <section className="fw-showcase snow">
@@ -56,12 +52,19 @@ export default function FeaturedWorksShowCase({ slice }){
       {/* Works Showcase */}
       <div className="fw-showcase-item-wrapper">
         {
-          reveal == false ? 
+          reveal === false ? 
 
           slice.items.map((item, i) => {
             return(
               <div key={i} style={{height: animate && i === 0 ? '28em':'16.25em', width: animate && i === 0 ? '45%':''}} className={ animate ? "fw-showcase-item curtain-reveal":"fw-showcase-item curtain"}>
-                  <PrismicNextImage style={{height:'100%', width:'100%'}} field={item.image} alt={item.image.alt} />
+                  <PrismicNextImage 
+                    style={{height:'100%', width:'100%'}} 
+                    imgixParams={{ar:'3:2'}}
+                    loading="eager"
+                    priority={true}
+                    field={item.image}
+                    sizes="100vw"
+                    loader={undefined}  />
                 <div className="fw-showcase-item-text-wrapper">
                   <div className={ animate && i === 0 ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
                     <div className="fw-showcase-item-c-name">
@@ -84,7 +87,14 @@ export default function FeaturedWorksShowCase({ slice }){
             return(
               <div onMouseOver={() => handleHover(i)} key={i} className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
                 <PrismicLink className="fw-showcase-item-link" field={item.work_cta_link} >
-                  <PrismicNextImage style={{height:'100%', width:'100%'}} field={item.image} alt={item.image.alt} />
+                  <PrismicNextImage 
+                    style={{height:'100%', width:'100%'}}
+                    sizes="100vw"
+                    loading="eager"
+                    priority={true}
+                    imgixParams={{ar:'3:2'}}
+                    field={item.image}
+                    loader={undefined} />
                 </PrismicLink>
                 <div className="fw-showcase-item-text-wrapper">
                   <div className={ active == i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>

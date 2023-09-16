@@ -5,7 +5,6 @@
     --side-padding: 2rem;
     --transition-quint: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
     --transition-quart: all 0.8s cubic-bezier(0.76, 0.00, 0.24, 1);
-  
 }
 /* Hero */
 .home-hero{
