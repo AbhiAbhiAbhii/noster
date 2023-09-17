@@ -81,6 +81,9 @@
 .p-tag {
   font-size: var(--p);
 }
+.cta-sml {
+  font-size: var(--cta);
+}
 
 /* Global Font Sizes End */
 
