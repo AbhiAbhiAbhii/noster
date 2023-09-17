@@ -9,31 +9,99 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink, PrismicRichText } from "@prismicio/react";
 import { useEffect, useState } from "react";
 
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import CursorA from "@/app/Component/CustomCursor/CursorA";
+gsap.registerPlugin(ScrollTrigger)
+
+
 export default function FeaturedWorksShowCase({ slice }){
 
   const [active, setActive ] = useState(0); 
   const [ reveal, setReveal ] = useState(false)
   const [ animate, setAnimate ] = useState(false)
 
+
   const handleHover = (i) => {
     setActive(i)
   }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          
-          setAnimate(true)
+  useEffect(() => { // gsap
 
-          setTimeout(() => {
-            setReveal(true)
-          }, 2000)
+    const observe = document.querySelector('.fw-showcase')
+    let start = 30
+    let end = 80
+
+    if(observe && !animate) {
+      gsap.from(observe, {
+        scrollTrigger: {
+          trigger: observe,
+          start: `top ${start}%`,
+          end: `bottom ${end}%`,
+          onEnter: () => {
+            setAnimate(true)
+            setTimeout(() => {
+              setReveal(true)
+            }, 2000)
+            ScrollTrigger.getById(observe).kill(); // Disable the ScrollTrigger once triggered
+          } ,
+          scrub: true,
+          markers: false
         }
       })
-    }, {threshold: 0.8})
-    observer.observe(document.querySelector('.fw-showcase'));
-  });
+    }
+
+
+    // Custom Cursor F-Works
+    let cursor = document.querySelector('.cursor-A')
+    let CursorBg = document.querySelector('.cursor-A-bg')
+
+    document.addEventListener("mousemove", moveCursor);
+
+    function moveCursor (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+    }
+
+    let CursorContainer = document.querySelectorAll('.fw-showcase-item')
+    let TextContainer = document.querySelectorAll('.fw-showcase-item-text-wrapper')
+    let TextColor = document.querySelector('.cursor-A-text-wrapper')
+    let TextBorder = document.querySelector('.cursor-A-text')
+    let TextArrow = document.querySelector('.cursor-A-arrow')
+
+
+    CursorContainer.forEach(element => {
+      element.addEventListener("mouseenter", () => {
+        cursor.classList.add('cursor-active')
+        CursorBg.classList.add('cursor-A-bg-active')
+        TextColor.classList.add('cursor-A-text-active')
+        TextBorder.classList.add('cursor-A-text-u-active')
+        TextArrow.classList.add('cursor-A-arrow-reveal')
+      })
+
+      element.addEventListener("mouseleave", () => {
+        CursorBg.classList.remove('cursor-A-bg-active')
+        cursor.classList.remove('cursor-active')
+        TextColor.classList.remove('cursor-A-text-active')
+        TextBorder.classList.remove('cursor-A-text-u-active')
+        TextArrow.classList.remove('cursor-A-arrow-reveal')
+      })
+    })
+
+    TextContainer.forEach(element => {
+      element.addEventListener("mouseenter", () => {
+        cursor.classList.remove('cursor-active')
+      })
+
+      element.addEventListener("mouseleave", () => {
+        cursor.classList.add('cursor-active')
+      })
+    })
+
+  }, [animate]);
+  
 
   return(
     <section className="fw-showcase snow" id="fwShowcase">
@@ -51,12 +119,15 @@ export default function FeaturedWorksShowCase({ slice }){
       {/* Eyebrow End */}
       {/* Works Showcase */}
       <div className="fw-showcase-item-wrapper">
+      <CursorA />
         {
           reveal === false ? 
 
           slice.items.map((item, i) => {
             return(
-              <div key={i} style={{height: animate && i === 0 ? '28em':'16.25em', width: animate && i === 0 ? '45%':''}} className={ animate ? "fw-showcase-item curtain-reveal":"fw-showcase-item curtain"}>
+              <div key={i} 
+                style={{height: animate && i === 0 ? '28em':'16.25em', width: animate && i === 0 ? '45%':''}} 
+                className={ animate ? "fw-showcase-item curtain-reveal":"fw-showcase-item curtain"}>
                   <PrismicNextImage 
                     style={{height:'100%', width:'100%'}} 
                     imgixParams={{ar:'3:2'}}
@@ -85,8 +156,9 @@ export default function FeaturedWorksShowCase({ slice }){
           :
           slice.items.map((item, i) => {
             return(
-              <div onMouseOver={() => handleHover(i)} key={i} className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
-                <PrismicLink className="fw-showcase-item-link" field={item.work_cta_link} >
+              <div onMouseOver={() => handleHover(i)} key={i}
+               className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
+                <PrismicLink className="fw-showcase-item-link" field={item.work_cta_link}>
                   <PrismicNextImage 
                     style={{height:'100%', width:'100%'}}
                     sizes="100vw"

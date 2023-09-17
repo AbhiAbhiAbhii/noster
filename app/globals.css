@@ -14,12 +14,15 @@
 
   --txt-black: #000;
   --snow-bg: #FFF;
+  --black-bg: #000;
   
   --cta-anim-black: #000;
   --cta-txt-white: #FFF;
   --transition-speed: 0.4s; 
   --transition-quint: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+  --quint: cubic-bezier(0.85, 0, 0.15, 1);
   --transition-quart: all 0.3s cubic-bezier(0.76, 0.00, 0.24, 1); 
+  --quart: cubic-bezier(0.76, 0.00, 0.24, 1);
 }
 /*  */
 
@@ -163,6 +166,116 @@
   width: fit-content;
   transition: all var(--transition-speed) ease;
 }
+
+/* Cursor-A */
+.cursor-A {
+  color: black;
+  scale: 0;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 1);
+  transition: scale 0.5s var(--quint);
+  pointer-events: none;
+  z-index: 2000;
+  transition-delay: 1100ms;
+}
+.cursor-A.cursor-active {
+  scale: 1;
+  transition: scale 0.9s var(--quint);
+  z-index: 2000;
+}
+.cursor-A-bg-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0.4em;
+}
+.cursor-A-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--black-bg);
+  transition: var(--transition-quint);
+  z-index: -10;
+  transition-delay: 600ms;
+}
+.cursor-A-bg.cursor-A-bg-active {
+  width: 100%;
+  transition: var(--transition-quint);
+  z-index: -10;
+  transition-delay: 500ms;
+}
+.cursor-A-text-wrapper {
+  transition: var(--transition-quint);
+  z-index: 500;
+}
+.cursor-A-text-wrapper > p {
+  color: var(--cta-anim-black);
+  transition: var(--transition-quint);
+  z-index: 500;
+  transition-delay: 600ms;
+}
+.cursor-A-text-wrapper.cursor-A-text-active > p {
+  color: var(--cta-txt-white);
+  transition: var(--transition-quint);
+  z-index: 500;
+  transition-delay: 500ms;
+}
+
+.cursor-A-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cursor-A-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0%;
+  background: #FFF;
+  z-index: 10;
+  transition: var(--transition-quint);
+  transition-delay: 400ms;
+}
+.cursor-A-text.cursor-A-text-u-active {
+  position: relative;
+  transition: var(--transition-quint);
+}
+.cursor-A-text.cursor-A-text-u-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #FFF;
+  z-index: 10;
+  transition: var(--transition-quart);
+  transition-delay: 800ms;
+}
+.cursor-A-text-u-active {
+  position: relative;
+
+}
+.cursor-A-arrow-wrapper {
+  overflow: hidden;
+}
+.cursor-A-arrow {
+  color: #FFF;
+  position: relative;
+  transform: translateX(-100%);
+  transition: var(--transition-quint);
+}
+.cursor-A-arrow.cursor-A-arrow-reveal {
+  transform: translateX(0%);
+  transition: var(--transition-quint);
+  transition-delay: 1000ms;
+}
+
+
 
 /* CTA Properties End */
 

@@ -107,6 +107,8 @@
     justify-content: space-between;
     height: 28em;
     margin-top: 2em;
+    position: relative;
+
 }
 .fw-showcase-item.curtain {
     width: 33%;
@@ -121,6 +123,7 @@
     transition: var(--transition-quart);
     
     transition-delay: 500ms;
+    cursor: none;
 } 
 .fw-showcase-item.expand-fw-showcase-item{
     height: 28em;
@@ -155,6 +158,9 @@
 }
 .fw-showcase-item-desc > p {
     width: 95%;
+}
+.fw-showcase-item-link {
+    cursor: none;
 }
 /* Featured Works end */
 
