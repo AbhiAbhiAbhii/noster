@@ -3,7 +3,7 @@
 import { PrismicRichText } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger)
 
 /**
@@ -13,7 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
  */
 export default function ContactShowcase({ slice }){
 
-  // const [ inView, setInView ] = useState(false)
 
   let Info = [ // Contact Mail/Phone Info
     {
@@ -27,19 +26,18 @@ export default function ContactShowcase({ slice }){
   ]
 
   useEffect(() => { // C-Showcase Title Anim Gsap
-
     const observe = document.querySelector('.c-showcase')
 
     if(observe) {
       gsap.to(observe, {
         scrollTrigger: {
           trigger: observe,
-          start: 'top 15%',
+          start: 'top 18%',
           onEnter: () => {
             AnimTrigger()
             // ScrollTrigger.getById(observe).kill();
           },
-          markers: true
+          scrub: true
         }
       })
     }
@@ -50,13 +48,16 @@ export default function ContactShowcase({ slice }){
       const TxtMid = document.querySelector('.c-showcase-title-mid')
       const TxtBottom = document.querySelector('.c-showcase-title-bottom')
 
+      TxtTop.style.opacity = "1"
+      TxtMid.style.opacity = "1"
+      TxtBottom.style.opacity = "1"
 
+      setTimeout(() => {
+        TxtTop.style.transform= "translateY(0)"
+        TxtBottom.style.transform= "translateY(0)"
 
-
+      }, 600)
     }
-
-    
-
 
   })
 
