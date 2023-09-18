@@ -19,7 +19,7 @@ export default function NewsAndInsights({ slice }){
         {
           slice.items.map((item, i) => {
             return(
-              <PrismicLink className="news-showcase-item" key={i}>
+              <PrismicLink field={item.cta_link} target="_blank" className="news-showcase-item" key={i}>
                 <PrismicNextImage 
                   style={{height:'100%', width:'100%'}} sizes="100vw"
                   imgixParams={{ar:'1:1'}}

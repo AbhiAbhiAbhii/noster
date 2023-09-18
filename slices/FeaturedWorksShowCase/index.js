@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function FeaturedWorksShowCase({ slice }){
 
-  const [active, setActive ] = useState(0); 
+  const [ active, setActive ] = useState(0); 
   const [ reveal, setReveal ] = useState(false)
   const [ animate, setAnimate ] = useState(false)
 
@@ -43,7 +43,7 @@ export default function FeaturedWorksShowCase({ slice }){
             setTimeout(() => {
               setReveal(true)
             }, 2000)
-            ScrollTrigger.getById(observe).kill(); // Disable the ScrollTrigger once triggered
+            // ScrollTrigger.getById(observe).kill(); // Disable the ScrollTrigger once triggered
           } ,
           scrub: true,
           markers: false

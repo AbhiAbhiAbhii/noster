@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | ContactShowcaseSlice
   | NewsAndInsightsSlice
   | FeaturedWorksShowCaseSlice
   | HomeBriefSlice
@@ -71,6 +72,81 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 export type AllDocumentTypes = HomeDocument;
+
+/**
+ * Primary content in *ContactShowcase → Primary*
+ */
+export interface ContactShowcaseSliceDefaultPrimary {
+  /**
+   * Showcase Title field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.showcase_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  showcase_title: prismic.RichTextField;
+
+  /**
+   * Email field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  email: prismic.RichTextField;
+
+  /**
+   * Phone field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.phone
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  phone: prismic.RichTextField;
+
+  /**
+   * Contact Info Text field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.contact_info_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact_info_text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ContactShowcase Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactShowcaseSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactShowcaseSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactShowcase*
+ */
+type ContactShowcaseSliceVariation = ContactShowcaseSliceDefault;
+
+/**
+ * ContactShowcase Shared Slice
+ *
+ * - **API ID**: `contact_showcase`
+ * - **Description**: ContactShowcase
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactShowcaseSlice = prismic.SharedSlice<
+  "contact_showcase",
+  ContactShowcaseSliceVariation
+>;
 
 /**
  * Primary content in *FeaturedWorksShowCase → Primary*
@@ -340,6 +416,16 @@ export interface NewsAndInsightsSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * CTA Link field in *NewsAndInsights → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_and_insights.items[].cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
 }
 
 /**
@@ -386,6 +472,10 @@ declare module "@prismicio/client" {
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
       AllDocumentTypes,
+      ContactShowcaseSlice,
+      ContactShowcaseSliceDefaultPrimary,
+      ContactShowcaseSliceVariation,
+      ContactShowcaseSliceDefault,
       FeaturedWorksShowCaseSlice,
       FeaturedWorksShowCaseSliceDefaultPrimary,
       FeaturedWorksShowCaseSliceDefaultItem,

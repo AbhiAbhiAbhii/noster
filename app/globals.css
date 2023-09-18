@@ -3,13 +3,14 @@
   --default-rgb: 255, 255, 255;
   --vid-overlay: 0, 0, 0, 1;
   --tile-start-rgb: 239, 245, 249;
-  --h1: 40px; /* H1 Font Size */
-  --h1-big: 5em;
-  --h1-small: 2em;
+  --h1-xl: 10.375em; /* H1 166px */
+  --h1-big: 5em; /* H1 80px */
+  --h1-small: 2em; /* H1 32px */
   --h2: 40px; /* H2 Font Size */
    /* H3 Font Size */
   --h4: 40px; /* H4 Font Size */
   --p: 1.1em;  /* P Font Size */
+  --p-l: 2.5em; /* P 40px */
   --cta: 0.875em;
 
   --txt-black: #000;
@@ -72,7 +73,7 @@
   font-family: haffer-R;
   src: local('haffer-R'), url('/fonts/Haffer-Regular.woff2') format('woff2');
 }
-.haffer-M { /* Haffer Regular */
+.haffer-R { /* Haffer Regular */
   font-family: haffer-R;
 }
 @font-face {
@@ -85,14 +86,20 @@
 /* Haffer Fonts End */
 
 /* Global Font Sizes */
-.h1-small {
-  font-size: var(--h1-small);
+.h1-xl {
+  font-size: var(--h1-xl);
 }
 .h1-big {
   font-size: var(--h1-big);
 }
+.h1-small {
+  font-size: var(--h1-small);
+}
 .p-tag {
   font-size: var(--p);
+}
+.p-l {
+  font-size: var(--p-l);
 }
 .cta-sml {
   font-size: var(--cta);
@@ -305,6 +312,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-size: 1vw;
+  font-family: haffer-R;
 }
 body {
   color: rgb(var(--default-rgb));
@@ -315,6 +323,11 @@ a {
 }
 h1,h2,h3,h4 {
   font-weight: 400;
+}
+
+/* eyebrow letter spacing */
+.eyebrow-title > h1 {
+  letter-spacing: -0.08rem;
 }
 
 @media (prefers-color-scheme: dark) {
