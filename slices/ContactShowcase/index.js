@@ -48,13 +48,14 @@ export default function ContactShowcase({ slice }){
       const TxtMid = document.querySelector('.c-showcase-title-mid')
       const TxtBottom = document.querySelector('.c-showcase-title-bottom')
 
-      TxtTop.style.opacity = "1"
       TxtMid.style.opacity = "1"
-      TxtBottom.style.opacity = "1"
 
       setTimeout(() => {
         TxtTop.style.transform= "translateY(0)"
         TxtBottom.style.transform= "translateY(0)"
+
+        TxtTop.style.opacity = "1"
+        TxtBottom.style.opacity = "1"
 
       }, 600)
     }

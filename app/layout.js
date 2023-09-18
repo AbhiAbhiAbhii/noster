@@ -8,12 +8,10 @@
 import { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
 import './globals.css'
-
-// Home Style
 import './styles/Home/home.css' 
 
-
 import { Inter } from 'next/font/google'
+import Footer from './Component/Footer/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -99,12 +97,8 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      {/* <div className='test-nav' style={{position:'fixed', top:'0', left:'0', border:'1px red solid', height:'90px', width:'100vw', transition:'all 2s ease'}}>
-        <p>
-          NOSTER
-        </p>
-      </div> */}
       <body className={inter.className}>{children}</body>
+      <Footer />
     </html>
   )
 }
