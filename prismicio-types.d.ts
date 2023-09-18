@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | NewsAndInsightsSlice
   | FeaturedWorksShowCaseSlice
   | HomeBriefSlice
   | HomeHeroSlice;
@@ -301,6 +302,76 @@ export type HomeHeroSlice = prismic.SharedSlice<
   HomeHeroSliceVariation
 >;
 
+/**
+ * Primary content in *NewsAndInsights → Primary*
+ */
+export interface NewsAndInsightsSliceDefaultPrimary {
+  /**
+   * Title field in *NewsAndInsights → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_and_insights.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *NewsAndInsights → Items*
+ */
+export interface NewsAndInsightsSliceDefaultItem {
+  /**
+   * Image field in *NewsAndInsights → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_and_insights.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *NewsAndInsights → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news_and_insights.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for NewsAndInsights Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsAndInsightsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsAndInsightsSliceDefaultPrimary>,
+  Simplify<NewsAndInsightsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *NewsAndInsights*
+ */
+type NewsAndInsightsSliceVariation = NewsAndInsightsSliceDefault;
+
+/**
+ * NewsAndInsights Shared Slice
+ *
+ * - **API ID**: `news_and_insights`
+ * - **Description**: NewsAndInsights
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsAndInsightsSlice = prismic.SharedSlice<
+  "news_and_insights",
+  NewsAndInsightsSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -328,6 +399,11 @@ declare module "@prismicio/client" {
       HomeHeroSliceDefaultPrimary,
       HomeHeroSliceVariation,
       HomeHeroSliceDefault,
+      NewsAndInsightsSlice,
+      NewsAndInsightsSliceDefaultPrimary,
+      NewsAndInsightsSliceDefaultItem,
+      NewsAndInsightsSliceVariation,
+      NewsAndInsightsSliceDefault,
     };
   }
 }

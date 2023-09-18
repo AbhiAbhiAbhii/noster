@@ -6,4 +6,5 @@ export const components = {
   featured_works_show_case: dynamic(() => import("./FeaturedWorksShowCase")),
   home_brief: dynamic(() => import("./HomeBrief")),
   home_hero: dynamic(() => import("./HomeHero")),
+  news_and_insights: dynamic(() => import("./NewsAndInsights")),
 };
