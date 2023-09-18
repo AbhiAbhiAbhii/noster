@@ -9,7 +9,7 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react"
 
 export default function NewsAndInsights({ slice }){
   return(
-    <section className="news-showcase snow">
+    <section className="news-showcase snow" style={{border:'1px red solid'}}>
       <div className="eyebrow-title">
         <h1 className="h1-big black-txt">
           <PrismicRichText field={slice.primary.title} />
