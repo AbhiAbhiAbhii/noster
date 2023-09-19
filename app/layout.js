@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
 import './globals.css'
 import './styles/Home/home.css' 
+import './styles/Works/works.css'
 
 import { Inter } from 'next/font/google'
 import Footer from './Component/Footer/Footer'

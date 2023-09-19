@@ -71,7 +71,155 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-export type AllDocumentTypes = HomeDocument;
+type WorksDocumentDataSlicesSlice =
+  | WorksShowcaseLeftSlice
+  | WorksShowcaseRightSlice;
+
+/**
+ * Content for Works documents
+ */
+interface WorksDocumentData {
+  /**
+   * Title field in *Works*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Works*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<WorksDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Works*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: works.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Works*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Works*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: works.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Works document from Prismic
+ *
+ * - **API ID**: `works`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorksDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<WorksDocumentData>, "works", Lang>;
+
+type WorksChildDocumentDataSlicesSlice =
+  | WorkChildImageSlice
+  | WorkChildVisionSlice
+  | WorkChildBriefSlice
+  | WorkChildHeroSlice;
+
+/**
+ * Content for Works Child documents
+ */
+interface WorksChildDocumentData {
+  /**
+   * Slice Zone field in *Works Child*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_child.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<WorksChildDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Works Child*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: works_child.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Works Child*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_child.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Works Child*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: works_child.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Works Child document from Prismic
+ *
+ * - **API ID**: `works_child`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WorksChildDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<WorksChildDocumentData>,
+    "works_child",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | HomeDocument
+  | WorksDocument
+  | WorksChildDocument;
 
 /**
  * Primary content in *ContactShowcase → Primary*
@@ -458,6 +606,576 @@ export type NewsAndInsightsSlice = prismic.SharedSlice<
   NewsAndInsightsSliceVariation
 >;
 
+/**
+ * Primary content in *WorkChildBrief → Primary*
+ */
+export interface WorkChildBriefSliceDefaultPrimary {
+  /**
+   * Description field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Client field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.client
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  client: prismic.RichTextField;
+
+  /**
+   * Sector field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.sector
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  sector: prismic.RichTextField;
+
+  /**
+   * Status field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.status
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  status: prismic.RichTextField;
+
+  /**
+   * Location field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.location
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  location: prismic.RichTextField;
+
+  /**
+   * Scope field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.scope
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  scope: prismic.RichTextField;
+
+  /**
+   * Scale field in *WorkChildBrief → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.scale
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  scale: prismic.RichTextField;
+}
+
+/**
+ * Default variation for WorkChildBrief Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildBriefSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorkChildBriefSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorkChildBrief*
+ */
+type WorkChildBriefSliceVariation = WorkChildBriefSliceDefault;
+
+/**
+ * WorkChildBrief Shared Slice
+ *
+ * - **API ID**: `work_child_brief`
+ * - **Description**: WorkChildBrief
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildBriefSlice = prismic.SharedSlice<
+  "work_child_brief",
+  WorkChildBriefSliceVariation
+>;
+
+/**
+ * Primary content in *WorkChildHero → Primary*
+ */
+export interface WorkChildHeroSliceDefaultPrimary {
+  /**
+   * Image field in *WorkChildHero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_hero.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *WorkChildHero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for WorkChildHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorkChildHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorkChildHero*
+ */
+type WorkChildHeroSliceVariation = WorkChildHeroSliceDefault;
+
+/**
+ * WorkChildHero Shared Slice
+ *
+ * - **API ID**: `work_child_hero`
+ * - **Description**: WorkChildHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildHeroSlice = prismic.SharedSlice<
+  "work_child_hero",
+  WorkChildHeroSliceVariation
+>;
+
+/**
+ * Primary content in *WorkChildImage → Primary*
+ */
+export interface WorkChildImageSliceDefaultPrimary {
+  /**
+   * Image field in *WorkChildImage → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_image.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for WorkChildImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildImageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorkChildImageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorkChildImage*
+ */
+type WorkChildImageSliceVariation = WorkChildImageSliceDefault;
+
+/**
+ * WorkChildImage Shared Slice
+ *
+ * - **API ID**: `work_child_image`
+ * - **Description**: WorkChildImage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildImageSlice = prismic.SharedSlice<
+  "work_child_image",
+  WorkChildImageSliceVariation
+>;
+
+/**
+ * Primary content in *WorkChildVision → Primary*
+ */
+export interface WorkChildVisionSliceDefaultPrimary {
+  /**
+   * Title field in *WorkChildVision → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_vision.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *WorkChildVision → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_vision.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for WorkChildVision Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildVisionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorkChildVisionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorkChildVision*
+ */
+type WorkChildVisionSliceVariation = WorkChildVisionSliceDefault;
+
+/**
+ * WorkChildVision Shared Slice
+ *
+ * - **API ID**: `work_child_vision`
+ * - **Description**: WorkChildVision
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorkChildVisionSlice = prismic.SharedSlice<
+  "work_child_vision",
+  WorkChildVisionSliceVariation
+>;
+
+/**
+ * Primary content in *WorksShowcaseLeft → Primary*
+ */
+export interface WorksShowcaseLeftSliceDefaultPrimary {
+  /**
+   * Company Name A field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.company_name_a
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_a: prismic.RichTextField;
+
+  /**
+   * Description A field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.description_a
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_a: prismic.RichTextField;
+
+  /**
+   * Image A field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.image_a
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_a: prismic.ImageField<never>;
+
+  /**
+   * CTA Link A field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.cta_link_a
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_a: prismic.LinkField;
+
+  /**
+   * Company Name B field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.company_name_b
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_b: prismic.RichTextField;
+
+  /**
+   * Description B field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.description_b
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_b: prismic.RichTextField;
+
+  /**
+   * Image B field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.image_b
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_b: prismic.ImageField<never>;
+
+  /**
+   * CTA Link B field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.cta_link_b
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_b: prismic.LinkField;
+
+  /**
+   * Company Name C field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.company_name_c
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_c: prismic.RichTextField;
+
+  /**
+   * Description C field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.description_c
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_c: prismic.RichTextField;
+
+  /**
+   * Image C field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.image_c
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_c: prismic.ImageField<never>;
+
+  /**
+   * CTA Link C field in *WorksShowcaseLeft → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_left.primary.cta_link_c
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_c: prismic.LinkField;
+}
+
+/**
+ * Default variation for WorksShowcaseLeft Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksShowcaseLeftSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorksShowcaseLeftSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorksShowcaseLeft*
+ */
+type WorksShowcaseLeftSliceVariation = WorksShowcaseLeftSliceDefault;
+
+/**
+ * WorksShowcaseLeft Shared Slice
+ *
+ * - **API ID**: `works_showcase_left`
+ * - **Description**: WorksShowcaseLeft
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksShowcaseLeftSlice = prismic.SharedSlice<
+  "works_showcase_left",
+  WorksShowcaseLeftSliceVariation
+>;
+
+/**
+ * Primary content in *WorksShowcaseRight → Primary*
+ */
+export interface WorksShowcaseRightSliceDefaultPrimary {
+  /**
+   * Company Name A field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.company_name_a
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_a: prismic.RichTextField;
+
+  /**
+   * Description A field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.description_a
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_a: prismic.RichTextField;
+
+  /**
+   * Image A field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.image_a
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_a: prismic.ImageField<never>;
+
+  /**
+   * CTA Link A field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.cta_link_a
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_a: prismic.LinkField;
+
+  /**
+   * Company Name B field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.company_name_b
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_b: prismic.RichTextField;
+
+  /**
+   * Description B field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.description_b
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_b: prismic.RichTextField;
+
+  /**
+   * Image B field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.image_b
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_b: prismic.ImageField<never>;
+
+  /**
+   * CTA Link B field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.cta_link_b
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_b: prismic.LinkField;
+
+  /**
+   * Company Name C field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.company_name_c
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  company_name_c: prismic.RichTextField;
+
+  /**
+   * Description C field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.description_c
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description_c: prismic.RichTextField;
+
+  /**
+   * Image C field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.image_c
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_c: prismic.ImageField<never>;
+
+  /**
+   * CTA Link C field in *WorksShowcaseRight → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: works_showcase_right.primary.cta_link_c
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link_c: prismic.LinkField;
+}
+
+/**
+ * Default variation for WorksShowcaseRight Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksShowcaseRightSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WorksShowcaseRightSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *WorksShowcaseRight*
+ */
+type WorksShowcaseRightSliceVariation = WorksShowcaseRightSliceDefault;
+
+/**
+ * WorksShowcaseRight Shared Slice
+ *
+ * - **API ID**: `works_showcase_right`
+ * - **Description**: WorksShowcaseRight
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WorksShowcaseRightSlice = prismic.SharedSlice<
+  "works_showcase_right",
+  WorksShowcaseRightSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -471,6 +1189,12 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      WorksDocument,
+      WorksDocumentData,
+      WorksDocumentDataSlicesSlice,
+      WorksChildDocument,
+      WorksChildDocumentData,
+      WorksChildDocumentDataSlicesSlice,
       AllDocumentTypes,
       ContactShowcaseSlice,
       ContactShowcaseSliceDefaultPrimary,
@@ -494,6 +1218,30 @@ declare module "@prismicio/client" {
       NewsAndInsightsSliceDefaultItem,
       NewsAndInsightsSliceVariation,
       NewsAndInsightsSliceDefault,
+      WorkChildBriefSlice,
+      WorkChildBriefSliceDefaultPrimary,
+      WorkChildBriefSliceVariation,
+      WorkChildBriefSliceDefault,
+      WorkChildHeroSlice,
+      WorkChildHeroSliceDefaultPrimary,
+      WorkChildHeroSliceVariation,
+      WorkChildHeroSliceDefault,
+      WorkChildImageSlice,
+      WorkChildImageSliceDefaultPrimary,
+      WorkChildImageSliceVariation,
+      WorkChildImageSliceDefault,
+      WorkChildVisionSlice,
+      WorkChildVisionSliceDefaultPrimary,
+      WorkChildVisionSliceVariation,
+      WorkChildVisionSliceDefault,
+      WorksShowcaseLeftSlice,
+      WorksShowcaseLeftSliceDefaultPrimary,
+      WorksShowcaseLeftSliceVariation,
+      WorksShowcaseLeftSliceDefault,
+      WorksShowcaseRightSlice,
+      WorksShowcaseRightSliceDefaultPrimary,
+      WorksShowcaseRightSliceVariation,
+      WorksShowcaseRightSliceDefault,
     };
   }
 }

@@ -1,0 +1,132 @@
+:root {
+    --side-padding: 2em;
+    --transition-quint: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.work {
+    padding: 6.5rem var(--side-padding) 2rem var(--side-padding);
+    overflow-y: hidden;
+}
+.work-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0;
+}
+.work-showcase-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+.works-showcase-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 28em;
+}
+.works-showcase-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 28em;
+    margin: 8em 0 6em 0;
+}
+
+/* Works Child */
+/* hero */
+.work-uid-hero {
+    position: relative;
+    overflow-y: hidden;
+    padding: 14rem var(--side-padding) 34rem var(--side-padding);
+}
+.work-uid-hero-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+}
+.work-uid-hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+.work-uid-hero-title > h1 {
+    color: #FFF;
+    z-index: 10;
+}
+/* hero end */
+
+/* Works Brief */
+.work-brief {
+    padding: 2rem var(--side-padding) 4rem var(--side-padding);
+}
+.work-brief-text-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.work-brief-left {
+    width: 20%;
+}
+.work-brief-right {
+    width: 50%;
+}
+.work-brief-right-top {
+    width: 80%;
+}
+.work-brief-right-bottom {
+    margin-top: 1.4em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.work-brief-item {
+    width: 30%;
+    margin-top: 2.5em;
+}
+.work-brief-item-content {
+    padding-top: 0.5em;
+    width: 90%;
+}
+
+/* Works Brief End */
+
+/* Works Vision */
+.work-vision {
+    padding: 4rem var(--side-padding) 4rem var(--side-padding);
+    overflow-y: hidden;
+}
+.work-vision-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-height: 60em;
+}
+.work-vision-left {
+    width: 50%;
+    height: 50vh;
+}
+.work-vision-left-wrapper {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.work-vision-left-text {
+    padding-bottom: 1em;
+}
+.work-vision-right {
+    width: 50%;
+}
+.work-vision-right > p {
+    width: 70%;
+    line-height: 144%; /* 1.98rem */
+    letter-spacing: -0.022rem;
+}
+/* Works Vision End */

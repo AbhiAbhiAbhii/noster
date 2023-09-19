@@ -12,7 +12,7 @@ export default function Nav(){
     let NavLink = [
         {
             text:'Work',
-            link:'/'
+            link:'/works'
         },
         {
             text:'About',
@@ -39,13 +39,28 @@ export default function Nav(){
             },
         });
 
-        tl.to(['.nav-mid-item', '.nav-logo-svg', '.nav-right-text', '.nav-right-arrow'], {
+        tl.fromTo(['.nav-mid-item', '.nav-logo-svg', '.nav-right-text'], 
+        {
+            color:'white'
+        },
+        {
             color:'black'
         })
-        tl.to(['.nav'], {
+        tl.fromTo(['.nav'], 
+        {
+            background:'none'
+        }
+        ,
+        {
             background:'#FFF'
         })
-        tl.to('.nav-right-arrow', {
+
+        tl.fromTo('.nav-right-arrow',
+        {
+            background:'#FFF',
+            color:'#000'
+        },
+        {
             background:'#000',
             color:'#FFF'
         })
@@ -53,11 +68,10 @@ export default function Nav(){
     })
 
 
-
     return(
         <div className="nav">
             <div className="nav-left">
-                <div className="nav-logo">
+                <div onClick={() => window.location.href="/"} style={{cursor:'pointer'}} className="nav-logo">
                     <svg className="nav-logo-svg" width="94" height="22" viewBox="0 0 94 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.8719 21.7556H10.7254L2.65399 5.07901V21.7556H0V0.244445H3.31065L11.1905 16.6765V0.244445H13.8719V21.7556Z" fill="currentColor"/>
                         <path d="M24.0894 0C27.2906 0 29.3427 1.05926 30.5466 3.01481C31.6136 4.67161 32.0788 7.27901 32.0788 10.8914C32.0788 14.7753 31.5589 17.2741 30.4098 18.9852C29.2333 21.0222 27.2086 22 24.0894 22C20.9703 22 18.8909 20.9679 17.7417 19.0123C16.6747 17.3556 16.0727 14.884 16.0727 10.9457C16.0727 7.41482 16.5652 4.83457 17.6597 3.0963C18.7814 1.22222 20.8609 0 24.0894 0ZM24.0894 19.5556C25.9226 19.5556 27.1538 18.9037 27.8926 17.8716C28.8228 16.6222 29.2606 14.2321 29.2606 10.9728C29.2606 8.41975 28.8776 5.5679 28.0567 4.37284C27.2633 3.28642 26.0868 2.55309 24.0894 2.55309C22.0374 2.55309 20.9429 3.28642 20.1768 4.34568C19.356 5.5679 18.973 8.44691 18.973 11.0272C18.973 13.7704 19.356 16.4593 20.3684 17.8716C21.1345 19.0667 22.4751 19.5556 24.0894 19.5556Z" fill="currentColor"/>

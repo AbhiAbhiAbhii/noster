@@ -8,4 +8,10 @@ export const components = {
   home_brief: dynamic(() => import("./HomeBrief")),
   home_hero: dynamic(() => import("./HomeHero")),
   news_and_insights: dynamic(() => import("./NewsAndInsights")),
+  work_child_brief: dynamic(() => import("./WorkChildBrief")),
+  work_child_hero: dynamic(() => import("./WorkChildHero")),
+  work_child_image: dynamic(() => import("./WorkChildImage")),
+  work_child_vision: dynamic(() => import("./WorkChildVision")),
+  works_showcase_left: dynamic(() => import("./WorksShowcaseLeft")),
+  works_showcase_right: dynamic(() => import("./WorksShowcaseRight")),
 };

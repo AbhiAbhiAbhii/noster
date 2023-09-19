@@ -8,9 +8,11 @@
   --h1-small: 2em; /* H1 32px */
   --h2: 40px; /* H2 Font Size */
    /* H3 Font Size */
+  --h2-l: 3.75em;
   --h4: 40px; /* H4 Font Size */
   --p: 1.1em;  /* P Font Size */
   --p-r: 1em; /* p 16px */
+  --p-s: 0.8em; /* p 12px */
   --p-l: 2.5em; /* P 40px */
   --cta: 0.875em;
 
@@ -98,6 +100,9 @@
 .h1-small {
   font-size: var(--h1-small);
 }
+.h2-l {
+  font-size: var(--h2-l);
+}
 .p-tag {
   font-size: var(--p);
 }
@@ -106,6 +111,9 @@
 }
 .p-r {
   font-size: var(--p-r);
+}
+.p-s {
+  font-size: var(--p-s);
 }
 .cta-sml {
   font-size: var(--cta);
@@ -348,6 +356,7 @@ h1,h2,h3,h4 {
   align-items: center;
   justify-content: space-between;
   transition: var(--transition-quart);
+  z-index: 100;
 }
 .nav-left {
   width: 33%;
