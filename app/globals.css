@@ -336,6 +336,72 @@ h1,h2,h3,h4 {
   letter-spacing: -0.08rem;
 }
 
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.95em 1.9em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transition-quart);
+}
+.nav-left {
+  width: 33%;
+}
+.nav-mid {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-mid-item {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-quint);
+}
+.nav-right {
+  width: 33%;
+  display: flex;
+}
+.nav-right-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.nav-right-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.13em;
+  width: 1.13em;
+  border-radius: 0.13em;
+  background: #FFF;
+  color: #000;
+  margin-left: 0.6em;
+  transition: var(--transition-quint);
+}
+
+.nav-right-text > p  {
+  transition: var(--transition-quint);
+}
+.nav-logo-svg {
+  color: white;
+  transition: var(--transition-quint);
+}
+.nav-logo-svg.white-section {
+  color: black;
+  transition: var(--transition-quint);
+}
+/* Nav End */
+
 /* Footer */
 .footer {
   padding: 2rem var(--side-padding) 2rem var(--side-padding);
@@ -406,7 +472,6 @@ h1,h2,h3,h4 {
   width: 70%;
 }
 /* Footer Form End */
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

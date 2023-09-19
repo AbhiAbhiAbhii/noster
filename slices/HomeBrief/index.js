@@ -9,7 +9,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 export default function HomeBrief({ slice }){
   return(
-    <section className="home-brief">
+    <section id="homeBrief" className="home-brief">
       <div className="home-brief-wrapper">
         <div className="home-brief-title haffer-R">
           <p className="p-tag">
