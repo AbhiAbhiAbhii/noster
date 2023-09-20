@@ -12,7 +12,7 @@ export function linkResolver(doc) {
     case 'works':
       return '/works'
     case 'works_child':
-      return `/works/${doc.uid}`
+      return `/${doc.uid}`
     default:
       return null
   }
