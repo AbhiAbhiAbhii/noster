@@ -48,8 +48,8 @@ export default function WorkChildBrief({ slice }){
         </div>
         <div className="work-brief-right">  
           <div className="work-brief-right-top">
-            <p className="p-tag black-txt">
-              <PrismicRichText field={slice.primary.description} />
+            <p className="p-tag black-txt" style={{color:'black'}}>
+              <PrismicRichText  field={slice.primary.description} />
             </p>
           </div>
           <div className="work-brief-right-bottom">
