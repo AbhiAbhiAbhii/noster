@@ -4,8 +4,32 @@
     --transition-quart: all 0.6s cubic-bezier(0.76, 0.00, 0.24, 1); 
 }
 
+/* Works Nav */
+.works-nav {
+    position: fixed;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0.5rem 1rem 0;
+    font-size: 1rem;
+    z-index: 200;
+}
+.works-nav-item {
+    width: 33.33%;
+    padding-inline: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Works Nav End */
+
 .work {
     padding: 6.5rem var(--side-padding) 2rem var(--side-padding);
+    font-size: 1rem;
     overflow-y: hidden;
 }
 .work-title {
@@ -35,12 +59,18 @@
     height: 28em;
     margin: 8em 0 6em 0;
 }
+/* work hero mob */
+.works-showcase-left-mob, .works-showcase-right-mob  {
+    display: none;
+}
+/* work hero mob end */
 
 /* Works Child */
 /* hero */
 .work-uid-hero {
     position: relative;
     overflow-y: hidden;
+    font-size: 1rem;
     padding: 14rem var(--side-padding) 34rem var(--side-padding);
 }
 .work-uid-hero-wrapper {
@@ -66,6 +96,7 @@
 /* Works Brief */
 .work-brief {
     padding: 2rem var(--side-padding) 4rem var(--side-padding);
+    font-size: 1rem;
 }
 .work-brief-text-container {
     display: flex;
@@ -102,6 +133,7 @@
 /* Works Vision */
 .work-vision {
     padding: 4rem var(--side-padding) 4rem var(--side-padding);
+    font-size: 1rem;
     overflow-y: hidden;
 }
 .work-vision-wrapper {
@@ -132,6 +164,17 @@
 }
 /* Works Vision End */
 
+/* Works Image */
+.worksImg {
+    height: 50vw;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+/* Works Image End */
+
 /* Behind the scene */
 .b-scene {
     padding: 2rem var(--side-padding) 2rem var(--side-padding);
@@ -145,7 +188,6 @@
     position: relative;
     padding: 2rem 0 2rem 0;
     height: 100vh;
-
 }
 .b-scene-title {
     z-index: 100;
@@ -193,3 +235,80 @@
     color: #FFF;
 }
 /* Behind the scene end */
+
+@media(max-width: 780px) {
+    .work {
+        font-size: 3rem;
+        padding-inline: 0;
+    }
+    .works-showcase-left {
+        display: none;
+    }
+    .works-showcase-left-mob{
+        display: flex;
+        padding-left: 2rem;
+        margin: 2em 0;
+    } 
+    .works-showcase-right-mob  {
+        display: flex;
+        padding-right: 2rem;
+    }
+    .works-showcase-right {
+        display: none;
+    }
+    .work-title {
+        padding: 4em 0 2em 0;
+    }
+
+    /* Works Child */
+    .work-uid-hero {
+        font-size: 3rem;
+        padding: 80rem 3rem 18rem 3rem;
+    }
+    .work-brief {
+        font-size: 3rem;
+        padding: 5rem 2rem 4rem 2rem;
+    }
+    .work-brief-text-container {
+        flex-direction: column;
+    }
+    .work-brief-left {
+        width: 100%;
+    }
+    .work-brief-right {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .work-brief-item {
+        width: 33.33%;
+    }
+    .work-vision {
+        font-size: 3rem;
+        padding: 5rem 2rem;
+    }
+    .work-vision-wrapper {
+        flex-direction: column;
+    }
+    .work-vision-left {
+        height: fit-content;
+    }
+    .work-vision-right {
+        width: 100%;
+        margin-top: 1em;
+    }
+    .work-vision-right > p {
+        width: 80%;
+    }
+
+    /* Works Nav */
+    .works-nav {
+        font-size: 3rem;
+        padding: 3rem 3rem 3rem 1rem;
+    }
+    .works-nav-item {
+        padding-inline: 2em;
+    }
+    /* Works Nav End */
+    /* Works Child End */
+
+}

@@ -9,6 +9,8 @@ import CursorA from "@/app/Component/CustomCursor/CursorA";
 import { PrismicNextImage } from "@prismicio/next"
 import { PrismicLink, PrismicRichText } from "@prismicio/react"
 import { useState, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css';
 
 
 export default function WorksShowcaseRight({ slice }){
@@ -94,41 +96,86 @@ export default function WorksShowcaseRight({ slice }){
 
 
   return(
-    <section className="works-showcase-right">
+    <section className="snow">
       <CursorA />
-    {
-      data.map((item, i) => {
-        return(
-          <div onMouseOver={() => handleHoverRight(i)} key={i}
-          className={ activeB === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
-           <PrismicLink className="fw-showcase-item-link" field={item.link}>
-             <PrismicNextImage 
-               style={{height:'100%', width:'100%'}}
-               sizes="100vw"
-               loading="eager"
-               priority={true}
-               imgixParams={{ar:'3:2'}}
-               field={item.image}
-               loader={undefined} />
-           </PrismicLink>
-           <div className="fw-showcase-item-text-wrapper">
-             <div className={ activeB === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
-               <div className="fw-showcase-item-c-name">
-                 <p>
-                   <PrismicRichText field={item.title}  />
-                 </p>
-               </div>
-               <div className="fw-showcase-item-desc">
-                 <p>
-                   <PrismicRichText field={item.desc} />
-                 </p>
-               </div>
-             </div>
-           </div>
-         </div>
-        )
-      })
-    }
+      <div className="works-showcase-right">
+        {
+        data.map((item, i) => {
+          return(
+            <div onMouseOver={() => handleHoverRight(i)} key={i}
+            className={ activeB === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
+            <PrismicLink className="fw-showcase-item-link" field={item.link}>
+              <PrismicNextImage 
+                style={{height:'100%', width:'100%'}}
+                sizes="100vw"
+                loading="eager"
+                priority={true}
+                imgixParams={{ar:'3:2'}}
+                field={item.image}
+                loader={undefined} />
+            </PrismicLink>
+            <div className="fw-showcase-item-text-wrapper">
+              <div className={ activeB === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
+                <div className="fw-showcase-item-c-name">
+                  <p>
+                    <PrismicRichText field={item.title}  />
+                  </p>
+                </div>
+                <div className="fw-showcase-item-desc">
+                  <p>
+                    <PrismicRichText field={item.desc} />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          )
+        })
+      }
+      </div>
+      <div className="works-showcase-right-mob">
+        <Swiper style={{padding:'0 0 6em 0'}}
+        slidesPerView={1.1}
+        spaceBetween={20} 
+        initialSlide={data.length}
+        >
+          {
+            data.map((item, i) => {
+              return(
+                <SwiperSlide key={i}>
+                  <div key={i}
+              className={"fw-showcase-item"}>
+              <PrismicLink className="fw-showcase-item-link" field={item.link}>
+                <PrismicNextImage 
+                  style={{height:'100%', width:'100%'}}
+                  sizes="100vw"
+                  loading="eager"
+                  priority={true}
+                  imgixParams={{ar:'3:2'}}
+                  field={item.image}
+                  loader={undefined} />
+              </PrismicLink>
+              <div className="fw-showcase-item-text-wrapper">
+                <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
+                  <div className="fw-showcase-item-c-name">
+                    <p>
+                      <PrismicRichText field={item.title}  />
+                    </p>
+                  </div>
+                  <div className="fw-showcase-item-desc">
+                    <p>
+                      <PrismicRichText field={item.desc} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+                </SwiperSlide>
+              )
+            })
+          }
+        </Swiper>
+      </div>
   </section>
   )
 }

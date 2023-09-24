@@ -50,8 +50,7 @@ export default function Nav(){
         tl.fromTo(['.nav'], 
         {
             background:'none'
-        }
-        ,
+        },
         {
             background:'#FFF'
         })
@@ -70,7 +69,7 @@ export default function Nav(){
 
 
     return(
-        <div className="nav">
+        <nav className="nav">
             <div className="nav-left">
                 <a href={'/'} style={{cursor:'pointer'}} className="nav-logo">
                     <svg className="nav-logo-svg" width="94" height="22" viewBox="0 0 94 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -108,6 +107,6 @@ export default function Nav(){
                     </div>
                 </div>
             </a>
-        </div>
+        </nav>
     )
 }

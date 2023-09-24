@@ -429,6 +429,7 @@ h1,h2,h3,h4 {
 /* Footer */
 .footer {
   padding: 2rem var(--side-padding) 2rem var(--side-padding);
+  font-size: 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -509,4 +510,31 @@ h1,h2,h3,h4 {
   .nav {
     display: none;
   }
+  .h1-big {
+    font-size: 3em;
+  }
+  .h1-xl {
+    font-size: 5.5em;
+  }
+  .p-l  {
+    font-size: 1.9em;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 3rem;
+    padding: 4rem 2rem 8rem 2rem;
+    flex-direction: column;
+  }
+  .footer-left  {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+  .footer-left-item {
+    width: 30%;
+  }
+  .footer-right {
+    width: 100%;
+  }
+  /* Footer End */
 }

@@ -11,8 +11,8 @@ export function linkResolver(doc) {
       return '/'
     case 'works':
       return '/works'
-    case 'works_child':
-      return `/${doc.uid}`
+    // case 'works_child':
+    //   return `/${doc.uid}`
     default:
       return null
   }

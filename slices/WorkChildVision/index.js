@@ -41,15 +41,19 @@ export default function WorkChildVision({ slice }){
   useEffect(() => {
     let trigger = document.querySelector('.work-vision')
 
-    gsap.to('.work-vision-left-wrapper', {
-      scrollTrigger: {
-        trigger: trigger,
-        start: 'top 25%',
-        end:'bottom 80%',
-        markers: false,
-        scrub: 0.6,
-      },
-      yPercent: 100,
+    let GsapMediaQuery = gsap.matchMedia() // Gsap Media Query
+
+    GsapMediaQuery.add("min-width: 780px", () => {
+      gsap.to('.work-vision-left-wrapper', {
+        scrollTrigger: {
+          trigger: trigger,
+          start: 'top 25%',
+          end:'bottom 80%',
+          markers: false,
+          scrub: 0.6,
+        },
+        yPercent: 100,
+      })
     })
   })
 

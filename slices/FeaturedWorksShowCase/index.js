@@ -12,6 +12,9 @@ import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import CursorA from "@/app/Component/CustomCursor/CursorA";
+import { Swiper, SwiperSlide } from "swiper/react"
+import 'swiper/css';
+
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -117,12 +120,11 @@ export default function FeaturedWorksShowCase({ slice }){
         </div>
       </div>
       {/* Eyebrow End */}
-      {/* Works Showcase */}
+      {/* Works Showcasem Desktop */}
       <div className="fw-showcase-item-wrapper">
       <CursorA />
         {
           reveal === false ? 
-
           slice.items.map((item, i) => {
             return(
               <div key={i} 
@@ -187,7 +189,48 @@ export default function FeaturedWorksShowCase({ slice }){
           })
         }
       </div>
-      {/* Works Showcase end */}
+      {/* Works Showcase Desktop end */}
+      <div className="fw-showcase-item-wrapper-mob">
+        <Swiper style={{padding:'0 0 6em 0'}}
+        slidesPerView={1.1}
+        spaceBetween={20} 
+        >
+          {
+            slice.items.map((item, i) => {
+              return(
+                <SwiperSlide key={i}>
+                  <div className={"fw-showcase-item"}>
+                    <PrismicLink className="fw-showcase-item-link" field={item.work_cta_link}>
+                      <PrismicNextImage 
+                        style={{height:'100%', width:'100%'}}
+                        sizes="100vw"
+                        loading="eager"
+                        priority={true}
+                        imgixParams={{ar:'3:2'}}
+                        field={item.image}
+                        loader={undefined} />
+                    </PrismicLink>
+                    <div className="fw-showcase-item-text-wrapper">
+                      <div className={ "fw-showcase-item-text-inner-wrapper active-inner-wrapper" }>
+                        <div className="fw-showcase-item-c-name">
+                          <p>
+                            <PrismicRichText field={item.company_name}  />
+                          </p>
+                        </div>
+                        <div className="fw-showcase-item-desc">
+                          <p>
+                            <PrismicRichText field={item.description} />
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              )
+            })
+          }
+        </Swiper>
+      </div>
     </section>
   )
 }
