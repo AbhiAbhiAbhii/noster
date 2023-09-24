@@ -54,7 +54,7 @@ export default function WorkChildVision({ slice }){
   })
 
   return(
-    <section className="work-vision snow">
+    <section id="workVision" className="work-vision snow">
       <div className="work-vision-wrapper">
         <div className="work-vision-left">
           <div className="work-vision-left-wrapper">

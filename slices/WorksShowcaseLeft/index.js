@@ -1,4 +1,5 @@
 'use client'
+import CursorA from "@/app/Component/CustomCursor/CursorA";
 /**
  * @typedef {import("@prismicio/client").Content.WorksShowcaseLeftSlice} WorksShowcaseLeftSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<WorksShowcaseLeftSlice>} WorksShowcaseLeftProps
@@ -7,7 +8,7 @@
 
 import { PrismicNextImage } from "@prismicio/next"
 import { PrismicLink, PrismicRichText } from "@prismicio/react"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function WorksShowcaseLeft({ slice }){
 
@@ -39,8 +40,61 @@ export default function WorksShowcaseLeft({ slice }){
     }, 
   ]
 
+
+  useEffect(() => {
+    // Custom Cursor F-Works
+    let cursor = document.querySelector('.cursor-A')
+    let CursorBg = document.querySelector('.cursor-A-bg')
+
+    document.addEventListener("mousemove", moveCursor);
+
+    function moveCursor (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+    }
+
+    let CursorContainer = document.querySelectorAll('.fw-showcase-item')
+    let TextContainer = document.querySelectorAll('.fw-showcase-item-text-wrapper')
+    let TextColor = document.querySelector('.cursor-A-text-wrapper')
+    let TextBorder = document.querySelector('.cursor-A-text')
+    let TextArrow = document.querySelector('.cursor-A-arrow')
+
+
+    CursorContainer.forEach(element => {
+      element.addEventListener("mouseenter", () => {
+        cursor.classList.add('cursor-active')
+        CursorBg.classList.add('cursor-A-bg-active')
+        TextColor.classList.add('cursor-A-text-active')
+        TextBorder.classList.add('cursor-A-text-u-active')
+        TextArrow.classList.add('cursor-A-arrow-reveal')
+      })
+
+      element.addEventListener("mouseleave", () => {
+        CursorBg.classList.remove('cursor-A-bg-active')
+        cursor.classList.remove('cursor-active')
+        TextColor.classList.remove('cursor-A-text-active')
+        TextBorder.classList.remove('cursor-A-text-u-active')
+        TextArrow.classList.remove('cursor-A-arrow-reveal')
+      })
+    })
+
+    TextContainer.forEach(element => {
+      element.addEventListener("mouseenter", () => {
+        cursor.classList.remove('cursor-active')
+      })
+
+      element.addEventListener("mouseleave", () => {
+        cursor.classList.add('cursor-active')
+      })
+    })
+  })
+
+
   return(
     <section className="works-showcase-left">
+      <CursorA />
       {
         data.map((item, i) => {
           return(

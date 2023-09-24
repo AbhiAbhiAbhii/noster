@@ -7,7 +7,7 @@
     --transition-quart: all 0.8s cubic-bezier(0.76, 0.00, 0.24, 1);
 }
 /* Hero */
-.home-hero{
+.home-hero {
     font-size: 1rem;
 
     overflow-y: hidden;
@@ -49,7 +49,6 @@
 }
 .home-hero-title {
     z-index: 10;
-    /* width: 40em; */
     width: 43%;
 }
 .home-hero-title > h1 {
@@ -293,5 +292,26 @@
 
 
 @media(max-width: 780px) {
+    .home-hero  {
+        font-size: 3rem;
+        padding: 80rem 2rem 18rem 2rem;
+    }
+    .home-hero-title {
+        width: 85%;
+    }
 
+    .home-brief {
+        font-size: 3rem;
+        padding: 8rem var(--side-padding) 4rem var(--side-padding);
+    }
+    .home-brief-wrapper {
+        flex-direction: column;
+    }
+    .home-brief-title {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+    .home-brief-desc-wrapper {
+        width: 90%;
+    }
 }

@@ -4,6 +4,7 @@
   --vid-overlay: 0, 0, 0, 1;
   --tile-start-rgb: 239, 245, 249;
   --h1-xl: 10.375em; /* H1 166px */
+  --h-l: 6.25em;
   --h1-big: 5em; /* H1 80px */
   --h1-small: 2em; /* H1 32px */
   --h2: 40px; /* H2 Font Size */
@@ -11,6 +12,7 @@
   --h2-l: 3.75em;
   --h4: 40px; /* H4 Font Size */
   --p: 1.1em;  /* P Font Size */
+  --p-26: 1.625em;
   --p-r: 1em; /* p 16px */
   --p-s: 0.8em; /* p 12px */
   --p-l: 2.5em; /* P 40px */
@@ -82,6 +84,13 @@
   font-family: haffer-R;
 }
 @font-face {
+  font-family: haffer-I;
+  src: local('haffer-I'), url('/fonts/Haffer-RegularItalic.woff2') format('woff2');
+}
+.haffer-I { /* Haffer Regular Italic */
+  font-family: haffer-I;
+}
+@font-face {
   font-family: haffer-L;
   src: local('haffer-L'), url('/fonts/Haffer-Light.woff2') format('woff2');
 }
@@ -97,6 +106,9 @@
 .h1-big {
   font-size: var(--h1-big);
 }
+.h1-l {
+  font-size: var(--h-l);
+}
 .h1-small {
   font-size: var(--h1-small);
 }
@@ -111,6 +123,9 @@
 }
 .p-r {
   font-size: var(--p-r);
+}
+.p-26 {
+  font-size: var(--p-26);
 }
 .p-s {
   font-size: var(--p-s);
@@ -484,5 +499,14 @@ h1,h2,h3,h4 {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+
+
+/* media-query */
+@media(max-width: 780px) {
+  .nav {
+    display: none;
   }
 }

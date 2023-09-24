@@ -46,7 +46,7 @@ export default function FeaturedWorksShowCase({ slice }){
             // ScrollTrigger.getById(observe).kill(); // Disable the ScrollTrigger once triggered
           } ,
           scrub: true,
-          markers: false
+          markers: false,
         }
       })
     }

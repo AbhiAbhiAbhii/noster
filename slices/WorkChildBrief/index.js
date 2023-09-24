@@ -39,7 +39,7 @@ export default function WorkChildBrief({ slice }){
 
 
   return(
-    <section className="work-brief snow">
+    <section id="workBrief" className="work-brief snow">
       <div className="work-brief-text-container">
         <div className="work-brief-left">
           <p className="p-tag black-txt">

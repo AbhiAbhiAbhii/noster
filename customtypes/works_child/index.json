@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "behind_the_scenes": {
+              "type": "SharedSlice"
+            },
             "work_child_image": {
               "type": "SharedSlice"
             },

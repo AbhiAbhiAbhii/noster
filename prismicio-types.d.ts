@@ -147,6 +147,7 @@ export type WorksDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<WorksDocumentData>, "works", Lang>;
 
 type WorksChildDocumentDataSlicesSlice =
+  | BehindTheScenesSlice
   | WorkChildImageSlice
   | WorkChildVisionSlice
   | WorkChildBriefSlice
@@ -220,6 +221,66 @@ export type AllDocumentTypes =
   | HomeDocument
   | WorksDocument
   | WorksChildDocument;
+
+/**
+ * Primary content in *BehindTheScenes → Primary*
+ */
+export interface BehindTheScenesSliceDefaultPrimary {
+  /**
+   * CTA Link field in *BehindTheScenes → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: behind_the_scenes.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *BehindTheScenes → Items*
+ */
+export interface BehindTheScenesSliceDefaultItem {
+  /**
+   * Image field in *BehindTheScenes → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: behind_the_scenes.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for BehindTheScenes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BehindTheScenesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BehindTheScenesSliceDefaultPrimary>,
+  Simplify<BehindTheScenesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *BehindTheScenes*
+ */
+type BehindTheScenesSliceVariation = BehindTheScenesSliceDefault;
+
+/**
+ * BehindTheScenes Shared Slice
+ *
+ * - **API ID**: `behind_the_scenes`
+ * - **Description**: BehindTheScenes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BehindTheScenesSlice = prismic.SharedSlice<
+  "behind_the_scenes",
+  BehindTheScenesSliceVariation
+>;
 
 /**
  * Primary content in *ContactShowcase → Primary*
@@ -1196,6 +1257,11 @@ declare module "@prismicio/client" {
       WorksChildDocumentData,
       WorksChildDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BehindTheScenesSlice,
+      BehindTheScenesSliceDefaultPrimary,
+      BehindTheScenesSliceDefaultItem,
+      BehindTheScenesSliceVariation,
+      BehindTheScenesSliceDefault,
       ContactShowcaseSlice,
       ContactShowcaseSliceDefaultPrimary,
       ContactShowcaseSliceVariation,
