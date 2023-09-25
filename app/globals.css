@@ -517,6 +517,7 @@ h1,h2,h3,h4 {
 /* media-query */
 @media(max-width: 780px) {
   .nav {
+    padding-top: 6em;
   }
   .nav-left {
     /* border: 1px red solid; */

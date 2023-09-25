@@ -158,7 +158,7 @@ export default function Nav(){
                 </div>
             </div>
             {/* Hamburger Inner */}
-            <div className="hb-inner" style={{top: !hbActive ? '-200%':'0%', transitionDelay: !hbActive ? '':'1000ms'}}>
+            <div className="hb-inner" style={{top: !hbActive ? '-150%':'0%', transitionDelay: !hbActive ? '':'1000ms'}}>
                 <div className="hb-inner-wrapper"> 
                     {
                         NavLink.map((item, i) => {
