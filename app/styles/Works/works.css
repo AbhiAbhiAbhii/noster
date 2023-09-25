@@ -240,6 +240,7 @@
     .work {
         font-size: 3rem;
         padding-inline: 2rem;
+        overflow-x: hidden;
     }
     .works-showcase-left {
         display: none;
