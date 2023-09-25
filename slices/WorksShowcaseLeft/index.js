@@ -134,7 +134,7 @@ export default function WorksShowcaseLeft({ slice }){
         }
       </div>
       <div className="works-showcase-left-mob">
-        <Swiper style={{padding:'0 0 6em 0'}}
+        {/* <Swiper style={{padding:'0 0 6em 0'}}
         slidesPerView={1.1}
         spaceBetween={20} 
         >
@@ -173,7 +173,39 @@ export default function WorksShowcaseLeft({ slice }){
               )
             })
           }
-        </Swiper>
+        </Swiper> */}
+        {
+          data.map((item, i) => {
+            return(
+              <div style={{width:'95%', margin:'2em 0'}} key={i}>
+              <PrismicLink className="fw-showcase-item-link" field={item.link}>
+                <PrismicNextImage 
+                  style={{height:'100%', width:'100%'}}
+                  sizes="100vw"
+                  loading="eager"
+                  priority={true}
+                  imgixParams={{ar:'3:2'}}
+                  field={item.image}
+                  loader={undefined} />
+              </PrismicLink>
+              <div className="fw-showcase-item-text-wrapper">
+                <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
+                  <div className="fw-showcase-item-c-name">
+                    <p>
+                      <PrismicRichText field={item.title}  />
+                    </p>
+                  </div>
+                  <div className="fw-showcase-item-desc">
+                    <p>
+                      <PrismicRichText field={item.desc} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+          })
+        }
       </div>
     </section>
   )

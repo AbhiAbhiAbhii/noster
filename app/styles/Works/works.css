@@ -239,19 +239,26 @@
 @media(max-width: 780px) {
     .work {
         font-size: 3rem;
-        padding-inline: 0;
+        padding-inline: 2rem;
     }
     .works-showcase-left {
         display: none;
     }
     .works-showcase-left-mob{
         display: flex;
-        padding-left: 2rem;
+        flex-direction: column;
+        padding-inline: 2rem;
+        width: 100vw;
+        /* padding-left: 2rem; */
         margin: 2em 0;
     } 
     .works-showcase-right-mob  {
         display: flex;
-        padding-right: 2rem;
+        flex-direction: column;
+        padding-inline: 2rem;
+        width: 100vw;
+        /* padding-left: 2rem; */
+        margin: 2em 0;
     }
     .works-showcase-right {
         display: none;
