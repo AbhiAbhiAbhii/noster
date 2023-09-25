@@ -429,6 +429,9 @@ h1,h2,h3,h4 {
 .nav-hb {
   display: none;
 }
+.hb-inner {
+  display: none;
+}
 
 /* Nav HB End */
 /* Nav End */
