@@ -429,10 +429,7 @@ h1,h2,h3,h4 {
 .nav-hb {
   display: none;
 }
-.no-scroll {
-  overflow: hidden;
-  position: fixed;
-}
+
 /* Nav HB End */
 /* Nav End */
 
@@ -570,7 +567,7 @@ h1,h2,h3,h4 {
     background: #FFF;
     z-index: 100;
     transition: var(--transition-quart);
-    font-size: 8rem;
+    font-size: 16rem;
 
     display: flex;
     align-items: center;
@@ -581,11 +578,12 @@ h1,h2,h3,h4 {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    padding: 0 2rem;
   }
   .hb-inner-item {
-    margin: 1em 0;
+    margin: 0.5em 0;
   }
       
   .h1-big {

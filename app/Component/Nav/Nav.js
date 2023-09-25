@@ -24,12 +24,17 @@ export default function Nav(){
                 bottom.style.background = '#000'
                 top.style.background = '#000'
                 logo.style.color = '#000'
+                bottom.style.width = '80%'
+                top.style.width = '80%'
+
             }, 500)
         } else {
             bottom.style.transform = 'translate(-50%,-50%) rotate(0deg)'
             top.style.transform = 'translate(-50%,-50%) rotate(0deg)'
             bottom.style.background = '#FFF'
             top.style.background = '#FFF'
+            bottom.style.width = '100%'
+            top.style.width = '100%'
             logo.style.color = '#FFF'
         }
 
