@@ -62,6 +62,32 @@ export default function ContactShowcase({ slice }){
 
   })
 
+
+  // TESTING ANIM
+  // useEffect(() => {
+
+  //   const target = document.querySelector('.test')
+
+  //   const elipse = document.querySelectorAll('.elipse')
+
+  //   let tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '.test',
+  //       start:'top 20%',
+  //       end:'200%',
+  //       scrub: 1,
+  //       markers: true,
+  //       pin: true
+  //     }
+  //   })
+
+  //   tl.to(elipse, {
+  //     left:'50%',
+  //   })
+
+
+  // })
+
   return(
     <section className="c-showcase snow">
       <div className="c-showcase-border">
@@ -103,6 +129,15 @@ export default function ContactShowcase({ slice }){
           </div>
         </div>
       </div>
+      {/* TESTING */}
+      {/* <div className="test">
+        <div className="elipse-wrapper">
+          <div className="elipse elipse-A" />
+          <div className="elipse elipse-B" />
+          <div className="elipse elipse-C" />
+          <div className="elipse elipse-D" />
+        </div>
+      </div> */}
     </section>
   )
 }

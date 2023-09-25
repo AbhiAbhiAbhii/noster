@@ -10,33 +10,9 @@ import gsap from "gsap";
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger"
-// import { useEffect } from "react";
-// gsap.registerPlugin(ScrollTrigger)
+
 
 export default function WorkChildVision({ slice }){
-
-
-  // useEffect(() => {
-
-  //   let trigger = document.querySelector('.work-vision')
-
-  //   let tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: trigger,
-  //       scrub: true,
-  //       markers: true,
-  //     }
-  //   })
-
-
-  //   tl.to('.work-vision-left-wrapper', 
-  //   {
-  //     y:'100%'
-  //   })
-
-  // })
 
   useEffect(() => {
     let trigger = document.querySelector('.work-vision')
@@ -49,7 +25,7 @@ export default function WorkChildVision({ slice }){
           trigger: trigger,
           start: 'top 25%',
           end:'bottom 80%',
-          markers: false,
+          markers: true,
           scrub: 0.6,
         },
         yPercent: 100,

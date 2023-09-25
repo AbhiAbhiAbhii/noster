@@ -1,5 +1,5 @@
 :root {
-    --side-padding: 2em;
+    --side-padding: 2rem;
     --transition-quint: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
     --transition-quart: all 0.6s cubic-bezier(0.76, 0.00, 0.24, 1); 
 }
@@ -7,7 +7,7 @@
 /* Works Nav */
 .works-nav {
     position: fixed;
-    bottom: 20%;
+    bottom: 8%;
     left: 50%;
     transform: translateX(-50%);
     border: 1px black solid;

@@ -1,12 +1,40 @@
 'use client'
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Nav(){
+
+    const [ hbActive, setHbActive ] = useState(false)
+
+
+    const handleHbClick = () => {
+        setHbActive(!hbActive)
+
+        let bottom = document.querySelector('.line-bottom')
+        let top = document.querySelector('.line-top')
+        let logo = document.querySelector('.nav-logo-svg')
+
+        if(!hbActive) {
+            setTimeout(() => {
+                bottom.style.transform = 'translate(-50%,-50%) rotate(45deg)'
+                top.style.transform = 'translate(-50%,-50%) rotate(-45deg)'
+                bottom.style.background = '#000'
+                top.style.background = '#000'
+                logo.style.color = '#000'
+            }, 500)
+        } else {
+            bottom.style.transform = 'translate(-50%,-50%) rotate(0deg)'
+            top.style.transform = 'translate(-50%,-50%) rotate(0deg)'
+            bottom.style.background = '#FFF'
+            top.style.background = '#FFF'
+            logo.style.color = '#FFF'
+        }
+
+    }
+
 
     const arrow = '->'
 
@@ -65,6 +93,15 @@ export default function Nav(){
             color:'#FFF'
         })
 
+        tl.fromTo('.hb-line', 
+        {
+            background: '#FFF'
+        }, 
+        {
+            background: '#000'
+        }
+        )
+
     })
 
 
@@ -107,6 +144,28 @@ export default function Nav(){
                     </div>
                 </div>
             </a>
+            {/* Hamburger */}
+            <div className="nav-hb">
+                <div onClick={handleHbClick} className="nav-hb-wrapper">
+                    <div className="hb-line line-top" style={{top: !hbActive ? '40%':'50%', transitionDelay: !hbActive ? '':'500ms', background: !hbActive ? '#FFF':'#000'}} />
+                    <div className="hb-line line-mid" style={{width: !hbActive ? '100%':'0%', transitionDelay: !hbActive ? '500ms':''}} />
+                    <div className="hb-line line-bottom" style={{top: !hbActive ? '60%':'50%', transitionDelay: !hbActive ? '':'500ms', background: !hbActive ? '#FFF':'#000'}} />
+                </div>
+            </div>
+            {/* Hamburger Inner */}
+            <div className="hb-inner" style={{top: !hbActive ? '-100%':'0%', transitionDelay: !hbActive ? '':'1000ms'}}>
+                <div className="hb-inner-wrapper"> 
+                    {
+                        NavLink.map((item, i) => {
+                            return(
+                                <a className="hb-inner-item black-txt p-r" href={item.link} key={i}>
+                                    {item.text}
+                                </a>
+                            )
+                        })
+                    }
+                </div>
+            </div>
         </nav>
     )
 }
