@@ -55,24 +55,37 @@ export default function BehindTheScenes({ slice }){
           </h1>
         </div>
         {/* Experimental */}
-        {
-          slice.items.map((item, i) => {
-            const { left, top, right, bottom, width, height } = getRandomPositionAndSize(
-              sectionWidth,
-              sectionHeight,
-              10, // Minimum width
-              10, // Minimum height
-              12, // Maximum width difference
-              12, // Maximum height difference
-            );
+        <div className="b-scene-img-container">
+          {
+            slice.items.map((item, i) => {
+              const { left, top, right, bottom, width, height } = getRandomPositionAndSize(
+                sectionWidth,
+                sectionHeight,
+                10, // Minimum width
+                10, // Minimum height
+                12, // Maximum width difference
+                12, // Maximum height difference
+              );
 
-            return(
-              <div key={i} className="b-scene-img" style={{height:`${height}em`, width:`${width}em`, position: "absolute", left: `${left}%`, top: `${top}%`}}>
-                <PrismicNextImage field={item.image} style={{height:'100%', width:'100%', objectFit:'fill'}} />
-              </div>
-            )
-          })
-        }
+              return(
+                <div key={i} className="b-scene-img" style={{height:`${height}em`, width:`${width}em`, position: "absolute", left: `${left}%`, top: `${top}%`}}>
+                  <PrismicNextImage field={item.image} style={{height:'100%', width:'100%', objectFit:'fill'}} />
+                </div>
+              )
+            })
+          }
+        </div>
+        <div className="b-scene-img-container-mob">
+          {
+            slice.items.map((item, i) => {
+              return(
+                <div key={i} style={{width:'100%', height:'100vw', margin:'1em 0'}}>
+                  <PrismicNextImage field={item.image} style={{height:'100%', width:'100%'}} />
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
       <div className="b-scene-cta">
         <PrismicLink field={slice.primary.cta_link} className="b-scene-cta-text p-26">View Next Project {arrow}</PrismicLink>

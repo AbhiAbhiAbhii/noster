@@ -178,6 +178,7 @@
 /* Behind the scene */
 .b-scene {
     padding: 2rem var(--side-padding) 2rem var(--side-padding);
+    font-size: 1rem;
 }
 .b-scene-border {
     border-top: 1px #000 solid;
@@ -186,7 +187,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 2rem 0 2rem 0;
+    padding: 2em 0 2em 0;
     height: 100vh;
 }
 .b-scene-title {
@@ -233,6 +234,9 @@
 }
 .b-scene-cta:hover .b-scene-cta-text{
     color: #FFF;
+}
+.b-scene-img-container-mob {
+    display: none;
 }
 /* Behind the scene end */
 
@@ -307,6 +311,29 @@
     .work-vision-right > p {
         width: 80%;
     }
+
+    /* Behind the Scenes */
+    .b-scene {
+        font-size: 3rem;
+    }
+    .b-scene-border {
+        height: auto;
+    }
+    .b-scene-img-container {
+        display: none;
+    }
+    .b-scene-border {
+        display: flex;
+        flex-direction: column;
+    }
+    .b-scene-img-container-mob {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    /* Behind the Scenes End */    
 
     /* Works Nav */
     .works-nav {
