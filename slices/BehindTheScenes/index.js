@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 /**
  * @typedef {import("@prismicio/client").Content.BehindTheScenesSlice} BehindTheScenesSlice
@@ -7,6 +8,7 @@
 
 import { PrismicNextImage } from "@prismicio/next"
 import { PrismicLink } from "@prismicio/react";
+import { useEffect } from "react";
 
 export default function BehindTheScenes({ slice }){
 
@@ -44,6 +46,47 @@ export default function BehindTheScenes({ slice }){
 
   const arrow = "->"
 
+  // Image JavaScript
+  useEffect(() => {
+    const images = document.querySelectorAll('.b-scene-img-item')
+    const imgPlayGround = document.querySelector('.b-scene-img-container')
+
+    // --------------------------
+    const displayDistance = 50 // distance in px to display another photo
+    const nDisplay = 7 // number of pictures to display at once
+
+
+    let globalIndex = 0 // used to count up the images
+    let lastMousePosition = {x: 0, y: 0} // used to get the last mouse position
+
+    // function to activate photos
+    function activatePic(img, x, y){
+        img.dataset.status = "active" 
+        img.style.left = `${x}px`
+        img.style.top = `${y}px`
+        img.style.zIndex = globalIndex // otherwise the last pic will always be at the top
+        lastMousePosition = {x: x, y: y} // update the last mouse position
+    }
+
+    // compute mouse distance 
+    function mouseDistance(x, y){
+        return Math.hypot(x - lastMousePosition.x, y - lastMousePosition.y)
+    }
+
+    document.querySelector('.b-scene-img-inner-container').addEventListener('mousemove', (e) => {
+    if (mouseDistance(e.clientX, e.clientY) > displayDistance){
+      let activePic = images[globalIndex % images.length]
+      let inactivePic = images[(globalIndex - nDisplay) % images.length]
+
+      activatePic(activePic, e.clientX, e.clientY)
+      if (inactivePic){inactivePic.dataset.status = "inactive"}
+
+      globalIndex++
+    }
+  })
+
+  })
+
 
 
   return(
@@ -56,24 +99,15 @@ export default function BehindTheScenes({ slice }){
         </div>
         {/* Experimental */}
         <div className="b-scene-img-container">
-          {
-            slice.items.map((item, i) => {
-              const { left, top, right, bottom, width, height } = getRandomPositionAndSize(
-                sectionWidth,
-                sectionHeight,
-                10, // Minimum width
-                10, // Minimum height
-                12, // Maximum width difference
-                12, // Maximum height difference
-              );
-
-              return(
-                <div key={i} className="b-scene-img" style={{height:`${height}em`, width:`${width}em`, position: "absolute", left: `${left}%`, top: `${top}%`}}>
-                  <PrismicNextImage field={item.image} style={{height:'100%', width:'100%', objectFit:'fill'}} />
-                </div>
-              )
-            })
-          }
+          <div className="b-scene-img-inner-container">
+            {
+              slice.items.map((item, i) => {
+                return(
+                  <img className="b-scene-img-item" src={item.image.url} alt="img" key={i} data-index={i} data-status="inactive" />
+                )
+              })
+            }
+          </div>
         </div>
         <div className="b-scene-img-container-mob">
           {

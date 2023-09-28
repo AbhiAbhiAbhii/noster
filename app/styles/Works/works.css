@@ -188,11 +188,12 @@
     justify-content: center;
     position: relative;
     padding: 2em 0 2em 0;
-    height: 100vh;
+    height: 100vh;  
+    overflow: hidden;
 }
 .b-scene-title {
-    z-index: 100;
-    /* background: rgba(255, 255, 255, 0.01); */
+    z-index: 200;
+    background: rgba(255, 255, 255, 0.01);
 }
 .b-scene-title > h1 {
     text-align: center;
@@ -238,8 +239,32 @@
 .b-scene-img-container-mob {
     display: none;
 }
+.b-scene-img-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.b-scene-img-inner-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: none;
+}
+.b-scene-img-item {
+    position: absolute;
+    width: 50vmin;
+    transform: translate(-50%,-50%);
+}
+.b-scene-img-item[data-status="inactive"] {
+    display: none;
+}
+.b-scene-img-item[data-status="active"] {
+    display: block;
+}
 /* Behind the scene end */
-
 @media(max-width: 780px) {
     .work {
         font-size: 3rem;

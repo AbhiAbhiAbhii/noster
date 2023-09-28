@@ -116,7 +116,8 @@ export default function WorksShowcaseRight({ slice }){
             </PrismicLink>
             <div className="fw-showcase-item-text-wrapper">
               <div className={ activeB === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
-                <div className="fw-showcase-item-c-name">
+                <div className="fw-showcase-item-c-na
+                me">
                   <p>
                     <PrismicRichText field={item.title}  />
                   </p>
