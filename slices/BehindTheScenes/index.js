@@ -86,7 +86,7 @@ export default function BehindTheScenes({ slice }){
   })
 
 
-  // Title Div
+  // Title Div test
   document.querySelector('.b-scene-title').addEventListener('mousemove', (e) => {
     if (mouseDistance(e.clientX, e.clientY) > displayDistance){
       let activePic = images[globalIndex % images.length]
