@@ -192,7 +192,7 @@
     overflow: hidden;
 }
 .b-scene-title {
-    z-index: 200;
+    /* z-index: 200; */
     background: rgba(255, 255, 255, 0.01);
 }
 .b-scene-title > h1 {
@@ -256,13 +256,20 @@
 .b-scene-img-item {
     position: absolute;
     width: 50vmin;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%,-50%);
+    transition: scale 1s ease;
 }
 .b-scene-img-item[data-status="inactive"] {
-    display: none;
+    /* display: none; */
+    scale: 0.6;
+    opacity: 0.6;
 }
 .b-scene-img-item[data-status="active"] {
-    display: block;
+    /* display: block; */
+    scale: 1;
+    opacity: 1;
 }
 /* Behind the scene end */
 @media(max-width: 780px) {
