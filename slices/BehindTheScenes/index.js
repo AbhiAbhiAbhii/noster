@@ -53,8 +53,8 @@ export default function BehindTheScenes({ slice }){
     const imgPlayGround = document.querySelector('.b-scene-img-container')
 
     // --------------------------
-    const displayDistance = 100 // distance in px to display another photo
-    const nDisplay = 8 // number of pictures to display at once
+    const displayDistance = 50 // distance in px to display another photo
+    const nDisplay = 5 // number of pictures to display at once
 
 
     let globalIndex = 0 // used to count up the images
@@ -74,7 +74,7 @@ export default function BehindTheScenes({ slice }){
         return Math.hypot(x - lastMousePosition.x, y - lastMousePosition.y)
     }
 
-    document.querySelector('.b-scene-img-inner-container').addEventListener('mousemove', (e) => {
+    document.querySelector('.b-scene-img-container').addEventListener('mousemove', (e) => {
     if (mouseDistance(e.clientX, e.clientY) > displayDistance){
       let activePic = images[globalIndex % images.length]
       let inactivePic = images[(globalIndex - nDisplay) % images.length]
@@ -102,8 +102,6 @@ export default function BehindTheScenes({ slice }){
   })
 
   })
-
-
 
   return(
     <section className="b-scene snow">
