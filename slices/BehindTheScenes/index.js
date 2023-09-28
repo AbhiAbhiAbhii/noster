@@ -52,8 +52,8 @@ export default function BehindTheScenes({ slice }){
     const imgPlayGround = document.querySelector('.b-scene-img-container')
 
     // --------------------------
-    const displayDistance = 50 // distance in px to display another photo
-    const nDisplay = 7 // number of pictures to display at once
+    const displayDistance = 100 // distance in px to display another photo
+    const nDisplay = 8 // number of pictures to display at once
 
 
     let globalIndex = 0 // used to count up the images
@@ -84,6 +84,24 @@ export default function BehindTheScenes({ slice }){
       globalIndex++
     }
   })
+
+
+  // Title Div
+  document.querySelector('.b-scene-title').addEventListener('mousemove', (e) => {
+    if (mouseDistance(e.clientX, e.clientY) > displayDistance){
+      let activePic = images[globalIndex % images.length]
+      let inactivePic = images[(globalIndex - nDisplay) % images.length]
+
+      activatePic(activePic, e.clientX, e.clientY)
+      if (inactivePic){inactivePic.dataset.status = "inactive"}
+
+      globalIndex++
+    }
+
+  })
+
+
+  
 
   })
 

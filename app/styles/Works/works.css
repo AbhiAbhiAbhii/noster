@@ -192,7 +192,7 @@
     overflow: hidden;
 }
 .b-scene-title {
-    /* z-index: 200; */
+    z-index: 200;
     background: rgba(255, 255, 255, 0.01);
 }
 .b-scene-title > h1 {
@@ -259,12 +259,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    transition: scale 1s ease;
+    transition: scale 1.6s ease;
 }
 .b-scene-img-item[data-status="inactive"] {
     /* display: none; */
     scale: 0.6;
-    opacity: 0.6;
+    opacity: 0.2;
 }
 .b-scene-img-item[data-status="active"] {
     /* display: block; */
