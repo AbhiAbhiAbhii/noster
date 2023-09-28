@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 export default function BehindTheScenes({ slice }){
 
+
   let sectionHeight = 400;
   let sectionWidth = 200;
 
@@ -86,7 +87,7 @@ export default function BehindTheScenes({ slice }){
   })
 
 
-  // Title Div test
+  // Title Div 
   document.querySelector('.b-scene-title').addEventListener('mousemove', (e) => {
     if (mouseDistance(e.clientX, e.clientY) > displayDistance){
       let activePic = images[globalIndex % images.length]
@@ -99,9 +100,6 @@ export default function BehindTheScenes({ slice }){
     }
 
   })
-
-
-  
 
   })
 
