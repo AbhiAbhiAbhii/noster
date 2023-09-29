@@ -8,49 +8,16 @@
 
 import { PrismicNextImage } from "@prismicio/next"
 import { PrismicLink } from "@prismicio/react";
+import Image from "next/image";
 import { useEffect } from "react";
 
 export default function BehindTheScenes({ slice }){
-
-
-  let sectionHeight = 400;
-  let sectionWidth = 200;
-
-  // function getRandomPosition(maxWidth, maxHeight) {
-
-  //   maxHeight = 70
-  //   maxWidth = 80
-
-  //   const left = Math.random() * maxWidth;
-  //   const top = Math.random() * maxHeight;
-  //   const width = Math.random() * (maxWidth / 2); // Adjust the width
-  //   const height = Math.random() * (maxHeight / 2); // Adjust the height 
-  //   return { left, top, width, height };
-  // }
-
-
-  function getRandomPositionAndSize(maxWidth, maxHeight, minWidth, minHeight, maxWidthDiff, maxHeightDiff) {
-
-    maxHeight = 20
-    maxWidth = 100
-
-    const left = Math.random() * maxWidth;
-    const top = Math.random() * maxHeight;
-    const right = Math.random() * maxWidth;
-    const bottom = Math.random() * maxHeight;
-    const width = minWidth + Math.random() * maxWidthDiff;
-    const height = minHeight + Math.random() * maxHeightDiff;
-    return { left, top, right, bottom, width, height };
-
-
-  }
 
   const arrow = "->"
 
   // Image JavaScript
   useEffect(() => {
     const images = document.querySelectorAll('.b-scene-img-item')
-    const imgPlayGround = document.querySelector('.b-scene-img-container')
 
     // --------------------------
     const displayDistance = 50 // distance in px to display another photo
@@ -71,10 +38,10 @@ export default function BehindTheScenes({ slice }){
 
     // compute mouse distance 
     function mouseDistance(x, y){
-        return Math.hypot(x - lastMousePosition.x, y - lastMousePosition.y)
+      return Math.hypot(x - lastMousePosition.x, y - lastMousePosition.y)
     }
 
-    document.querySelector('.b-scene-img-container').addEventListener('mousemove', (e) => {
+    document.querySelector('.b-scene-border').addEventListener('mousemove', (e) => { // div mouse event listener
     if (mouseDistance(e.clientX, e.clientY) > displayDistance){
       let activePic = images[globalIndex % images.length]
       let inactivePic = images[(globalIndex - nDisplay) % images.length]
@@ -84,21 +51,6 @@ export default function BehindTheScenes({ slice }){
 
       globalIndex++
     }
-  })
-
-
-  // Title Div 
-  document.querySelector('.b-scene-title').addEventListener('mousemove', (e) => {
-    if (mouseDistance(e.clientX, e.clientY) > displayDistance){
-      let activePic = images[globalIndex % images.length]
-      let inactivePic = images[(globalIndex - nDisplay) % images.length]
-
-      activatePic(activePic, e.clientX, e.clientY)
-      if (inactivePic){inactivePic.dataset.status = "inactive"}
-
-      globalIndex++
-    }
-
   })
 
   })
@@ -111,13 +63,17 @@ export default function BehindTheScenes({ slice }){
             Behind<br /><span className="haffer-I">the </span>Scenes
           </h1>
         </div>
-        {/* Experimental */}
+        {/* Cursor Trailing */}
         <div className="b-scene-img-container">
           <div className="b-scene-img-inner-container">
             {
               slice.items.map((item, i) => {
                 return(
-                  <img className="b-scene-img-item" src={item.image.url} alt="img" key={i} data-index={i} data-status="inactive" />
+                  <Image className="b-scene-img-item" height={500} width={500} 
+                    src={item.image.url} alt="img" 
+                    loading="eager" priority={true} 
+                    key={i} data-index={i} 
+                    data-status="inactive" />
                 )
               })
             }
@@ -128,7 +84,11 @@ export default function BehindTheScenes({ slice }){
             slice.items.map((item, i) => {
               return(
                 <div key={i} style={{width:'100%', height:'100vw', margin:'1em 0'}}>
-                  <PrismicNextImage field={item.image} style={{height:'100%', width:'100%'}} />
+                  <PrismicNextImage
+                    field={item.image} style={{height:'100%', width:'100%'}}
+                    imgixParams={{ar:'3:2'}} 
+                    loading="eager"
+                     />
                 </div>
               )
             })

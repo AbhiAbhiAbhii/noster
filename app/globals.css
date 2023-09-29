@@ -183,7 +183,7 @@
   /* CTA UnderLine */
   width: 100%;
   transition: var(--transition-quart);
-  transition-delay: 500ms;
+  transition-delay: 200ms;
 }
 
 .cta:hover {
@@ -196,7 +196,7 @@
   background: var(--snow-bg);
   transition: var(--transition-quart);
   transform: translateX(-120%);
-  transition-delay: 300ms;
+  transition-delay: 250ms;
 }
 .cta-arrow-A {
   position: absolute;
@@ -211,7 +211,7 @@
 }
 .cta:hover .cta-arrow {
   transform: translateX(-10%);
-  transition-delay: 800ms;
+  transition-delay: 300ms;
 }
 .cta-prop {
   position: relative;
@@ -228,12 +228,12 @@
   transition: scale 0.5s var(--quint);
   pointer-events: none;
   z-index: 2000;
-  transition-delay: 1100ms;
+  transition-delay: 600ms;
 }
 .cursor-A.cursor-active {
   scale: 1;
   transition: scale 0.9s var(--quint);
-  z-index: 2000;
+  z-index: 200;
 }
 .cursor-A-bg-wrapper {
   height: 100%;
@@ -250,13 +250,13 @@
   background: var(--black-bg);
   transition: var(--transition-quint);
   z-index: -10;
-  transition-delay: 600ms;
+  transition-delay: 300ms;
 }
 .cursor-A-bg.cursor-A-bg-active {
   width: 100%;
   transition: var(--transition-quint);
   z-index: -10;
-  transition-delay: 500ms;
+  transition-delay: 300ms;
 }
 .cursor-A-text-wrapper {
   transition: var(--transition-quint);
@@ -266,13 +266,13 @@
   color: var(--cta-anim-black);
   transition: var(--transition-quint);
   z-index: 500;
-  transition-delay: 600ms;
+  transition-delay: 300ms;
 }
 .cursor-A-text-wrapper.cursor-A-text-active > p {
   color: var(--cta-txt-white);
   transition: var(--transition-quint);
   z-index: 500;
-  transition-delay: 500ms;
+  transition-delay: 300ms;
 }
 
 .cursor-A-text {
@@ -290,7 +290,7 @@
   background: #FFF;
   z-index: 10;
   transition: var(--transition-quint);
-  transition-delay: 400ms;
+  transition-delay: 200ms;
 }
 .cursor-A-text.cursor-A-text-u-active {
   position: relative;
@@ -306,7 +306,7 @@
   background: #FFF;
   z-index: 10;
   transition: var(--transition-quart);
-  transition-delay: 800ms;
+  transition-delay: 500ms;
 }
 .cursor-A-text-u-active {
   position: relative;
@@ -323,7 +323,7 @@
 .cursor-A-arrow.cursor-A-arrow-reveal {
   transform: translateX(0%);
   transition: var(--transition-quint);
-  transition-delay: 1000ms;
+  transition-delay: 700ms;
 }
 /* Cursor-A End */
 /* CTA Properties End */

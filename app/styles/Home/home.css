@@ -119,13 +119,13 @@
     width: 27%;
     height: 16.25em;
     transition: var(--transition-quart);
-    transition-delay: 500ms;
+    transition-delay: 300ms;
 } 
 .fw-showcase-item.expand-fw-showcase-item{
     height: 28em;
     width: 45%;
     transition: var(--transition-quart);  
-    transition-delay: 500ms;
+    transition-delay: 300ms;
 }
 .fw-showcase-item-text-wrapper {
     position: absolute;
@@ -144,7 +144,7 @@
 }
 .fw-showcase-item-text-inner-wrapper.active-inner-wrapper {
     transform: translate(0);
-    transition-delay: 1000ms;
+    transition-delay: 600ms;
 }
 .fw-showcase-item-c-name {
     width: 25%;
