@@ -123,12 +123,12 @@ export default function BehindTheScenes({ slice }){
       })
     }
 
-    gsap.from(imgFrames, {
+    gsap.to(imgFrames, {
       scrollTrigger: {  
         trigger: '.frame-A',
-        start: 'top bottom',
+        start: 'top center',
         // end: 'top top',
-        // markers: true,
+        markers: true,
         onEnter: () => {
           drag()
           console.log("drag function enter")
@@ -137,11 +137,12 @@ export default function BehindTheScenes({ slice }){
           console.log("drag function leave")
         }
       },
-      duration: 0.3,
+      duration: 1,
       scale: 1,
       ease: 'expo.inOut',
+      stagger: 0.2
       // onComplete: drag(),
-      stagger: 0.8
+      // stagger: 0.8
     })
 
    
