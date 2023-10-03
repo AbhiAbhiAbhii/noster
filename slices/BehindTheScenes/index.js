@@ -98,24 +98,6 @@ export default function BehindTheScenes({ slice }){
 
     const imgFrames = document.querySelectorAll('.img-frame')
     const frame = document.querySelector('.frame-B')
-
-    // let tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.frame-A',
-    //   }
-    // })
-
-
-    // tl = gsap.from('.img-frame', {
-    //   duration: 1.8,
-    //   scale: 0,
-    //   ease: 'expo.inOut',
-    //   onComplete: drag(),
-    //   stagger: 0.8
-    // })
-  //  const init = () => {
-    
-    // }
   
     const drag = () => {
       Draggable.create('.frame-B', {
@@ -144,9 +126,9 @@ export default function BehindTheScenes({ slice }){
     gsap.from(imgFrames, {
       scrollTrigger: {  
         trigger: '.frame-A',
-        start: 'top top',
-        end: 'top top',
-        markers: true,
+        start: 'top bottom',
+        // end: 'top top',
+        // markers: true,
         onEnter: () => {
           drag()
           console.log("drag function enter")
@@ -175,7 +157,7 @@ export default function BehindTheScenes({ slice }){
               return(
                 <div key={i} className="img-frame" style={{scale:'0'}}>
                   <figure className="img-frame-figure">
-                    <PrismicNextImage loading="eager" field={item.image} style={{height:'100%', width:'100%', objectFit:'cover'}} />
+                    <PrismicNextImage loading="eager" height={500} width={500} priority={true} field={item.image} style={{height:'100%', width:'100%', objectFit:'cover'}} />
                   </figure>
                 </div>
               )
