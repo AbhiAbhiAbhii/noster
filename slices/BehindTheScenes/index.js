@@ -127,8 +127,6 @@ export default function BehindTheScenes({ slice }){
       scrollTrigger: {  
         trigger: '.frame-A',
         start: 'top center',
-        // end: 'top top',
-        markers: true,
         onEnter: () => {
           drag()
           console.log("drag function enter")
@@ -150,22 +148,32 @@ export default function BehindTheScenes({ slice }){
   })
 
   return(
-    <div style={{position:'relative', height:'100vh', width:'100vw', overflow:'hidden', zIndex:'1'}}>
-      <div className="frame-A snow">
-        <div className="frame-B">
-          {
-            slice.items.map((item, i) => {
-              return(
-                <div key={i} className="img-frame" style={{scale:'0'}}>
-                  <figure className="img-frame-figure">
-                    <PrismicNextImage loading="eager" height={500} width={500} priority={true} field={item.image} style={{height:'100%', width:'100%', objectFit:'cover'}} />
-                  </figure>
-                </div>
-              )
-            })
-          }
+    <div className="b-scene-frame snow">
+      <div className="b-scene-title">
+        <h1 className="h-l black-txt">
+          Behind<br /><span className="haffer-I">the </span>Scenes
+        </h1>
+      </div>
+      <div className="b-scene-inner-frame snow">
+        <div className="frame-A snow">
+          <div className="frame-B">
+            {
+              slice.items.map((item, i) => {
+                return(
+                  <div key={i} className="img-frame" style={{scale:'0'}}>
+                    <figure className="img-frame-figure">
+                      <PrismicNextImage loading="eager" height={500} width={500} priority={true} field={item.image} style={{height:'100%', width:'100%', objectFit:'cover'}} />
+                    </figure>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       </div>
+      <div className="b-scene-cta">
+         <PrismicLink field={slice.primary.cta_link} className="b-scene-cta-text p-26">View Next Project {arrow}</PrismicLink>
+       </div>
     </div>
     // <section className="b-scene snow">
     //   <div className="b-scene-border">

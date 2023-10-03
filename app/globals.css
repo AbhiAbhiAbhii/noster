@@ -345,6 +345,7 @@ body {
 }
 body {
   color: rgb(var(--default-rgb));
+  background: #FFF;
 }
 a {
   color: inherit;
