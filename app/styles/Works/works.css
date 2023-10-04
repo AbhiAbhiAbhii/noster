@@ -443,7 +443,6 @@
 } */
 .hero-frame {
     position: absolute;
-    border: 1px red solid;
 }
 /* nth children */
 .hero-frame:nth-child(1) {
@@ -550,6 +549,16 @@
 
 /* Testing new code end */
 /* Behind the scene end */
+
+/* media query */
+@media(max-width: 1100px) {
+    .work-uid-hero {
+        /* position: relative;
+        overflow-y: hidden;
+        font-size: 1rem; */
+        padding: 24rem var(--side-padding) 24rem var(--side-padding);
+    } 
+}
 @media(max-width: 780px) {
     .work {
         font-size: 3rem;
