@@ -16,7 +16,7 @@ export default function WorkChildHero({ slice }){
         </h1>
       </div>
       <div className="work-uid-hero-wrapper">
-        <PrismicNextImage style={{height:'100%', width:'100%'}} field={slice.primary.image} />
+        <PrismicNextImage height={500 * 10} width={500 * 10} style={{height:'100%', width:'100%', objectFit:'cover'}} field={slice.primary.image} />
       </div>
     </section>
   )

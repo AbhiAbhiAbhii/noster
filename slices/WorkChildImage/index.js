@@ -12,7 +12,7 @@ export default function WorkChildImage({ slice }){
       <div style={{height:'98%', width:'100%'}}>
         <PrismicNextImage 
           field={slice.primary.image}  
-          style={{height:'100%', width:'100%'}} 
+          style={{height:'100%', width:'100%', objectFit:'cover'}} 
           imgixParams={{ar:'3:2'}} loading="eager" />
       </div>
     </section>

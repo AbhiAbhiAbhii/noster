@@ -76,7 +76,17 @@
     position: relative;
     overflow-y: hidden;
     font-size: 1rem;
-    padding: 14rem var(--side-padding) 34rem var(--side-padding);
+    padding: 20rem var(--side-padding) 20rem var(--side-padding);
+}
+.work-uid-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 .work-uid-hero-wrapper {
     position: absolute;
@@ -171,7 +181,7 @@
 
 /* Works Image */
 .worksImg {
-    height: 50vw;
+    height: 80vw;
     padding: 0 2rem;
     display: flex;
     align-items: center;
@@ -204,9 +214,17 @@
     transform: translate(-50%, -50%);
 }
 .b-scene-title > h1 {
+    /* color: #FFF; */
     text-align: center;
     font-size: 6.25em;
     touch-action: none;
+    /* background: #FFF;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent; */
+
+    mix-blend-mode: color-burn;
 }
 .b-scene-cta {
     border-bottom: 1px black solid;
