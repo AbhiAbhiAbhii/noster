@@ -665,3 +665,47 @@ h1,h2,h3,h4 {
   left: 100%;
   background: #000;
 }
+
+
+/*  */
+.test-class {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: black;
+  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+
+.test-opacity {
+  animation: rev-reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 1s;
+}
+
+@keyframes rev-block {
+  0% {
+   left: -100%;
+   /* width: 0%;  */
+  }
+  50% {
+    left: -100%;
+    /* width: 100%; */
+  }
+  100% {
+    left: 0%;
+    /* width: 0%; */
+  }
+}
+@keyframes rev-reveal {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
+
