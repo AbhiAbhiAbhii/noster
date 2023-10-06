@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 /**
  * @typedef {import("@prismicio/client").Content.WorkChildImageSlice} WorkChildImageSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<WorkChildImageSlice>} WorkChildImageProps
@@ -6,19 +6,19 @@
  */
 
 import { PrismicNextImage } from "@prismicio/next";
-import { useEffect } from "react";
-import SimpleParallax from "simple-parallax-js";
+// import { useEffect } from "react";
+// import SimpleParallax from "simple-parallax-js";
 
 export default function WorkChildImage({ slice }){
 
-  useEffect(() => {
-    let image = document.querySelectorAll('.thumbnail')
-    new SimpleParallax(image, {
-      delay: 0.8,
-      // scale: 1.08,
-      transition: 'cubic-bezier(0,0,0,1)'
-    })
-  })
+  // useEffect(() => {
+  //   let image = document.querySelectorAll('.thumbnail')
+  //   new SimpleParallax(image, {
+  //     delay: 0.8,
+  //     // scale: 1.08,
+  //     transition: 'cubic-bezier(0,0,0,1)'
+  //   })
+  // })
 
 
   return(
