@@ -6,9 +6,16 @@
 
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+// import SimpleParallax from "simple-parallax-js";
 
 export default function WorkChildHero({ slice }){
-  
+
+  // var image = document.querySelectorAll('.image')
+
+  // new SimpleParallax(image, {
+  //   delay: 0.6,
+  //   transition: 'cubic-bezier(0,0,0,1)'
+  // })
 
   return(
     <section className="work-uid-hero">
