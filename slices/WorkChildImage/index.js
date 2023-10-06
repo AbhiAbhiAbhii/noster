@@ -12,7 +12,7 @@ import SimpleParallax from "simple-parallax-js";
 export default function WorkChildImage({ slice }){
 
   useEffect(() => {
-    var image = document.querySelectorAll('.thumbnail')
+    let image = document.querySelectorAll('.thumbnail')
     new SimpleParallax(image, {
       delay: 0.8,
       // scale: 1.08,
