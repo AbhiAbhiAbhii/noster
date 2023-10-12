@@ -6,12 +6,12 @@
  */
 
 import { PrismicNextImage } from "@prismicio/next";
-// import { useEffect } from "react";
-import SimpleParallax from "simple-parallax-js";
+import { useEffect } from "react";
+import gsap from "gsap";
+// import SimpleParallax from "simple-parallax-js";
+// import Rellax from "rellax";
 
 export default function WorkChildImage({ slice }){
-
-
 
   // useEffect(() => {
   //   let image = document.querySelectorAll('.thumbnail')
@@ -22,22 +22,35 @@ export default function WorkChildImage({ slice }){
   //   })
   // })
 
-  var image = document.querySelectorAll('.thumbnail')
+  useEffect(() => {
 
-  new SimpleParallax(image, {
-    delay: 0.6,
-    transition: 'cubic-bezier(0,0,0,1)'
+    // const image = document.querySelectorAll('.thumbnail')
+
+    // let animation = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: image,
+    //     start:'top bottom',
+    //     end:'bottom bottom',
+    //     scrub: true,
+    //     // markers:true
+    //   }
+    // })
+
+    // animation.to(image, {
+    //   // transform: 'translateY(-20%)',
+    //   duration: 1,
+    //   ease: 'ease'
+    // })
+
   })
-
-
-
+  
 
   return(
-    <section className="worksImg snow">
-      <div style={{height:'98%', width:'100%'}}>
-        <PrismicNextImage className="thumbnail" 
+    <section className="worksImg snow" style={{overflow:'hidden'}}>
+      <div className="parallax" style={{height:'98%', width:'100%', overflow:'hidden'}}>
+        <PrismicNextImage className="thumbnail"
           field={slice.primary.image}  
-          style={{height:'100%', width:'100%', objectFit:'cover'}} 
+          style={{height:'100%', width:'100%', objectFit:'cover', scale:'1.4'}} 
           imgixParams={{ar:'3:2'}} loading="eager" />
       </div>
     </section>

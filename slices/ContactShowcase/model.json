@@ -47,6 +47,22 @@
             "allowTargetBlank": true,
             "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "cursorimage": {
+          "type": "Image",
+          "config": {
+            "label": "CursorImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "CTA Link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

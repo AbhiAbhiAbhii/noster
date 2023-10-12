@@ -38,12 +38,24 @@
 /* Background & Text Color */
 .snow {
   background: var(--snow-bg);
+  transition: all var(--transition-quart);
+}
+.darkMode {
+  background: #000;
+  transition: all var(--transition-quart);
+}
+.border-white {
+  border-top: 2px #FFF solid;
+  border-bottom: 2px #FFF solid;
+  transition: all var(--transition-quart);
 }
 .black-txt {
   color: #000;
+  transition: all var(--transition-quart);
 }
 .snow-txt {
   color: var(--txt-white);
+  transition: all var(--transition-quart);
 }
 /* Background & Text Color End */
 
@@ -326,10 +338,131 @@
   transition-delay: 700ms;
 }
 /* Cursor-A End */
+/* Cursor-B */
+.cursor-B {
+  color: black;
+  scale: 0;
+  background-color: rgba(255, 255, 255, 1);
+  transition: scale 0.5s var(--quint);
+  pointer-events: none;
+  z-index: 2000;
+  transition-delay: 600ms;
+}
+.cursor-B.cursor-active {
+  scale: 1;
+  transition: scale 0.9s var(--quint);
+  z-index: 200;
+  transition-delay: 600ms;
+}
+.cursor-B-bg-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0.4em;
+}
+.cursor-B-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--black-bg);
+  transition: var(--transition-quint);
+  z-index: -10;
+  transition-delay: 300ms;
+}
+.cursor-B-bg.cursor-B-bg-active {
+  width: 100%;
+  transition: var(--transition-quint);
+  z-index: -10;
+  transition-delay: 300ms;
+}
+.cursor-B-text-wrapper {
+  transition: var(--transition-quint);
+  z-index: 500;
+}
+.cursor-B-text-wrapper > p {
+  color: var(--cta-anim-black);
+  transition: var(--transition-quint);
+  z-index: 500;
+  transition-delay: 300ms;
+}
+.cursor-B-text-wrapper.cursor-B-text-active > p {
+  color: var(--cta-txt-white);
+  transition: var(--transition-quint);
+  z-index: 500;
+  transition-delay: 300ms;
+}
+
+.cursor-B-text {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.cursor-B-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0%;
+  background: #FFF;
+  z-index: 10;
+  transition: var(--transition-quint);
+  transition-delay: 200ms;
+}
+.cursor-B-text.cursor-B-text-u-active {
+  position: relative;
+  transition: var(--transition-quint);
+}
+.cursor-B-text.cursor-B-text-u-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #FFF;
+  z-index: 10;
+  transition: var(--transition-quart);
+  transition-delay: 500ms;
+}
+.cursor-B-text-u-active {
+  position: relative;
+}
+.cursor-B-arrow-wrapper {
+  overflow: hidden;
+}
+.cursor-B-arrow {
+  color: #FFF;
+  position: relative;
+  transform: translateX(-100%);
+  transition: var(--transition-quint);
+}
+.cursor-B-arrow.cursor-B-arrow-reveal {
+  transform: translateX(0%);
+  transition: var(--transition-quint);
+  transition-delay: 700ms;
+}
+.cursor-b-img-outer {
+  height: 30em;
+  width: 30em;
+  position: fixed;
+  border-radius: 50%;
+  z-index: 20;
+  scale: 0;
+  transition: scale 0.5s var(--quart);
+  overflow: hidden;
+  border: 1px rgba(0, 0, 0, 0) solid;
+}
+.cursor-b-img-outer.circle-img-reveal {
+  scale: 1;
+  opacity: 1;
+  transition: scale 0.5s var(--quart);
+  transition-delay: 1400ms;
+}
+/* Cursor-B End */
 /* CTA Properties End */
-
-
-
 
 * {
   box-sizing: border-box;
@@ -676,7 +809,6 @@ h1,h2,h3,h4 {
   animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   animation-delay: 1s;
 }
-
 .test-opacity {
   animation: rev-reveal 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
   animation-delay: 1s;

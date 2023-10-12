@@ -11,8 +11,11 @@ import { PrismicLink, PrismicRichText } from "@prismicio/react"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 export default function NewsAndInsights({ slice }){
+
+  let value = "cubic-bezier(0.83, 0, 0.17, 1)"
+
   return(
-    <section className="news-showcase snow">
+    <section className="news-showcase snow" style={{transition:`all 0.2s ${value}`}}>
       <div className="eyebrow-title">
         <h1 className="h1-big black-txt">
           <PrismicRichText field={slice.primary.title} />

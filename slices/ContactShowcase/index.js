@@ -1,9 +1,10 @@
 'use client'
 
+import CursorB from "@/app/Component/CustomCursor/CursorB";
 import { PrismicRichText } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 gsap.registerPlugin(ScrollTrigger)
 
 /**
@@ -13,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger)
  */
 export default function ContactShowcase({ slice }){
 
+  const [ scroll, setScroll ] = useState(40)
 
   let Info = [ // Contact Mail/Phone Info
     {
@@ -25,40 +27,127 @@ export default function ContactShowcase({ slice }){
     }
   ]
 
+  let value = "cubic-bezier(0.83, 0, 0.17, 1)"
+
   useEffect(() => { // C-Showcase Title Anim Gsap
     const observe = document.querySelector('.c-showcase')
+    const bg = document.querySelectorAll('.snow')
+    const text = document.querySelectorAll('.black-txt')
+    const border = document.querySelector('.c-showcase-border')
+
+    const TxtTop = document.querySelector('.c-showcase-title-top')
+    const TxtBottom = document.querySelector('.c-showcase-title-bottom')
+
+
+
+    const AnimTrigger = () => { 
+      TxtTop.style.transform= "translateY(0)"
+      TxtBottom.style.transform= "translateY(0)"
+
+      TxtTop.style.opacity = "1"
+      TxtBottom.style.opacity = "1"
+    }
+
+    const AnimRevert = () => {
+      TxtTop.style.transform= "translateY(100%)"
+      TxtBottom.style.transform= "translateY(-100%)"
+
+      TxtTop.style.opacity = "0"
+      TxtBottom.style.opacity = "0"
+    }
+
+    const darkMode = () => {
+      bg.forEach(item => {
+        item.classList.add("darkMode")
+      })
+
+      text.forEach(item => {
+        item.classList.add("snow-txt")
+      })
+
+      border.style.borderTop = "2px #FFF solid"
+      border.style.borderBottom = "2px #FFF solid"
+    }
+
+    const lightMode = () => {
+      bg.forEach(item => {
+        item.classList.remove("darkMode")
+      })
+
+      text.forEach(item => {
+        item.classList.remove("snow-txt")
+      })
+
+      border.style.borderTop = "2px #000 solid"
+      border.style.borderBottom = "2px #000 solid"
+    }
 
     if(observe) {
-      gsap.to(observe, {
+      gsap.to(observe, 
+        {
         scrollTrigger: {
           trigger: observe,
-          start: 'top 18%',
+          // start: `top ${scroll}%`,
+          start: 'top 30%',
           onEnter: () => {
-            AnimTrigger()
-            // ScrollTrigger.getById(observe).kill();
+            setTimeout(() => AnimTrigger(), 400);
+            darkMode();
+            // ScrollTrigger.getById(observe).kill
           },
-          scrub: true
+          onLeaveBack: () => {
+            setTimeout(() => lightMode(), 500)
+            AnimRevert();
+          },
+          scrub: true,
+          // markers: true
         }
+      }
+      )
+    }
+
+
+    // Custom CursorB
+    // cursor DOM
+    let cursorB = document.querySelector('.cursor-B')
+    let CursorBg = document.querySelector('.cursor-B-bg')
+
+    let contactArea = document.querySelector('.c-showcase-border')
+    let TextColor = document.querySelector('.cursor-B-text-wrapper')
+    let TextBorder = document.querySelector('.cursor-B-text')
+    let TextArrow = document.querySelector('.cursor-B-arrow')
+
+    // Cursor BG DOM
+    let circleImg = document.querySelector('.cursor-b-img-outer')
+
+    function moveCursorB (e) {
+      let x = e.clientX;
+      let y = e.clientY;
+      circleImg.style.left = `${x}px`;
+      circleImg.style.top = `${y}px`;
+      // circleImg.style.transform = "translate(-50%, -50%)"
+    }
+
+    document.body.addEventListener("mousemove", moveCursorB)
+
+      contactArea.addEventListener("mouseenter", () => {
+        cursorB.classList.add('cursor-active')
+        CursorBg.classList.add('cursor-B-bg-active')
+        TextColor.classList.add('cursor-B-text-active')
+        TextBorder.classList.add('cursor-B-text-u-active')
+        TextArrow.classList.add('cursor-B-arrow-reveal')
+  
+        circleImg.classList.add('circle-img-reveal')
       })
-    }
 
-    function AnimTrigger() { 
+    contactArea.addEventListener("mouseleave", () => {
+      cursorB.classList.remove('cursor-active')
+      CursorBg.classList.remove('cursor-B-bg-active')
+      TextColor.classList.remove('cursor-B-text-active')
+      TextBorder.classList.remove('cursor-B-text-u-active')
+      TextArrow.classList.remove('cursor-B-arrow-reveal')
 
-      const TxtTop = document.querySelector('.c-showcase-title-top')
-      const TxtMid = document.querySelector('.c-showcase-title-mid')
-      const TxtBottom = document.querySelector('.c-showcase-title-bottom')
-
-      TxtMid.style.opacity = "1"
-
-      setTimeout(() => {
-        TxtTop.style.transform= "translateY(0)"
-        TxtBottom.style.transform= "translateY(0)"
-
-        TxtTop.style.opacity = "1"
-        TxtBottom.style.opacity = "1"
-
-      }, 600)
-    }
+      circleImg.classList.remove('circle-img-reveal')
+    })
 
   })
 
@@ -89,8 +178,9 @@ export default function ContactShowcase({ slice }){
   // })
 
   return(
-    <section className="c-showcase snow">
-      <div className="c-showcase-border">
+    <section className="c-showcase snow" style={{transition:`all 0.2s ${value}`}}>
+      <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`}}>
+      <CursorB image={slice.primary.cursorimage} />
         <div className="c-showcase-title-wrapper black-txt">
           <div className="c-showcase-title-top">
             <h1 className="c-showcase-title h1-xl">

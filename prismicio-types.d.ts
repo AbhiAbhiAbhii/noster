@@ -325,6 +325,26 @@ export interface ContactShowcaseSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   contact_info_text: prismic.RichTextField;
+
+  /**
+   * CursorImage field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.cursorimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cursorimage: prismic.ImageField<never>;
+
+  /**
+   * CTA Link field in *ContactShowcase → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
 }
 
 /**

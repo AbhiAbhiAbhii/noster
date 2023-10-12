@@ -59,7 +59,6 @@ export default function FeaturedWorksShowCase({ slice }){
     let cursor = document.querySelector('.cursor-A')
     let CursorBg = document.querySelector('.cursor-A-bg')
 
-    document.addEventListener("mousemove", moveCursor);
 
     function moveCursor (e) {
       let x = e.clientX;
@@ -67,6 +66,8 @@ export default function FeaturedWorksShowCase({ slice }){
       cursor.style.left = `${x}px`;
       cursor.style.top = `${y}px`;
     }
+
+    document.addEventListener("mousemove", moveCursor);
 
     let CursorContainer = document.querySelectorAll('.fw-showcase-item')
     let TextContainer = document.querySelectorAll('.fw-showcase-item-text-wrapper')

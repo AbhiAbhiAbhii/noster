@@ -8,17 +8,20 @@ import CTA from "@/app/Component/CTA/CTA";
 import { PrismicRichText } from "@prismicio/react";
 
 export default function HomeBrief({ slice }){
+
+  let value = "cubic-bezier(0.83, 0, 0.17, 1)"
+
   return(
-    <section id="homeBrief" className="home-brief">
+    <section id="homeBrief" className="home-brief snow" style={{transition:`all 0.2s ${value}`}}>
       <div className="home-brief-wrapper">
         <div className="home-brief-title haffer-R">
-          <p className="p-tag">
+          <p className="p-tag black-txt">
             <PrismicRichText field={slice.primary.title} />
           </p>
         </div>
         <div className="home-brief-desc-wrapper">
           <div className="home-brief-desc haffer-R">
-            <p className="p-tag">
+            <p className="p-tag black-txt">
               <PrismicRichText field={slice.primary.description} />
             </p>
           </div>
