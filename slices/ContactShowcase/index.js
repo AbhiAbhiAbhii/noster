@@ -116,6 +116,8 @@ export default function ContactShowcase({ slice }){
     let TextBorder = document.querySelector('.cursor-B-text')
     let TextArrow = document.querySelector('.cursor-B-arrow')
 
+    let prevDiv = document.querySelector('.news-showcase')
+
     // Cursor BG DOM
     let circleImg = document.querySelector('.cursor-b-img-outer')
 
@@ -137,6 +139,16 @@ export default function ContactShowcase({ slice }){
         TextArrow.classList.add('cursor-B-arrow-reveal')
   
         circleImg.classList.add('circle-img-reveal')
+      })
+      
+      prevDiv.addEventListener("mouseenter", () => {
+        cursorB.classList.remove('cursor-active')
+        CursorBg.classList.remove('cursor-B-bg-active')
+        TextColor.classList.remove('cursor-B-text-active')
+        TextBorder.classList.remove('cursor-B-text-u-active')
+        TextArrow.classList.remove('cursor-B-arrow-reveal')
+  
+        circleImg.classList.remove('circle-img-reveal')
       })
 
     contactArea.addEventListener("mouseleave", () => {
