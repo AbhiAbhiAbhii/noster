@@ -14,37 +14,31 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function HomeHero({ slice }){
 
-  let targetText = slice.primary.title[0].text
 
   useEffect(() => {
+    let target = document.querySelectorAll(".target-text")
 
-    let target = document.querySelectorAll('.target-text')
+    setTimeout(() => {
+      gsap.to(target, {
+        translateY:"0%",
+        stagger:{each:0.05}
+      })
+    }, 200)
 
-    gsap.from(target, {
-      y: "-100%",
-      opacity: 0,
-      duration: 2,
-      stagger: { each: 0.06 },
-      transformOrigin: "right center",
-    })
-
-  }, [])
-
-
-
+  })
 
   return(
     <section className="home-hero">
-      <div className="home-hero-title" style={{perspective:'0px'}}>
+      <div className="home-hero-title">
         <h1 className="haffer-R h1-small">
           {/* <PrismicRichText field={slice.primary.title} /> */}
-          <div className="target-text">
-            <p style={{overflow:'hidden', perspective:'0px'}}>
+          <div style={{overflow:'hidden', perspective:'0px'}}>
+            <p className="target-text" style={{transform:'translateY(-100%)', transition:'all 0.8s cubic-bezier(0.83, 0, 0.17, 1)'}}>
               Noster Associates is a full service office interior &
             </p>
           </div>
-          <div className="target-text" style={{overflow:'hidden', perspective:'0px'}}>
-            <p>
+          <div style={{overflow:'hidden', perspective:'0px'}}>
+            <p className="target-text" style={{transform:'translateY(-110%)', transition:'all 0.8s cubic-bezier(0.83, 0, 0.17, 1)'}}>
               space developers, for growing companies
             </p>
           </div>

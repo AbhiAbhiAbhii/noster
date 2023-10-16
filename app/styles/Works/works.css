@@ -95,6 +95,12 @@
     height: 100%;
     width: 100%;
     z-index: -10;
+
+    /* background: url('https://images.prismic.io/noster/9ee012d4-8d83-49aa-a3bb-c8928caf0e20_DSC00853+%281%29.webp?auto=compress,format'); */
+    /* background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 .work-uid-hero-title {
     display: flex;

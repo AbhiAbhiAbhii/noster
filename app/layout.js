@@ -14,6 +14,7 @@ import './styles/Works/works.css'
 import { Inter } from 'next/font/google'
 import Footer from './Component/Footer/Footer'
 import Nav from './Component/Nav/Nav'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -99,9 +100,11 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <ParallaxProvider>
       <Nav />
       <body className={inter.className}>{children}</body>
       <Footer />
+      </ParallaxProvider>
     </html>
   )
 }

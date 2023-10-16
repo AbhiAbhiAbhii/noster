@@ -1,3 +1,4 @@
+'use client'
 /**
  * @typedef {import("@prismicio/client").Content.WorkChildHeroSlice} WorkChildHeroSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<WorkChildHeroSlice>} WorkChildHeroProps
@@ -6,6 +7,8 @@
 
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Image from "next/image";
+import { Parallax } from "react-scroll-parallax";
 // import SimpleParallax from "simple-parallax-js";
 
 export default function WorkChildHero({ slice }){
@@ -17,6 +20,12 @@ export default function WorkChildHero({ slice }){
   //   transition: 'cubic-bezier(0,0,0,1)'
   // })
 
+  // let URL = require('url').URL
+  // let myURL = new URL(`${slice.primary.image.url}`)
+  
+
+  console.log(slice.primary.image.url,"HI DADDY")
+
   return(
     <section className="work-uid-hero">
       <div className="work-uid-hero-title">
@@ -24,8 +33,11 @@ export default function WorkChildHero({ slice }){
           <PrismicRichText field={slice.primary.title} />
         </h1>
       </div>
-      <div className="work-uid-hero-wrapper">
-        <PrismicNextImage className="image" height={500 * 10} width={500 * 10} style={{height:'100%', width:'100%', objectFit:'cover'}} field={slice.primary.image} />
+      <div className="work-uid-hero-wrapper" style={{}}>
+          <Parallax speed={-50} style={{height:'110%', width:'100%'}}>
+            <PrismicNextImage className="parralax-test" height={500 * 10} width={500 * 10} style={{height:'100%', width:'100%'}} field={slice.primary.image} />
+          </Parallax>
+        {/* <div className="parralax-image" style={{height:'100%', width:'100%'}} /> */}
       </div>
     </section>
   )
