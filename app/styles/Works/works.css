@@ -20,11 +20,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem 0.5rem 1rem 0;
+    padding: 1.25rem 0;
     font-size: 1rem;
     z-index: 200;
     opacity: 1;
     transition: all 0.3s var(--new-transition);
+
+    width: 450px;
 }
 .works-nav.works-nav-hide {
     bottom: -10%;
@@ -33,7 +35,6 @@
 }
 .works-nav-item {
     width: 33.33%;
-    padding-inline: 1.5em;
     display: flex;
     align-items: center;
     justify-content: center;
