@@ -26,7 +26,7 @@ export default function WorkChildHero({ slice }){
         </h1>
       </div>
       <div className="work-uid-hero-wrapper" style={{}}>
-          <Parallax speed={-50} style={{height:'110%', width:'100%'}}>
+          <Parallax speed={-30} style={{height:'110%', width:'100%'}}>
             <PrismicNextImage height={500 * 10} width={500 * 10} style={{height:'100%', width:'100%', objectFit:'cover'}} 
               loading='eager' 
               imgixParams={{ar:'3:2'}} 
