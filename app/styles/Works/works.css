@@ -91,10 +91,11 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    width: 96%;
+    background: rgba(0, 0, 0, 0.25);
     z-index: 1;
 }
 .work-uid-hero-wrapper {
@@ -104,12 +105,7 @@
     height: 100%;
     width: 100%;
     z-index: -10;
-
-    /* background: url('https://images.prismic.io/noster/9ee012d4-8d83-49aa-a3bb-c8928caf0e20_DSC00853+%281%29.webp?auto=compress,format'); */
-    /* background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
+    padding: 0 2em;
 }
 .work-uid-hero-title {
     display: flex;
