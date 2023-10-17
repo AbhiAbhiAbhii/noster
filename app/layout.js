@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ParallaxProvider>
       <Nav />
-      <body lenis={Lenis} className={inter.className}>{children}</body>
+      <body className={inter.className}>{children}</body>
       <Footer />
       </ParallaxProvider>
     </html>
