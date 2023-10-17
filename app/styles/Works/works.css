@@ -671,11 +671,11 @@
 
     /* Works Nav */
     .works-nav {
-        font-size: 3rem;
+        font-size: 4rem;
         padding: 3rem 3rem 3rem 1rem;
     }
     .works-nav-item {
-        padding-inline: 2em;
+        /* padding-inline: 2em; */
     }
     /* Works Nav End */
     /* Works Child End */
