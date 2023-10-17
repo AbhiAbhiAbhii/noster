@@ -27,19 +27,19 @@ export default function WorksShowcaseLeft({ slice }){
       title: slice.primary.company_name_a,
       desc: slice.primary.description_a,
       image: slice.primary.image_a,
-      link: slice.primary.cta_link_a
+      link: slice.primary.cta_link_a.uid
     },
     {
       title: slice.primary.company_name_b,
       desc: slice.primary.description_b,
       image: slice.primary.image_b,
-      link: slice.primary.cta_link_b
+      link: slice.primary.cta_link_b.uid
     },
     {
       title: slice.primary.company_name_c,
       desc: slice.primary.description_c,
       image: slice.primary.image_c,
-      link: slice.primary.cta_link_c
+      link: slice.primary.cta_link_c.uid
     }, 
   ]
 
@@ -105,7 +105,7 @@ export default function WorksShowcaseLeft({ slice }){
             return(
               <div style={{border:''}} onMouseOver={() => handleHover(i)} key={i}
               className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
-              <PrismicLink className="fw-showcase-item-link" field={item.link}>
+              <a href={`/works/${item.link}`} className="fw-showcase-item-link">
                 <PrismicNextImage 
                   style={{height:'100%', width:'100%'}}
                   sizes="100vw"
@@ -114,7 +114,7 @@ export default function WorksShowcaseLeft({ slice }){
                   imgixParams={{ar:'3:2'}}
                   field={item.image}
                   loader={undefined} />
-              </PrismicLink>
+              </a>
               <div className="fw-showcase-item-text-wrapper">
                 <div className={ active === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
                   <div className="fw-showcase-item-c-name">
@@ -179,7 +179,7 @@ export default function WorksShowcaseLeft({ slice }){
           data.map((item, i) => {
             return(
               <div style={{width:'95%', margin:'2em 0'}} key={i}>
-              <PrismicLink className="fw-showcase-item-link" field={item.link}>
+              <a href={`/works/${item.link}`} className="fw-showcase-item-link" >
                 <PrismicNextImage 
                   style={{height:'100%', width:'100%'}}
                   sizes="100vw"
@@ -188,7 +188,7 @@ export default function WorksShowcaseLeft({ slice }){
                   imgixParams={{ar:'3:2'}}
                   field={item.image}
                   loader={undefined} />
-              </PrismicLink>
+              </a>
               <div className="fw-showcase-item-text-wrapper">
                 <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
                   <div className="fw-showcase-item-c-name">
