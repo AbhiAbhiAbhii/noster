@@ -87,7 +87,7 @@
     font-size: 1rem;
     padding: 20rem var(--side-padding) 20rem var(--side-padding);
 }
-.work-uid-hero::after {
+/* .work-uid-hero::after {
     content: '';
     position: absolute;
     top: 0;
@@ -97,7 +97,7 @@
     width: 96%;
     background: rgba(0, 0, 0, 0.25);
     z-index: 1;
-}
+} */
 .work-uid-hero-wrapper {
     position: absolute;
     top: 0;
@@ -105,7 +105,22 @@
     height: 100%;
     width: 100%;
     z-index: -10;
-    padding: 0 2em;
+    padding: 0 2rem;
+}
+.work-uid-overlay {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.work-uid-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 20;
 }
 .work-uid-hero-title {
     display: flex;
@@ -611,7 +626,7 @@
     /* Works Child */
     .work-uid-hero {
         font-size: 3rem;
-        padding: 80rem 3rem 30rem 3rem;
+        padding: 74rem 3rem 50rem 3rem;
     }
     .work-brief {
         font-size: 3rem;
