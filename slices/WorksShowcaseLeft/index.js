@@ -44,6 +44,7 @@ export default function WorksShowcaseLeft({ slice }){
   ]
 
 
+
   useEffect(() => {
     // Custom Cursor F-Works
     let cursor = document.querySelector('.cursor-A')
