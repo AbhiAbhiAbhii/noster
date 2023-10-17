@@ -13,10 +13,6 @@ import { useEffect } from "react";
 import { Parallax } from "react-scroll-parallax";
 
 export default function WorkChildHero({ slice }){
-
- 
-
-  
   return(
     <section className="work-uid-hero">
       <NavComponentA />

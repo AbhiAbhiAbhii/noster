@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
     })
 
     // lenis.on('scroll', (e) => {
-    //   console.log(e, "Lenis Scrolling")
+    //   console.log(e, "Lenis Scrolling")npm 
 
     // })
 
@@ -92,10 +92,7 @@ export default function RootLayout({ children }) {
       requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
-
   }
-
-
   })
 
   return (
