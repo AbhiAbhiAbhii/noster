@@ -9,6 +9,7 @@ export const components = {
   home_brief: dynamic(() => import("./HomeBrief")),
   home_hero: dynamic(() => import("./HomeHero")),
   news_and_insights: dynamic(() => import("./NewsAndInsights")),
+  next_project_link: dynamic(() => import("./NextProjectLink")),
   work_child_brief: dynamic(() => import("./WorkChildBrief")),
   work_child_hero: dynamic(() => import("./WorkChildHero")),
   work_child_image: dynamic(() => import("./WorkChildImage")),

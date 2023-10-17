@@ -147,6 +147,7 @@ export type WorksDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<WorksDocumentData>, "works", Lang>;
 
 type WorksChildDocumentDataSlicesSlice =
+  | NextProjectLinkSlice
   | BehindTheScenesSlice
   | WorkChildImageSlice
   | WorkChildVisionSlice
@@ -685,6 +686,51 @@ type NewsAndInsightsSliceVariation = NewsAndInsightsSliceDefault;
 export type NewsAndInsightsSlice = prismic.SharedSlice<
   "news_and_insights",
   NewsAndInsightsSliceVariation
+>;
+
+/**
+ * Primary content in *NextProjectLink → Primary*
+ */
+export interface NextProjectLinkSliceDefaultPrimary {
+  /**
+   * CTA Link field in *NextProjectLink → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: next_project_link.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for NextProjectLink Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NextProjectLinkSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NextProjectLinkSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NextProjectLink*
+ */
+type NextProjectLinkSliceVariation = NextProjectLinkSliceDefault;
+
+/**
+ * NextProjectLink Shared Slice
+ *
+ * - **API ID**: `next_project_link`
+ * - **Description**: NextProjectLink
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NextProjectLinkSlice = prismic.SharedSlice<
+  "next_project_link",
+  NextProjectLinkSliceVariation
 >;
 
 /**
@@ -1304,6 +1350,10 @@ declare module "@prismicio/client" {
       NewsAndInsightsSliceDefaultItem,
       NewsAndInsightsSliceVariation,
       NewsAndInsightsSliceDefault,
+      NextProjectLinkSlice,
+      NextProjectLinkSliceDefaultPrimary,
+      NextProjectLinkSliceVariation,
+      NextProjectLinkSliceDefault,
       WorkChildBriefSlice,
       WorkChildBriefSliceDefaultPrimary,
       WorkChildBriefSliceVariation,
