@@ -25,11 +25,6 @@ export default function NavComponentA( )  {
         infinite: false,
     })
 
-    // lenis.on('scroll', (e) => {
-    //   console.log(e, "Lenis Scrolling")
-
-    // })
-
     function raf(time) {
         lenis.raf(time)
         requestAnimationFrame(raf)
@@ -49,7 +44,7 @@ export default function NavComponentA( )  {
         },
         {
           text:'Execution',
-          link:'.b-scene-frame'
+          link:'.worksImg'
         },
       ]
 
@@ -104,7 +99,7 @@ export default function NavComponentA( )  {
                 }
             })
         }, {threshold: 0.2})
-        observerC.observe(document.querySelector('.b-scene-frame'))
+        observerC.observe(document.querySelector('.worksImg'))
       })
 
 

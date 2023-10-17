@@ -52,10 +52,10 @@ export default function Nav(){
             text:'About',
             link:'/'
         },
-        {
-            text:'Blog',
-            link:'/'
-        }
+        // {
+        //     text:'Blog',
+        //     link:'/'
+        // }
     ]
 
     useEffect(() => {
@@ -135,7 +135,7 @@ export default function Nav(){
                     })
                 }
             </div>
-            <a href="/" className="nav-right">
+            <a href="tel: 1234567890" className="nav-right">
                 <div className="nav-right-wrapper">
                     <div className="nav-right-text">
                         <p className="p-r">
