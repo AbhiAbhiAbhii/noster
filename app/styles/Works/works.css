@@ -203,6 +203,12 @@
     justify-content: center;
     overflow-y: hidden;
 }
+.desk-parallax {
+    /* border: 1px red solid; */
+}
+.mob-img {
+    display: none;
+}
 /* Works Image End */
 
 /* Behind the scene */
@@ -644,6 +650,13 @@
     }
     .work-vision-right > p {
         width: 80%;
+    }
+
+    .desk-parallax {
+        display: none;
+    }
+    .mob-img {
+        display: block;
     }
 
     /* Behind the Scenes */
