@@ -100,7 +100,23 @@ export default function NavComponentA( )  {
             })
         }, {threshold: 0.2})
         observerC.observe(document.querySelector('.worksImg'))
+
+        const observerD = new IntersectionObserver((items) => {
+            items.forEach(item => {
+                if(item.isIntersecting) {
+                    navComponentA.style.opacity = 0
+                    setTimeout(() => {
+                        navComponentA.style.display = "none"
+                    }, 500)
+                } else {
+                    navComponentA.style.display = "flex"
+                    navComponentA.style.opacity = 1
+                }
+            })
+          })
+          observerD.observe(document.querySelector('.footer'))
       })
+
 
 
 
