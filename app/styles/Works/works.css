@@ -129,8 +129,10 @@
     z-index: 200;
 }
 .work-uid-hero-title > h1 {
+    width: 82%;
     color: #FFF;
     z-index: 10;
+    text-align: center;
 }
 /* hero end */
 
