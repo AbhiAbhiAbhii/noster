@@ -754,6 +754,11 @@ h1,h2,h3,h4 {
   /* Footer End */
 }
 
+/* no scroll */
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
 
 
 

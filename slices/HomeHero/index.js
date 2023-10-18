@@ -1,4 +1,5 @@
 'use client'
+import Curtain from "@/app/Component/Curtain/Curtain";
 /**
  * @typedef {import("@prismicio/client").Content.HomeHeroSlice} HomeHeroSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<HomeHeroSlice>} HomeHeroProps
@@ -8,12 +9,13 @@
 import { PrismicRichText } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 gsap.registerPlugin(ScrollTrigger)
 
 
 export default function HomeHero({ slice }){
 
+  const [ curtain, setCurtain ] = useState(true)
 
   useEffect(() => {
     let target = document.querySelectorAll(".target-text")
@@ -25,10 +27,67 @@ export default function HomeHero({ slice }){
       })
     }, 200)
 
-  })
+    const curtainDrop = () => {
+      // document.body.classList.add('no-scroll')
+      // document.querySelector('.nav').style.opacity = 0
+      // document.querySelector('.footer').style.opacity = 0   
+      console.log("Curtain is dropped")
+      document.body.classList.remove('no-scroll')
+    }
+
+    const curtainStart = () => {
+      console.log("Curtain is up")
+      document.body.classList.add('no-scroll')
+      document.querySelector('.nav').style.opacity = 0
+      document.querySelector('.footer').style.opacity = 0   
+    }
+
+    // if(setCurtain(false)) {
+    //   curtainDrop()
+    // } else {
+    //   curtainStart()
+    // }
+
+    // if(curtain) {
+    //   console.log("Curtain is up")
+    //   curtainStart()
+    // } else if(!curtain) {
+    //   console.log("Curtain is down")
+    //   curtainDrop()
+    // }
+
+    // setTimeout(() => {
+    //   setCurtain(false)
+    //   console.log("Curtain is down")
+    // }, 3000)
+ 
+
+
+
+
+    // if(setCurtain(false)) {
+    //   document.body.classList.add('no-scroll')
+    //   document.querySelector('.nav').style.opacity = 0
+    //   document.querySelector('.footer').style.opacity = 0   
+    // }
+    // if(setCurtain(true)) {
+    //   document.querySelector('.nav').style.opacity = 1
+    //   document.querySelector('.footer').style.opacity = 1
+    //   document.body.classList.remove('no-scroll')
+    //   // document.querySelector('.curtain-ref').style.opacity = 0
+    //   document.getElementById('curtainRef').style.opacity = 0
+      
+    // }
+
+
+    
+
+
+  }, [])
 
   return(
-    <section className="home-hero">
+    <section className="home-hero" style={{position:'relative'}}>
+      
       <div className="home-hero-title">
         <h1 className="haffer-R h1-small">
           {/* <PrismicRichText field={slice.primary.title} /> */}

@@ -65,56 +65,59 @@ export default function NavComponentA( )  {
         })
 
         let elipse = document.querySelectorAll('.elipse')
+        elipse.forEach(item => {
+            item.style.opacity = 0
+        })
 
-        const observer = new IntersectionObserver((items) => {
-            items.forEach(item => {
-                if(item.isIntersecting) {
-                    elipse[0].style.opacity = 1
-                } else {
-                    elipse[0].style.opacity = 0
-                }
-            })
-        },{threshold: 1})
-        observer.observe(document.getElementById('workBrief'))
+        // const observer = new IntersectionObserver((items) => {
+        //     items.forEach(item => {
+        //         if(item.isIntersecting) {
+        //             elipse[0].style.opacity = 1
+        //         } else {
+        //             elipse[0].style.opacity = 0
+        //         }
+        //     })
+        // },{threshold: 1})
+        // observer.observe(document.getElementById('workBrief'))
 
 
-        const observerB = new IntersectionObserver((items) => {
-            items.forEach(item => {
-                if(item.isIntersecting) {
-                    elipse[1].style.opacity = 1
-                } else {
-                    elipse[1].style.opacity = 0
-                }
-            })
-        }, {threshold: 0.6})
-        observerB.observe(document.getElementById('workVision'))
+        // const observerB = new IntersectionObserver((items) => {
+        //     items.forEach(item => {
+        //         if(item.isIntersecting) {
+        //             elipse[1].style.opacity = 1
+        //         } else {
+        //             elipse[1].style.opacity = 0
+        //         }
+        //     })
+        // }, {threshold: 0.6})
+        // observerB.observe(document.getElementById('workVision'))
 
         
-        const observerC = new IntersectionObserver((items) => {
-            items.forEach(item => {
-                if(item.isIntersecting) {
-                    elipse[2].style.opacity = 1
-                } else {
-                    elipse[2].style.opacity = 0
-                }
-            })
-        }, {threshold: 0.2})
-        observerC.observe(document.querySelector('.worksImg'))
+        // const observerC = new IntersectionObserver((items) => {
+        //     items.forEach(item => {
+        //         if(item.isIntersecting) {
+        //             elipse[2].style.opacity = 1
+        //         } else {
+        //             elipse[2].style.opacity = 0
+        //         }
+        //     })
+        // })
+        // observerC.observe(document.querySelector('.worksImg'))
 
-        const observerD = new IntersectionObserver((items) => {
-            items.forEach(item => {
-                if(item.isIntersecting) {
-                    navComponentA.style.opacity = 0
-                    setTimeout(() => {
-                        navComponentA.style.display = "none"
-                    }, 500)
-                } else {
-                    navComponentA.style.display = "flex"
-                    navComponentA.style.opacity = 1
-                }
-            })
-          })
-          observerD.observe(document.querySelector('.footer'))
+        // const observerD = new IntersectionObserver((items) => {
+        //     items.forEach(item => {
+        //         if(item.isIntersecting) {
+        //             navComponentA.style.opacity = 0
+        //             setTimeout(() => {
+        //                 navComponentA.style.display = "none"
+        //             }, 500)
+        //         } else {
+        //             navComponentA.style.display = "flex"
+        //             navComponentA.style.opacity = 1
+        //         }
+        //     })
+        //   })
+        //   observerD.observe(document.querySelector('.footer'))
       })
 
 
