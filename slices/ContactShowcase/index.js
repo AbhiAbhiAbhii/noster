@@ -108,58 +108,58 @@ export default function ContactShowcase({ slice }){
 
     // Custom CursorB
     // cursor DOM
-    let cursorB = document.querySelector('.cursor-B')
-    let CursorBg = document.querySelector('.cursor-B-bg')
+    // let cursorB = document.querySelector('.cursor-B')
+    // let CursorBg = document.querySelector('.cursor-B-bg')
 
-    let contactArea = document.querySelector('.c-showcase-border')
-    let TextColor = document.querySelector('.cursor-B-text-wrapper')
-    let TextBorder = document.querySelector('.cursor-B-text')
-    let TextArrow = document.querySelector('.cursor-B-arrow')
+    // let contactArea = document.querySelector('.c-showcase-border')
+    // let TextColor = document.querySelector('.cursor-B-text-wrapper')
+    // let TextBorder = document.querySelector('.cursor-B-text')
+    // let TextArrow = document.querySelector('.cursor-B-arrow')
 
-    let prevDiv = document.querySelector('.news-showcase')
+    // let prevDiv = document.querySelector('.news-showcase')
 
-    // Cursor BG DOM
-    let circleImg = document.querySelector('.cursor-b-img-outer')
+    // // Cursor BG DOM
+    // let circleImg = document.querySelector('.cursor-b-img-outer')
 
-    function moveCursorB (e) {
-      let x = e.clientX;
-      let y = e.clientY;
-      circleImg.style.left = `${x}px`;
-      circleImg.style.top = `${y}px`;
-      // circleImg.style.transform = "translate(-50%, -50%)"
-    }
+    // function moveCursorB (e) {
+    //   let x = e.clientX;
+    //   let y = e.clientY;
+    //   circleImg.style.left = `${x}px`;
+    //   circleImg.style.top = `${y}px`;
+    //   // circleImg.style.transform = "translate(-50%, -50%)"
+    // }
 
-    document.body.addEventListener("mousemove", moveCursorB)
+    // document.body.addEventListener("mousemove", moveCursorB)
 
-      contactArea.addEventListener("mouseenter", () => {
-        cursorB.classList.add('cursor-active')
-        CursorBg.classList.add('cursor-B-bg-active')
-        TextColor.classList.add('cursor-B-text-active')
-        TextBorder.classList.add('cursor-B-text-u-active')
-        TextArrow.classList.add('cursor-B-arrow-reveal')
+    //   contactArea.addEventListener("mouseenter", () => {
+    //     cursorB.classList.add('cursor-active')
+    //     CursorBg.classList.add('cursor-B-bg-active')
+    //     TextColor.classList.add('cursor-B-text-active')
+    //     TextBorder.classList.add('cursor-B-text-u-active')
+    //     TextArrow.classList.add('cursor-B-arrow-reveal')
   
-        circleImg.classList.add('circle-img-reveal')
-      })
+    //     circleImg.classList.add('circle-img-reveal')
+    //   })
       
-      prevDiv.addEventListener("mouseenter", () => {
-        cursorB.classList.remove('cursor-active')
-        CursorBg.classList.remove('cursor-B-bg-active')
-        TextColor.classList.remove('cursor-B-text-active')
-        TextBorder.classList.remove('cursor-B-text-u-active')
-        TextArrow.classList.remove('cursor-B-arrow-reveal')
+    //   prevDiv.addEventListener("mouseenter", () => {
+    //     cursorB.classList.remove('cursor-active')
+    //     CursorBg.classList.remove('cursor-B-bg-active')
+    //     TextColor.classList.remove('cursor-B-text-active')
+    //     TextBorder.classList.remove('cursor-B-text-u-active')
+    //     TextArrow.classList.remove('cursor-B-arrow-reveal')
   
-        circleImg.classList.remove('circle-img-reveal')
-      })
+    //     circleImg.classList.remove('circle-img-reveal')
+    //   })
 
-    contactArea.addEventListener("mouseleave", () => {
-      cursorB.classList.remove('cursor-active')
-      CursorBg.classList.remove('cursor-B-bg-active')
-      TextColor.classList.remove('cursor-B-text-active')
-      TextBorder.classList.remove('cursor-B-text-u-active')
-      TextArrow.classList.remove('cursor-B-arrow-reveal')
+    // contactArea.addEventListener("mouseleave", () => {
+    //   cursorB.classList.remove('cursor-active')
+    //   CursorBg.classList.remove('cursor-B-bg-active')
+    //   TextColor.classList.remove('cursor-B-text-active')
+    //   TextBorder.classList.remove('cursor-B-text-u-active')
+    //   TextArrow.classList.remove('cursor-B-arrow-reveal')
 
-      circleImg.classList.remove('circle-img-reveal')
-    })
+    //   circleImg.classList.remove('circle-img-reveal')
+    // })
 
   })
 
@@ -192,7 +192,7 @@ export default function ContactShowcase({ slice }){
   return(
     <section className="c-showcase snow" style={{transition:`all 0.2s ${value}`}}>
       <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`}}>
-      <CursorB image={slice.primary.cursorimage} />
+      {/* <CursorB image={slice.primary.cursorimage} /> */}
         <div className="c-showcase-title-wrapper black-txt">
           <div className="c-showcase-title-top">
             <h1 className="c-showcase-title h1-xl">
