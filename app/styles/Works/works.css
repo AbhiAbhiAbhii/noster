@@ -597,7 +597,7 @@
         /* position: relative;
         overflow-y: hidden;
         font-size: 1rem; */
-        padding: 30rem var(--side-padding) 30rem var(--side-padding);
+        padding: 26rem var(--side-padding) 26rem var(--side-padding);
     } 
 }
 @media(max-width: 780px) {
