@@ -1,15 +1,11 @@
 import { useEffect } from "react"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
 import Lenis from '@studio-freight/lenis'
-
-
 gsap.registerPlugin(ScrollTrigger)
 
 
 export default function NavComponentA( )  {
-    
 
     let lenis;
     if (typeof window !== "undefined") {
@@ -67,7 +63,6 @@ export default function NavComponentA( )  {
         elipse.forEach(item => {
             item.style.opacity = 0
         })
-
         // const observer = new IntersectionObserver((items) => {
         //     items.forEach(item => {
         //         if(item.isIntersecting) {

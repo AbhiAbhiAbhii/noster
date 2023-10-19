@@ -57,6 +57,12 @@ export default function HomeHero({ slice }){
   })
 
 
+  let height = screen.height
+  let width = screen.width
+
+  console.log(`Users device screen height is ${height} and width is ${width}`)
+
+
 
   return(
     <>
