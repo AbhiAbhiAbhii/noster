@@ -30,7 +30,6 @@ export default function NavComponentA( )  {
         requestAnimationFrame(raf)
     }
     requestAnimationFrame(raf)
-    
     }
 
     let data = [
