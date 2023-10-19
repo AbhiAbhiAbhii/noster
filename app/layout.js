@@ -23,49 +23,6 @@ export default function RootLayout({ children }) {
 
 
   useEffect(() => {
-
-    // let myNav = document.querySelector('.test-nav')
-    
-
-    // window.addEventListener("wheel", (e) => {
-
-    //   if(e.deltaY >= 0) {
-    //     console.log("Scrolling down")
-    //     myNav.style.top = "-15%"
-    //   } else {
-    //     console.log("Scrolling up")
-    //     myNav.style.top = "0"
-    //   }
-
-    // }) not accurate
-
-
-    // var oldY = window.scrollY;
-
-    // window.onscroll = (e) => {
-
-    //   if(oldY < window.scrollY) {
-    //     console.log("Scroll down")
-    //     myNav.style.top = "-15%"
-    //   } else  {
-    //     console.log("scroll up")
-    //     myNav.style.top = "0"
-    //   }
-    //   oldY = window.scrollY
-    // }
-
-  //   const lenis = new Lenis()
-
-  // lenis.on('scroll', (e) => {
-  //   console.log(e)
-  // })
-
-  // function raf(time) {
-  //   lenis.raf(time)
-  //   requestAnimationFrame(raf)
-  // }
-
-  // requestAnimationFrame(raf)
   
   let lenis;
 

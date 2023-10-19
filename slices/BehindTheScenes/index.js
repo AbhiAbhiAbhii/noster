@@ -100,9 +100,6 @@ export default function BehindTheScenes({ slice }){
           </div>
         </div>
       </div>
-      <div className="b-scene-cta">
-         <PrismicLink field={slice.primary.cta_link} className="b-scene-cta-text p-26">View Next Project {arrow}</PrismicLink>
-       </div>
     </div>
   )
 }
