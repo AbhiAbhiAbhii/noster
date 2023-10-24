@@ -18,12 +18,12 @@ export default function ContactShowcase({ slice }){
 
   let Info = [ // Contact Mail/Phone Info
     {
-      text: <PrismicRichText field={slice.primary.email} />,
+      text:`${slice.primary.email[0].text}`,
       format: 'mailto'
     },
     {
-      text: <PrismicRichText field={slice.primary.phone} />,
-      format: 'telto'
+      text: `${slice.primary.phone[0].text}`,
+      format: 'tel'
     }
   ]
 
