@@ -138,9 +138,9 @@ export default function Nav(){
             <a href="tel: 1234567890" className="nav-right">
                 <div className="nav-right-wrapper">
                     <div className="nav-right-text">
-                        <p className="p-r">
+                        <a href='tel: +91-7025576677' className="p-r">
                             Book an Appointment
-                        </p>
+                        </a>
                     </div>
                     <div className="nav-right-arrow">
                         <p className="p-r">
