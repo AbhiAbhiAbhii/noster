@@ -244,7 +244,7 @@
 }
 .cursor-A.cursor-active {
   scale: 1;
-  transition: scale 0.9s var(--quint);
+  transition: scale 0.5s var(--quint);
   z-index: 200;
 }
 .cursor-A-bg-wrapper {
@@ -268,7 +268,7 @@
   width: 100%;
   transition: var(--transition-quint);
   z-index: -10;
-  transition-delay: 300ms;
+  transition-delay: 150ms;
 }
 .cursor-A-text-wrapper {
   transition: var(--transition-quint);
@@ -278,13 +278,13 @@
   color: var(--cta-anim-black);
   transition: var(--transition-quint);
   z-index: 500;
-  transition-delay: 300ms;
+  transition-delay: 150ms;
 }
 .cursor-A-text-wrapper.cursor-A-text-active > p {
   color: var(--cta-txt-white);
   transition: var(--transition-quint);
   z-index: 500;
-  transition-delay: 300ms;
+  transition-delay: 150ms;
 }
 
 .cursor-A-text {
@@ -302,7 +302,7 @@
   background: #FFF;
   z-index: 10;
   transition: var(--transition-quint);
-  transition-delay: 200ms;
+  transition-delay: 150ms;
 }
 .cursor-A-text.cursor-A-text-u-active {
   position: relative;
@@ -318,7 +318,7 @@
   background: #FFF;
   z-index: 10;
   transition: var(--transition-quart);
-  transition-delay: 500ms;
+  transition-delay: 300ms;
 }
 .cursor-A-text-u-active {
   position: relative;
@@ -335,7 +335,7 @@
 .cursor-A-arrow.cursor-A-arrow-reveal {
   transform: translateX(0%);
   transition: var(--transition-quint);
-  transition-delay: 700ms;
+  transition-delay: 350ms;
 }
 /* Cursor-A End */
 /* Cursor-B */

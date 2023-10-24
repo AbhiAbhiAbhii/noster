@@ -24,11 +24,15 @@ export default function Footer(){
         },
         {
             title:'Company',
-            list:[{text:'Work', link:'/'},{text:'About', link:'/'},{text:'Blog', link:'/'}]
+            list:[
+                {text:'Work', link:'/'},
+                // {text:'About', link:'/'},
+                // {text:'Blog', link:'/'}
+            ]
         },
         {
             title:'Follow us',
-            list:[{text:'Instagram', link:'/'},{text:'Linked-in', link:'/'}]
+            list:[{text:'Instagram', link:'https://www.instagram.com/noster_associates/'},{text:'Linked-in', link:'https://www.instagram.com/noster_associates/'}]
         }
     ]
 

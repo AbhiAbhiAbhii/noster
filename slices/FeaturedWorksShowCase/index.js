@@ -158,7 +158,6 @@ export default function FeaturedWorksShowCase({ slice }){
           })
           :
           slice.items.map((item, i) => {
-            console.log(item,"OUR LINK")
             return(
               <div onMouseOver={() => handleHover(i)} key={i}
                className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>

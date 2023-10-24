@@ -48,10 +48,10 @@ export default function Nav(){
             text:'Work',
             link:'/works'
         },
-        {
-            text:'About',
-            link:'/'
-        },
+        // {
+        //     text:'About',
+        //     link:'/'
+        // },
         // {
         //     text:'Blog',
         //     link:'/'

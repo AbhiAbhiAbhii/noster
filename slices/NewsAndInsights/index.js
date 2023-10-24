@@ -15,7 +15,7 @@ export default function NewsAndInsights({ slice }){
   let value = "cubic-bezier(0.83, 0, 0.17, 1)"
 
   return(
-    <section className="news-showcase snow" style={{transition:`all 0.2s ${value}`}}>
+    <section className="news-showcase snow" style={{transition:`all 0.2s ${value}`, display:'none'}}>
       <div className="eyebrow-title">
         <h1 className="h1-big black-txt">
           <PrismicRichText field={slice.primary.title} />
