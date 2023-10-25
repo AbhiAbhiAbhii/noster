@@ -121,7 +121,7 @@ export default function FeaturedWorksShowCase({ slice }){
         </div>
       </div>
       {/* Eyebrow End */}
-      {/* Works Showcasem Desktop */}
+      {/* Works Showcase Desktop */}
       <div className="fw-showcase-item-wrapper">
       <CursorA />
         {

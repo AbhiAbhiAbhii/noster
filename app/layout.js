@@ -54,13 +54,13 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <ParallaxProvider>
         <body className={inter.className}>
-          <Nav />
-            {children}
-          <Footer />
+          <ParallaxProvider>
+            <Nav />
+              {children}
+            <Footer />
+          </ParallaxProvider>
         </body>
-      </ParallaxProvider>
     </html>
   )
 }
