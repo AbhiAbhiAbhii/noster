@@ -15,46 +15,46 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function HomeHero({ slice }){
 
-  const [ curtain, setCurtain ] = useState(false)
+  // const [ curtain, setCurtain ] = useState(false)
 
-  const curtainStart = () => {
-    let ourBody = document.body
-    let nav = document.querySelector('.nav')
-    let footer = document.querySelector('.footer')
+  // const curtainStart = () => {
+  //   let ourBody = document.body
+  //   let nav = document.querySelector('.nav')
+  //   let footer = document.querySelector('.footer')
 
-    nav.style.opacity = 0
-    footer.style.opacity = 0
+  //   nav.style.opacity = 0
+  //   footer.style.opacity = 0
 
 
-    console.log("Curtain Start")
-    ourBody.classList.add('no-scroll')
-  }
+  //   console.log("Curtain Start")
+  //   ourBody.classList.add('no-scroll')
+  // }
 
-  const curtainEnd = () => {
-    let ourCurtain = document.getElementById('curtainRef')
-    let ourBody = document.body
+  // const curtainEnd = () => {
+  //   let ourCurtain = document.getElementById('curtainRef')
+  //   let ourBody = document.body
 
-    let nav = document.querySelector('.nav')
-    let footer = document.querySelector('.footer')
+  //   let nav = document.querySelector('.nav')
+  //   let footer = document.querySelector('.footer')
 
-    console.log("Curtain End")
-    ourBody.classList.remove('no-scroll')
-    ourCurtain.style.opacity = 0
-    nav.style.opacity = 1
-    footer.style.opacity = 1
+  //   console.log("Curtain End")
+  //   ourBody.classList.remove('no-scroll')
+  //   ourCurtain.style.opacity = 0
+  //   nav.style.opacity = 1
+  //   footer.style.opacity = 1
 
-    setTimeout(() => {
-      ourCurtain.style.display = 'none'
-    }, 2000)
-  }
+  //   setTimeout(() => {
+  //     ourCurtain.style.display = 'none'
+  //   }, 2000)
+  // }
 
   useEffect(() => {
 
-    setTimeout(() => {
-      setCurtain(true)
-    }, 1000)
+    // setTimeout(() => {
+    //   setCurtain(true)
+    // }, 1500)
 
-    {curtain ? curtainEnd() : curtainStart()}
+    // {curtain ? curtainEnd() : curtainStart()}
 
     let target = document.querySelectorAll(".target-text")
 
@@ -81,7 +81,6 @@ export default function HomeHero({ slice }){
 
   return(
     <>
-     <Curtain />
       <section className="home-hero" style={{position:'relative'}}>
         <div className="home-hero-title">
           <h1 className="haffer-R h1-small">

@@ -10,11 +10,7 @@ export default async function Page({ params }) {
     .getByUID("works_child", params.uid)
     .catch(() => notFound());
 
-  return(
-    <>
-      <SliceZone slices={page.data.slices} components={components} />
-    </>
-  )
+  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata({ params }) {
