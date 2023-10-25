@@ -43,7 +43,7 @@ export default function WorkChildVision({ slice }){
                 Our Vision
               </p>
             </div>
-            <div>
+            <div className="work-vision-left-description">
               <h2 className="h2-l black-txt">
                 <PrismicRichText field={slice.primary.title} />
               </h2>

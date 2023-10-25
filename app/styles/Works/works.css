@@ -149,11 +149,11 @@
 .work-brief-left {
     width: 20%;
 }
-.work-brief-right {
-    width: 50%;
+.work-brief-right, .work-vision-right {
+    width: 48.75%;
 }
 .work-brief-right-top {
-    width: 80%;
+    width: 85%;
 }
 .work-brief-right-bottom {
     margin-top: 1.4em;
@@ -187,7 +187,7 @@
 }
 .work-vision-left {
     width: 50%;
-    height: 50vh;
+    /* height: 50vh; */
 }
 .work-vision-left-wrapper {
     height: 100%;
@@ -197,11 +197,11 @@
 .work-vision-left-text {
     padding-bottom: 1em;
 }
-.work-vision-right {
-    width: 50%;
+.work-vision-left-description > h2 {
+    width: 90%;
 }
 .work-vision-right > p {
-    width: 70%;
+    width: 80%;
     line-height: 144%; /* 1.98rem */
     letter-spacing: -0.022rem;
 }
