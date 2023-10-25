@@ -166,9 +166,13 @@ export default function Nav(){
                                 <a className="hb-inner-item black-txt p-r" href={item.link} key={i}>
                                     {item.text}
                                 </a>
+                                // +91-7025576677
                             )
                         })
                     }
+                    <a className="hb-inner-item black-txt p-r" href='tel: +91-7025576677'>
+                        Book an appointment
+                    </a>
                 </div>
             </div>
         </nav>
