@@ -36,16 +36,33 @@ export default function WorkChildBrief({ slice }){
     }
   ]
 
+  // Ospyn 
 
 
   return(
     <section id="workBrief" className="work-brief snow">
       <div className="work-brief-text-container">
+        {/* Modify Here */}
         <div className="work-brief-left">
-          <p className="p-tag black-txt">
-            The Brief
-          </p>
+          <div className="">
+            <p className="p-tag black-txt">
+              Our Vision
+            </p>
+          </div>
+          {/* New Insert */}
+          {/* <div className="work-vision-right">
+            <p className="p-tag black-txt">
+              <PrismicRichText field={slice.primary.description_left} />
+            </p>
+          </div> */}
+          <div className="work-vision-left-description" style={{paddingTop:'1em'}}>
+              <h2 className="h2-l black-txt">
+                <PrismicRichText field={slice.primary.text_left} />
+              </h2>
+          </div>
+          {/* New Insert End */}
         </div>
+        {/* Modify Here End */}
         <div className="work-brief-right">  
           <div className="work-brief-right-top">
             <p className="p-tag black-txt" style={{color:'black', lineHeight:'144%', letterSpacing: '-0.352px'}}>

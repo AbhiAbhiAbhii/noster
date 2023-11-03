@@ -4,7 +4,7 @@ import CursorB from "@/app/Component/CustomCursor/CursorB";
 import { PrismicRichText } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 gsap.registerPlugin(ScrollTrigger)
 
 /**
@@ -15,6 +15,9 @@ gsap.registerPlugin(ScrollTrigger)
 export default function ContactShowcase({ slice }){
 
   const [ scroll, setScroll ] = useState(40)
+
+  const borderTopRef = useRef()
+  const borderBottomRef = useRef()
 
   let Info = [ // Contact Mail/Phone Info
     {
@@ -65,8 +68,15 @@ export default function ContactShowcase({ slice }){
         item.classList.add("snow-txt")
       })
 
-      border.style.borderTop = "2px #FFF solid"
-      border.style.borderBottom = "2px #FFF solid"
+      setTimeout(() => {
+        borderTopRef.current.style.width = "100%"
+        borderTopRef.current.style.background = "#FFF"
+        borderBottomRef.current.style.width = "100%"
+        borderBottomRef.current.style.background = "#FFF"
+      }, 300) 
+
+      // border.style.borderTop = "2px #FFF solid"
+      // border.style.borderBottom = "2px #FFF solid"
     }
 
     const lightMode = () => {
@@ -78,8 +88,13 @@ export default function ContactShowcase({ slice }){
         item.classList.remove("snow-txt")
       })
 
-      border.style.borderTop = "2px #000 solid"
-      border.style.borderBottom = "2px #000 solid"
+      // border.style.borderTop = "2px #000 solid"
+      // border.style.borderBottom = "2px #000 solid"
+
+      borderTopRef.current.style.width = "0%"
+      borderTopRef.current.style.background = "#000"
+      borderBottomRef.current.style.width = "0%"
+      borderBottomRef.current.style.background = "#000"
     }
 
     if(observe) {
@@ -185,13 +200,13 @@ export default function ContactShowcase({ slice }){
   //   tl.to(elipse, {
   //     left:'50%',
   //   })
-
-
   // })
 
   return(
     <section className="c-showcase snow" style={{transition:`all 0.2s ${value}`}}>
-      <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`}}>
+      <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`, position:'relative', border:'1px rgba(255, 255, 255, 0) solid'}}>
+        <div ref={borderTopRef} style={{position:'absolute', top:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
+        <div ref={borderBottomRef} style={{position:'absolute', bottom:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
       {/* <CursorB image={slice.primary.cursorimage} /> */}
         <div className="c-showcase-title-wrapper black-txt">
           <div className="c-showcase-title-top">

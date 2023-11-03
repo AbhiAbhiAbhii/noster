@@ -1,0 +1,36 @@
+
+
+export default function MobNav(){
+
+    let text = "View Works"
+    let textB = "Talk to us"
+
+    let arrow = "->"
+
+    return(
+        <nav className="mobile-Nav" style={
+                {
+                    border:'1px rgba(0, 0, 0, 0.17) solid', height:'70px', width:'275px', borderRadius:'20em',
+                    display:'flex', alignItems:'center', justifyContent:'space-around', background:'#FFF', padding:'5px 0 5px 8px'
+                }
+            }>
+            <div style={{}}>
+                <a href="/works" className="haffer-M" style={{fontSize:'16px', color:'#1E1E1E'}}>
+                    { text }
+                </a>
+            </div>
+            <div style={{display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'20em', width:'', background:'rgba(30, 30, 30, 1)', padding:'14px'}}>
+                <div className="">
+                    <a href='tel: +91-7025576677' className="" style={{fontSize:'16px'}}>
+                        Talk to us
+                    </a>
+                </div>
+                <div style={{height:'5em',width:'18px', display:'flex', alignItems:'center', justifyContent:'center', background:'#FFF', borderRadius:'2px', marginLeft:'10px'}}>
+                    <p style={{width:'100%', fontSize:'16px', color:'#000'}}>
+                        { arrow }
+                    </p>
+                </div>
+            </div>
+        </nav>
+    )
+}

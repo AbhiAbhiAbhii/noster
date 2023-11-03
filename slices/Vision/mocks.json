@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ut commodo est enim esse voluptate excepteur tempor sint fugiat aliqua duis. Anim commodo deserunt minim laborum reprehenderit in ad amet consectetur consectetur."
-						}
-					}
-				]
-			},
 			"client": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -76,6 +65,28 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Incididunt velit deserunt amet adipisicing nostrud sunt commodo sint velit irure ipsum amet elit nulla."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non quis veniam Lorem nisi est id deserunt exercitation enim. Laborum ex cupidatat non exercitation cillum et fugiat qui ut officia esse. Tempor officia proident velit ea sunt ut enim."
+						}
+					}
+				]
+			},
+			"text_left": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim labore laboris esse ex exercitation veniam deserunt laborum incididunt reprehenderit reprehenderit ad."
 						}
 					}
 				]

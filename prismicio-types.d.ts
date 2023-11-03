@@ -734,11 +734,11 @@ export type NextProjectLinkSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *WorkChildBrief → Primary*
+ * Primary content in *Vision → Primary*
  */
 export interface WorkChildBriefSliceDefaultPrimary {
   /**
-   * Description field in *WorkChildBrief → Primary*
+   * Description field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -748,7 +748,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   description: prismic.RichTextField;
 
   /**
-   * Client field in *WorkChildBrief → Primary*
+   * Client field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -758,7 +758,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   client: prismic.RichTextField;
 
   /**
-   * Sector field in *WorkChildBrief → Primary*
+   * Sector field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -768,7 +768,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   sector: prismic.RichTextField;
 
   /**
-   * Status field in *WorkChildBrief → Primary*
+   * Status field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -778,7 +778,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   status: prismic.RichTextField;
 
   /**
-   * Location field in *WorkChildBrief → Primary*
+   * Location field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -788,7 +788,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   location: prismic.RichTextField;
 
   /**
-   * Scope field in *WorkChildBrief → Primary*
+   * Scope field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -798,7 +798,7 @@ export interface WorkChildBriefSliceDefaultPrimary {
   scope: prismic.RichTextField;
 
   /**
-   * Scale field in *WorkChildBrief → Primary*
+   * Scale field in *Vision → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -806,10 +806,20 @@ export interface WorkChildBriefSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   scale: prismic.RichTextField;
+
+  /**
+   * Text Left field in *Vision → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: work_child_brief.primary.text_left
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_left: prismic.RichTextField;
 }
 
 /**
- * Default variation for WorkChildBrief Slice
+ * Default variation for Vision Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -822,12 +832,12 @@ export type WorkChildBriefSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *WorkChildBrief*
+ * Slice variation for *Vision*
  */
 type WorkChildBriefSliceVariation = WorkChildBriefSliceDefault;
 
 /**
- * WorkChildBrief Shared Slice
+ * Vision Shared Slice
  *
  * - **API ID**: `work_child_brief`
  * - **Description**: WorkChildBrief

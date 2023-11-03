@@ -15,7 +15,7 @@ import { Parallax } from "react-scroll-parallax";
 export default function WorkChildHero({ slice }){
   return(
     <section className="work-uid-hero">
-      <NavComponentA />
+      {/* <NavComponentA /> */}
       <div className="work-uid-hero-title">
         <h1 className="h1-big">
           <PrismicRichText field={slice.primary.title} />

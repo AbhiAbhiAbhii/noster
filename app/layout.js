@@ -4,7 +4,6 @@
 // }
 
 'use client'
-
 import { useEffect, useState } from 'react'
 import Lenis from '@studio-freight/lenis'
 import './globals.css'
@@ -16,6 +15,7 @@ import Footer from './Component/Footer/Footer'
 import Nav from './Component/Nav/Nav'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import Curtain from './Component/Curtain/Curtain'
+import MobNav from './Component/Nav/MobNav'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -101,6 +101,7 @@ export default function RootLayout({ children }) {
         <Curtain />
           <ParallaxProvider>
             <Nav />
+            <MobNav />
               {children}
             <Footer />
           </ParallaxProvider>

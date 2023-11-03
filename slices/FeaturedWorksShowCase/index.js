@@ -20,6 +20,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function FeaturedWorksShowCase({ slice }){
 
+  let value = "cubic-bezier(0.83, 0, 0.17, 1)"
+
+
   const [ active, setActive ] = useState(0); 
   const [ reveal, setReveal ] = useState(false)
   const [ animate, setAnimate ] = useState(false)
@@ -108,7 +111,7 @@ export default function FeaturedWorksShowCase({ slice }){
   
 
   return(
-    <section className="fw-showcase snow" id="fwShowcase">
+    <section className="fw-showcase snow" id="fwShowcase" style={{transition:`all 0.2s ${value}`}}>
       {/* Eyebrow */}
       <div className="eyebrow black-txt">
         <div className="eyebrow-title">

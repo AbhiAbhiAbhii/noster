@@ -141,15 +141,15 @@ export default function Nav(){
                             Book an Appointment
                         </a>
                     </div>
-                    <div className="nav-right-arrow">
-                        <p className="p-r">
+                    <div className="nav-right-arrow" style={{}}>
+                        <p className="p-r" style={{width:'100%', position:'relative', top:'-2%', left:'8%'}}>
                             { arrow }
                         </p>
                     </div>
                 </div>
             </a>
             {/* Hamburger */}
-            <div className="nav-hb">
+            <div className="nav-hb" style={{display:'none'}}>
                 <div onClick={handleHbClick} className="nav-hb-wrapper">
                     <div className="hb-line line-top" style={{top: !hbActive ? '40%':'50%', transitionDelay: !hbActive ? '':'500ms', background: !hbActive ? '#FFF':'#000'}} />
                     <div className="hb-line line-mid" style={{width: !hbActive ? '100%':'0%', transitionDelay: !hbActive ? '500ms':''}} />

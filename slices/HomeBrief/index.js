@@ -26,7 +26,7 @@ export default function HomeBrief({ slice }){
             </p>
           </div>
           <div className="home-brief-desc-CTA cta-prop">
-            <CTA link={slice.primary.cta_link} text={slice.primary.cta_text} />
+            {/* <CTA link={slice.primary.cta_link} text={slice.primary.cta_text} /> */}
           </div>
         </div>
       </div>

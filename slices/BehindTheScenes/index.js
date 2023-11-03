@@ -64,7 +64,7 @@ export default function BehindTheScenes({ slice }){
           console.log("drag function leave")
         }
       },
-      duration: 1,
+      duration: 0.3,
       scale: 1,
       ease: 'expo.inOut',
       stagger: 0.2
@@ -72,15 +72,13 @@ export default function BehindTheScenes({ slice }){
       // stagger: 0.8
     })
 
-   
-
   })
 
   return(
     <div className="b-scene-frame snow">
       <div className="b-scene-title">
-        <h1 className="h-l black-txt">
-          Behind<br /><span className="haffer-I">the </span>Scenes
+        <h1 className="h-l snow-txt" style={{userSelect:'none'}}>
+          <span style={{background:'#000', padding:'0 8px'}}>Behind</span><br /><span style={{background:'#000', padding:'0 8px'}}><span className="haffer-I">the </span>Scenes</span>
         </h1>
       </div>
       <div className="b-scene-inner-frame snow">

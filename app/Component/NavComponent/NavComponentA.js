@@ -118,7 +118,7 @@ export default function NavComponentA( )  {
 
 
     return(
-        <div className="works-nav snow">
+        <div className="works-nav snow" style={{display:'none'}}>
             {
             data.map((item, i) => {
                 return(
