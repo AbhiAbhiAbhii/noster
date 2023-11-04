@@ -110,7 +110,7 @@ export default function Nav(){
 
 
     return(
-        <nav className="nav" style={{}}>
+        <nav className="nav" style={{opacity:'0'}}>
             <div className="nav-left" style={{}}>
                 <a href={'/'} style={{cursor:'pointer'}} className="nav-logo">
                     <svg className="nav-logo-svg" width="94" height="22" viewBox="0 0 94 22" fill="none" xmlns="http://www.w3.org/2000/svg">
