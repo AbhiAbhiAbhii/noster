@@ -11,7 +11,7 @@ export default function MobNav(){
         <nav className="mobile-Nav" style={
                 {
                     border:'1px rgba(0, 0, 0, 0.17) solid', height:'70px', width:'275px', borderRadius:'20em',
-                    display:'flex', alignItems:'center', justifyContent:'space-around', background:'#FFF', padding:'5px 0 5px 8px'
+                    background:'#FFF', padding:'5px 0 5px 8px',zIndex:'200'
                 }
             }>
             <div style={{}}>

@@ -208,6 +208,7 @@ export default function ContactShowcase({ slice }){
         <div ref={borderTopRef} style={{position:'absolute', top:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
         <div ref={borderBottomRef} style={{position:'absolute', bottom:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
       {/* <CursorB image={slice.primary.cursorimage} /> */}
+        {/* Desktop */}
         <div className="c-showcase-title-wrapper black-txt">
           <div className="c-showcase-title-top">
             <h1 className="c-showcase-title h1-xl">
@@ -225,6 +226,16 @@ export default function ContactShowcase({ slice }){
             </h1>
           </div>
         </div>
+        {/* Desktop End */}
+        {/* Mob */}
+        <div className="c-showcase-title-wrapper mob">
+          <div className="c-showcase-title-mid">
+            <h1 className="c-showcase-title h1-xl">
+              <PrismicRichText field={slice.primary.showcase_title} />
+            </h1>
+          </div>
+        </div>
+        {/* Mob */}
         <div className="c-showcase-info-wrapper">
           <div className="c-showcase-info-left">
             <p className="p-l black-txt">

@@ -667,13 +667,22 @@ h1,h2,h3,h4 {
   }
 }
 
+.mob {
+  display: none;
+}
+
 
 
 /* media-query */
 @media(max-width: 780px) {
   /*  */
+  .mob {
+    display: flex;
+  }
   .mobile-Nav {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     position: fixed;
     bottom: 8%;
     left: 50%;
