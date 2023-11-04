@@ -79,7 +79,6 @@ export default function RootLayout({ children }) {
     //   console.log(e, "Lenis Scrolling")npm 
 
     // })
-
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)

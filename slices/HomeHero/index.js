@@ -47,30 +47,30 @@ export default function HomeHero({ slice }){
   //     ourCurtain.style.display = 'none'
   //   }, 2000)
   // }
+ 
+  // useEffect(() => { Uncomment this useEffect for the text anim
 
-  useEffect(() => {
+  //   // setTimeout(() => {
+  //   //   setCurtain(true)
+  //   // }, 1500)
 
-    // setTimeout(() => {
-    //   setCurtain(true)
-    // }, 1500)
+  //   // {curtain ? curtainEnd() : curtainStart()}
 
-    // {curtain ? curtainEnd() : curtainStart()}
+  //   let target = document.querySelectorAll(".target-text")
 
-    let target = document.querySelectorAll(".target-text")
+  //   setTimeout(() => {
+  //     gsap.to(target, {
+  //       translateY:"0%",
+  //       stagger:{each:0.05}
+  //     })
+  //   }, 1000)
 
-    setTimeout(() => {
-      gsap.to(target, {
-        translateY:"0%",
-        stagger:{each:0.05}
-      })
-    }, 1000)
-
-    let height = screen.height
-    let width = screen.width
+  //   let height = screen.height
+  //   let width = screen.width
   
-    console.log(`Users device screen height is ${height} and width is ${width}`)
+  //   console.log(`Users device screen height is ${height} and width is ${width}`)
 
-  })
+  // })
 
 
   
@@ -84,8 +84,8 @@ export default function HomeHero({ slice }){
       <section className="home-hero" style={{position:'relative'}}>
         <div className="home-hero-title">
           <h1 className="haffer-R h1-small">
-            {/* <PrismicRichText field={slice.primary.title} /> */}
-            <div style={{overflow:'hidden', perspective:'0px'}}>
+            <PrismicRichText field={slice.primary.title} />
+            {/* <div style={{overflow:'hidden', perspective:'0px'}}>
               <p className="target-text" style={{transform:'translateY(-100%)', transition:'all 0.8s cubic-bezier(0.83, 0, 0.17, 1)'}}>
                 Noster Associates is a full service office interior &
               </p>
@@ -94,7 +94,7 @@ export default function HomeHero({ slice }){
               <p className="target-text" style={{transform:'translateY(-110%)', transition:'all 0.8s cubic-bezier(0.83, 0, 0.17, 1)'}}>
                 space developers, for growing companies
               </p>
-            </div>
+            </div> */}
           </h1>
         </div>
         <div className="home-hero-vid-main">

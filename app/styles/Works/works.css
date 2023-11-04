@@ -205,7 +205,8 @@
 .work-vision-left-description > h2 {
     width: 85%;
     font-size: 2em;
-    line-height: 118%;
+    line-height: 128%;
+    letter-spacing: -0.01em;
 }
 .work-vision-right > p {
     width: 80%;
@@ -652,7 +653,7 @@
     }
     .work-brief {
         font-size: 3rem;
-        padding: 5rem 2rem 4rem 2rem;
+        padding: 5rem 2rem 6rem 2rem;
     }
     .work-brief-text-container {
         flex-direction: column;
@@ -690,6 +691,9 @@
     }
     .mob-img {
         display: block;
+    }
+    .worksImg  {
+        padding: 0 1.7rem;
     }
 
     /* Behind the Scenes */

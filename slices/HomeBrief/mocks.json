@@ -24,24 +24,6 @@
 						}
 					}
 				]
-			},
-			"cta_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Fugiat qui tempor proident fugiat ipsum sit laboris dolor in cillum est nisi amet ipsum cillum."
-						}
-					}
-				]
-			},
-			"cta_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
-				}
 			}
 		},
 		"items": []

@@ -14,6 +14,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import CursorA from "@/app/Component/CustomCursor/CursorA";
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css';
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -108,6 +109,10 @@ export default function FeaturedWorksShowCase({ slice }){
     })
 
   }, [animate]);
+
+
+  let arrow = "->"
+
   
 
   return(
@@ -120,7 +125,26 @@ export default function FeaturedWorksShowCase({ slice }){
           </h1>
         </div>
         <div className="eyebrow-cta">
-          <CTA link={slice.primary.cta_link} text={slice.primary.cta_text} />
+          {/* <CTA link={slice.primary.cta_link} text={slice.primary.cta_text} /> */}
+          <a href={'/works'}>
+            <div style={{display:'flex', alignItems:'center'}}>
+              <p className="cta">
+                  <p style={{display:'flex', alignItems:'center'}}>
+                      <p>
+                        View All
+                      </p>
+                      <div style={{overflow:'hidden', height:'15px', display:'flex', alignItems:'center', justifyContent:'center', marginLeft:'0.25em'}}>
+                          <div className="cta-arrow" style={{}}>
+                              <div className="cta-arrow-A snow-txt" >
+                                  { arrow }
+                              </div>
+                          </div>
+                      </div>
+                  </p>
+              </p>
+            </div>
+          </a>
+         
         </div>
       </div>
       {/* Eyebrow End */}

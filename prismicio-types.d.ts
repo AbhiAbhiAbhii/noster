@@ -391,26 +391,6 @@ export interface FeaturedWorksShowCaseSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
-
-  /**
-   * CTA Text field in *FeaturedWorksShowCase → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: featured_works_show_case.primary.cta_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  cta_text: prismic.RichTextField;
-
-  /**
-   * CTA Link field in *FeaturedWorksShowCase → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: featured_works_show_case.primary.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_link: prismic.LinkField;
 }
 
 /**
@@ -511,26 +491,6 @@ export interface HomeBriefSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
-
-  /**
-   * CTA Text field in *HomeBrief → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_brief.primary.cta_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  cta_text: prismic.RichTextField;
-
-  /**
-   * CTA Link field in *HomeBrief → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home_brief.primary.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_link: prismic.LinkField;
 }
 
 /**

@@ -680,7 +680,7 @@ h1,h2,h3,h4 {
     display: flex;
   }
   .mobile-Nav {
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: space-around;
     position: fixed;

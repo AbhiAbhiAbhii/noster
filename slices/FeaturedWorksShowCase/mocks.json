@@ -13,24 +13,6 @@
 						}
 					}
 				]
-			},
-			"cta_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "http://twitter.com"
-				}
-			},
-			"cta_text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Laboris aute nisi laborum eiusmod consectetur amet eiusmod irure ex."
-						}
-					}
-				]
 			}
 		},
 		"items": [
