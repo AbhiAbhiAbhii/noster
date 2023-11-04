@@ -68,7 +68,7 @@ export default function Footer(){
             <div className="footer-right">
                 <div className="footer-right-top">
                     <div className="footer-right-text-A">
-                        <p className="p-r black-txt">
+                        <p className="p-r black-txt" style={{opacity:'0'}}>
                             {Text}
                         </p>
                     </div>
@@ -80,7 +80,7 @@ export default function Footer(){
                 </div>
                 <div className="footer-right-bottom">
                     <form className="footer-form">
-                        <div className="footer-form-wrapper">
+                        <div className="footer-form-wrapper" style={{display:'none'}}>
                             <input type="email" onBlur={handleFormBlur} onFocus={handleFormFocus} />
                             <div className="footer-form-border">
                                 <div style={{height:'100%', width:'100%', position:'relative'}}>

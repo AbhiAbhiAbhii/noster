@@ -62,11 +62,13 @@ export default function RootLayout({ children }) {
   
   let lenis;
 
-  var boolean;
+  var speed;
 
   if(window.innerWidth <= 780) {
-    boolean = false
-  } else boolean = true
+    speed = 0.9999
+  } else speed = 1.001
+
+  console.log(speed, "Our speed")
 
   if (typeof window !== "undefined") {
     lenis = new Lenis({
