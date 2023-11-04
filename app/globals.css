@@ -689,6 +689,7 @@ h1,h2,h3,h4 {
   }
   .nav {
     padding-top: 6em;
+    padding: 4em 1.9rem;
   }
   .nav-left {
     /* border: 1px red solid; */

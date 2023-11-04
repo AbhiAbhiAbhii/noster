@@ -11,7 +11,7 @@ export default async function Page({}) {
   return(
     <section className="work snow">
         <div className="work-title">
-        <h1 className="h1-big black-txt">
+        <h1 className="h1-big black-txt" style={{letterSpacing:'-2.2px'}}>
           <PrismicRichText field={page.data.title} />
         </h1>
       </div>
