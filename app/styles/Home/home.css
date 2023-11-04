@@ -129,7 +129,7 @@
 }
 .fw-showcase-item-text-wrapper {
     position: absolute;
-    bottom: -15%;
+    bottom: -17%;
     color: rgba(var(--black));
     /* transition: var(--transition-quint); */
     transition: all 0.4s cubic-bezier(0.76, 0.00, 0.24, 1);
@@ -359,7 +359,8 @@
     }
     .fw-showcase-item-text-wrapper {
         position: relative;
-        bottom: -5%;
+        bottom: -10%;
+        transform: translateY(12%);
         height: fit-content;
     }
     
