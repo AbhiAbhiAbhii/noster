@@ -129,11 +129,12 @@
 }
 .fw-showcase-item-text-wrapper {
     position: absolute;
-    bottom: -12%;
+    bottom: -15%;
     color: rgba(var(--black));
     /* transition: var(--transition-quint); */
     transition: all 0.4s cubic-bezier(0.76, 0.00, 0.24, 1);
     overflow: hidden;
+    height: 4em;
 }
 .fw-showcase-item-text-inner-wrapper {
     display: flex;
@@ -147,6 +148,7 @@
 .fw-showcase-item-text-inner-wrapper.active-inner-wrapper {
     transform: translate(0);
     transition-delay: 200ms;
+
 }
 .fw-showcase-item-c-name {
     width: 25%;
