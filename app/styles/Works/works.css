@@ -203,7 +203,9 @@
     padding-bottom: 1em;
 }
 .work-vision-left-description > h2 {
-    width: 90%;
+    width: 85%;
+    font-size: 2em;
+    line-height: 118%;
 }
 .work-vision-right > p {
     width: 80%;
@@ -609,6 +611,9 @@
     } 
 }
 @media(max-width: 780px) {
+    .work-vision-left-description {
+        padding: 1em 0 2em 0 !important;
+    }
     .work {
         font-size: 3rem;
         padding-inline: 2rem;

@@ -1,4 +1,6 @@
+'use client'
 
+import { useEffect } from "react"
 
 export default function MobNav(){
 
@@ -7,11 +9,37 @@ export default function MobNav(){
 
     let arrow = "->"
 
+
+    useEffect(() => {
+        let mobNav = document.querySelector('.mobile-Nav')
+
+        let footer = document.querySelector('.footer')
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    mobNav.style.opacity = "0"
+                    setTimeout(() => {
+                        mobNav.style.display = "none"
+                    }, 400)
+                } else {
+                    mobNav.style.display = "flex"
+                    setTimeout(() => {
+                        mobNav.style.opacity = "1"
+                    }, 300)
+                }
+            })
+        }, {threshold: 0.3})
+        observer.observe(footer)
+        
+    })
+
+
     return(
         <nav className="mobile-Nav" style={
                 {
                     border:'1px rgba(0, 0, 0, 0.17) solid', height:'70px', width:'275px', borderRadius:'20em',
-                    background:'#FFF', padding:'5px 0 5px 8px',zIndex:'200'
+                    background:'#FFF', padding:'5px 0 5px 8px', zIndex:'100', 
                 }
             }>
             <div style={{}}>
