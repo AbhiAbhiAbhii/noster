@@ -42,9 +42,10 @@
 /* Works Nav End */
 
 .work {
-    padding: 6.5rem var(--side-padding) 2rem var(--side-padding);
+    padding: 6.5rem var(--side-padding) 7rem var(--side-padding);
     font-size: 1rem;
     overflow-y: hidden;
+    
 }
 .work-title {
     display: flex;
