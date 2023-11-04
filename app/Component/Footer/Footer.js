@@ -32,7 +32,7 @@ export default function Footer(){
         },
         {
             title:'Follow us',
-            list:[{text:'Instagram', link:'https://www.instagram.com/noster_associates/'},{text:'Linked-in', link:'https://www.instagram.com/noster_associates/'}]
+            list:[{text:'Instagram', link:'https://www.instagram.com/noster_associates/'},{text:'Linked-in', link:'https://in.linkedin.com/company/noster-associates'}]
         }
     ]
 

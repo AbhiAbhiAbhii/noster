@@ -148,7 +148,7 @@
 .fw-showcase-item-text-inner-wrapper.active-inner-wrapper {
     transform: translate(0);
     transition-delay: 200ms;
-
+    
 }
 .fw-showcase-item-c-name {
     width: 25%;
@@ -360,6 +360,7 @@
     .fw-showcase-item-text-wrapper {
         position: relative;
         bottom: -5%;
+        height: fit-content;
     }
     
     /* News and Insights */

@@ -896,3 +896,9 @@
     width: 35em;
     height: 30em;
 }
+
+@media(max-width: 1180px) {
+    .b-scene-frame {
+        display: none;
+    }
+}
