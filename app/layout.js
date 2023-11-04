@@ -62,10 +62,20 @@ export default function RootLayout({ children }) {
   
   let lenis;
 
+  var speed;
+
+  if(window.innerWidth <= 780) {
+    lenis = false
+    speed = 0.9
+  } else speed = 1.001
+
+  console.log(speed,"sdjasd")
+
   if (typeof window !== "undefined") {
     lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      easing: (t) => Math.min(1, speed - Math.pow(2, -10 * t)), 
+      // https://www.desmos.com/calculator/brs54l4xou
       direction: 'vertical', // vertical, horizontal
       gestureDirection: 'vertical', // vertical, horizontal, both
       smooth: true,
