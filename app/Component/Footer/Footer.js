@@ -25,7 +25,7 @@ export default function Footer(){
         {
             title:'Company',
             list:[
-                {text:'Work', link:'/'},
+                {text:'Work', link:'/works'},
                 // {text:'About', link:'/'},
                 // {text:'Blog', link:'/'}
             ]
