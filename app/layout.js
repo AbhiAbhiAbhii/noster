@@ -75,11 +75,12 @@ export default function RootLayout({ children }) {
       // https://www.desmos.com/calculator/brs54l4xou
       direction: 'vertical', // vertical, horizontal
       gestureDirection: 'vertical', // vertical, horizontal, both
-      smooth: boolean,
+      smooth: true,
       mouseMultiplier: 1,
-      smoothTouch: true,
+      smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
+      
     })
 
     console.log(lenis,"newww")
