@@ -228,7 +228,7 @@ export default function FeaturedWorksShowCase({ slice }){
               return(
                 <SwiperSlide key={i}>
                   <div className={"fw-showcase-item"}>
-                    <PrismicLink className="fw-showcase-item-link" field={item.work_cta_link}>
+                    <a href={`/works/${item.work_cta_link.uid}`} className="fw-showcase-item-link">
                       <PrismicNextImage 
                         style={{height:'100%', width:'100%'}}
                         sizes="100vw"
@@ -237,7 +237,7 @@ export default function FeaturedWorksShowCase({ slice }){
                         imgixParams={{ar:'3:2'}}
                         field={item.image}
                         loader={undefined} />
-                    </PrismicLink>
+                    </a>
                     <div className="fw-showcase-item-text-wrapper">
                       <div className={ "fw-showcase-item-text-inner-wrapper active-inner-wrapper" }>
                         <div className="fw-showcase-item-c-name">
