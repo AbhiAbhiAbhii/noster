@@ -513,7 +513,7 @@ h1,h2,h3,h4 {
 
 /* Nav */
 .mobile-Nav {
-  display: none;
+  display: none !important;
 }
 .nav {
   position: fixed;
