@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
       gestureDirection: 'vertical', // vertical, horizontal, both
       smooth: true,
       mouseMultiplier: 1,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 2,
       infinite: false,
       
