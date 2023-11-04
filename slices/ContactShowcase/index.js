@@ -123,7 +123,6 @@ export default function ContactShowcase({ slice }){
       scrollTrigger: {
         trigger: observe,
         start:'top 80%',
-        markers: true,
         onEnter: () => {
           expandLine()
         },
