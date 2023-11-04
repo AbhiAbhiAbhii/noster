@@ -12,8 +12,9 @@ export default async function Page({ params }) {
     .catch(() => notFound());
 
   return <div className="workChildRef" style={{}}>
-    <MobNav uid={page.uid} />
-    <SliceZone  slices={page.data.slices} components={components} /></div>
+      <MobNav uid={page.uid} />
+      <SliceZone  slices={page.data.slices} components={components} />
+    </div>
 }
 
 export async function generateMetadata({ params }) {
