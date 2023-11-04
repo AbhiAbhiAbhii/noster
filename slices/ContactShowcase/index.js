@@ -43,7 +43,7 @@ export default function ContactShowcase({ slice }){
 
 
 
-    const AnimTrigger = () => { 
+    const AnimTrigger = () => { // Trigger Anim
       TxtTop.style.transform= "translateY(0)"
       TxtBottom.style.transform= "translateY(0)"
 
@@ -51,7 +51,7 @@ export default function ContactShowcase({ slice }){
       TxtBottom.style.opacity = "1"
     }
 
-    const AnimRevert = () => {
+    const AnimRevert = () => { // Revert Anim
       TxtTop.style.transform= "translateY(100%)"
       TxtBottom.style.transform= "translateY(-100%)"
 
@@ -59,7 +59,7 @@ export default function ContactShowcase({ slice }){
       TxtBottom.style.opacity = "0"
     }
 
-    const darkMode = () => {
+    const darkMode = () => { // Dark Mode
       bg.forEach(item => {
         item.classList.add("darkMode")
       })
@@ -68,18 +68,12 @@ export default function ContactShowcase({ slice }){
         item.classList.add("snow-txt")
       })
 
-      setTimeout(() => {
-        borderTopRef.current.style.width = "100%"
         borderTopRef.current.style.background = "#FFF"
-        borderBottomRef.current.style.width = "100%"
         borderBottomRef.current.style.background = "#FFF"
-      }, 300) 
 
-      // border.style.borderTop = "2px #FFF solid"
-      // border.style.borderBottom = "2px #FFF solid"
     }
 
-    const lightMode = () => {
+    const lightMode = () => { // Light Mode
       bg.forEach(item => {
         item.classList.remove("darkMode")
       })
@@ -88,13 +82,18 @@ export default function ContactShowcase({ slice }){
         item.classList.remove("snow-txt")
       })
 
-      // border.style.borderTop = "2px #000 solid"
-      // border.style.borderBottom = "2px #000 solid"
-
-      borderTopRef.current.style.width = "0%"
       borderTopRef.current.style.background = "#000"
-      borderBottomRef.current.style.width = "0%"
       borderBottomRef.current.style.background = "#000"
+    }
+
+    const expandLine = () => { // Expand Line
+        borderTopRef.current.style.width = "100%"
+        borderBottomRef.current.style.width = "100%"
+    }
+
+    const shrinkLine = () => { // Shrink Line
+      borderTopRef.current.style.width = "0%"
+      borderBottomRef.current.style.width = "0%"
     }
 
     if(observe) {
@@ -103,7 +102,7 @@ export default function ContactShowcase({ slice }){
         scrollTrigger: {
           trigger: observe,
           // start: `top ${scroll}%`,
-          start: 'top 30%',
+          start: 'top 35%',
           onEnter: () => {
             setTimeout(() => AnimTrigger(), 400);
             darkMode();
@@ -119,6 +118,22 @@ export default function ContactShowcase({ slice }){
       }
       )
     }
+
+    gsap.to([borderTopRef.current, borderBottomRef.current], {
+      scrollTrigger: {
+        trigger: observe,
+        start:'top 80%',
+        markers: true,
+        onEnter: () => {
+          expandLine()
+        },
+        onLeaveBack: () => {
+          shrinkLine()
+        }
+      }
+    })
+
+
 
 
     // Custom CursorB

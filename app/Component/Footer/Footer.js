@@ -4,7 +4,7 @@ import { useState } from "react"
 import CTA from "../CTA/CTA"
 import FooterCTA from "../CTA/FooterCTA"
 
-export default function Footer(){
+export default function Footer({style}){
 
     const [ formFocus, setFormFocus ] = useState(false)
 
@@ -40,7 +40,7 @@ export default function Footer(){
 
 
     return(
-        <footer className="footer snow">
+        <footer className="footer snow" style={style}>
             <div className="footer-left">
                 {
                     FooterLeft.map((item, i) => {

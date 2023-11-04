@@ -4,6 +4,7 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import MobNav from "@/app/Component/Nav/MobNav";
+import Footer from "@/app/Component/Footer/Footer";
 
 export default async function Page({ params }) {
   const client = createClient();
