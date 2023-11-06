@@ -1,12 +1,15 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CTA from "../CTA/CTA"
 import FooterCTA from "../CTA/FooterCTA"
+import { usePathname } from "next/navigation"
 
 export default function Footer({style}){
 
     const [ formFocus, setFormFocus ] = useState(false)
+    const pathName = usePathname()
+
 
     const handleFormFocus = () => {
         setFormFocus(true)
@@ -38,9 +41,12 @@ export default function Footer({style}){
 
     let Text ="Sign up with your email address to recieve news and updates"
 
+    
+
 
     return(
-        <footer className="footer snow" style={style}>
+        <footer className="footer snow" style={{position:'relative'}}>
+            <div style={{position:'absolute', height:'1px', width:'97%', top:'0', left:'50%', transform:'translateX(-50%)', background:'#000', display: pathName === "/works" ? '':'none'}} />
             <div className="footer-left">
                 {
                     FooterLeft.map((item, i) => {
