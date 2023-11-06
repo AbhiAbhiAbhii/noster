@@ -675,9 +675,15 @@ h1,h2,h3,h4 {
   .nav {
     font-size: 1.6rem;
   }
+  .footer {
+    font-size: 1.6rem;
+  }
 }
 @media(max-width: 780px) {
   /*  */
+  .cursor-A {
+    display: none;
+  }
   .mob {
     display: flex;
   }

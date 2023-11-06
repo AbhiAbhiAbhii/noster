@@ -312,7 +312,27 @@
 }
 /* Contact Showcase End */
 
-
+@media(max-width: 1200px) {
+    .home-hero {
+        font-size: 1.6rem;
+        padding: 14rem 2rem 34rem 2rem;
+    }
+    .home-hero-title {
+        width: 64ch;
+    }
+    .home-brief {
+        font-size: 1.6rem;
+    }
+    .fw-showcase {
+        padding: 2rem var(--side-padding) 8rem var(--side-padding);
+    }
+    .c-showcase {
+        font-size: 1.3rem;
+    }
+    .c-showcase-title-wrapper > div > h1 {
+        font-size: 86px;
+    }
+}
 @media(max-width: 780px) {
    
     .home-hero  {

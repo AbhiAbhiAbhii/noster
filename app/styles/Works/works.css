@@ -615,6 +615,11 @@
         padding: 26rem var(--side-padding) 26rem var(--side-padding);
     } 
 }
+@media(max-width: 1200px) {
+    .work-brief {
+        font-size: 1.4rem;
+    }
+}
 @media(max-width: 780px) {
     .work-vision-left-description {
         padding: 1em 0 2em 0 !important;
