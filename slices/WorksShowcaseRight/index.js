@@ -17,6 +17,8 @@ export default function WorksShowcaseRight({ slice }){
 
   const [ activeB, setActiveB ] = useState(0); 
 
+  console.log(slice,"DJAHJKASHDJ")
+
 
   const handleHoverRight = (i) => {
     setActiveB(i)
@@ -102,8 +104,9 @@ export default function WorksShowcaseRight({ slice }){
         {
         data.map((item, i) => {
           return(
-            <div onMouseOver={() => handleHoverRight(i)} key={i}
-            className={ activeB === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
+            <div onMouseOver={() => handleHoverRight(i)} key={i} 
+            className={ activeB === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"} 
+            style={{display: slice.primary.company_name_a[0].text === "" ? 'none' :  slice.primary.company_name_b[0].text === "" ? 'none': slice.primary.company_name_c[0].text === "" ? 'none':'' }}>
             <a href={`/works/${item.link}`} className="fw-showcase-item-link">
               <PrismicNextImage 
                 style={{height:'100%', width:'100%'}}
@@ -116,8 +119,7 @@ export default function WorksShowcaseRight({ slice }){
             </a>
             <div className="fw-showcase-item-text-wrapper">
               <div className={ activeB === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
-                <div className="fw-showcase-item-c-na
-                me">
+                <div className="fw-showcase-item-c-name">
                   <p>
                     <PrismicRichText field={item.title}  />
                   </p>

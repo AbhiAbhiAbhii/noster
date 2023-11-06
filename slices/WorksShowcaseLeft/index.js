@@ -102,8 +102,11 @@ export default function WorksShowcaseLeft({ slice }){
       <div className="works-showcase-left">
         {
           data.map((item, i) => {
+
+            console.log(item,"ourItem")
+
             return(
-              <div style={{border:''}} onMouseOver={() => handleHover(i)} key={i}
+              <div style={{display:  item.title.length === 0 ? 'none':''}} onMouseOver={() => handleHover(i)} key={i}
               className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
               <a href={`/works/${item.link}`} className="fw-showcase-item-link">
                 <PrismicNextImage 
