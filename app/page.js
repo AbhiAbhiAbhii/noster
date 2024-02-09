@@ -7,6 +7,8 @@ export default async function Home() {
   const client = createClient();
   const page = await client.getSingle("home");
 
+  console.log(page,"adjlashjd")
+
   return (
     <>
     <SliceZone slices={page.data.slices} components={components} />

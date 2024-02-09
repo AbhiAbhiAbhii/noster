@@ -103,8 +103,6 @@ export default function WorksShowcaseLeft({ slice }){
         {
           data.map((item, i) => {
 
-            console.log(item,"ourItem")
-
             return(
               <div style={{display:  item.title.length === 0 ? 'none':''}} onMouseOver={() => handleHover(i)} key={i}
               className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>

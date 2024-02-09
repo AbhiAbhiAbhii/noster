@@ -11,6 +11,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "works_showcase_left": {
+              "type": "SharedSlice"
+            },
+            "works_showcase_right": {
+              "type": "SharedSlice"
+            },
             "contact_showcase": {
               "type": "SharedSlice"
             },
