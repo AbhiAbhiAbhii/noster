@@ -812,7 +812,7 @@ h1,h2,h3,h4 {
 
 /* TESTING */
 .test {
-  border: 1px red solid;
+  border: 1px green solid;
   height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -820,7 +820,7 @@ h1,h2,h3,h4 {
 }
 .elipse-wrapper {
   width: 60%;
-  border: 1px red solid;
+  border: 10px red solid;
   display: flex;
   align-items: center;
   justify-content: space-between;

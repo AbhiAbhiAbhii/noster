@@ -16,6 +16,7 @@ export default function ContactShowcase({ slice }){
 
   const [ scroll, setScroll ] = useState(40)
 
+
   const borderTopRef = useRef()
   const borderBottomRef = useRef()
 
@@ -23,6 +24,10 @@ export default function ContactShowcase({ slice }){
     {
       text:`${slice.primary.email[0].text}`,
       format: 'mailto'
+    },
+    {
+      text: `${slice.primary.phone[0].text}`,
+      format: 'tel'
     },
     {
       text: `${slice.primary.phone[0].text}`,
@@ -194,27 +199,27 @@ export default function ContactShowcase({ slice }){
 
 
   // TESTING ANIM
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const target = document.querySelector('.test')
+    const target = document.querySelector('.test')
 
-  //   const elipse = document.querySelectorAll('.elipse')
+    const elipse = document.querySelectorAll('.elipse')
 
-  //   let tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: '.test',
-  //       start:'top 20%',
-  //       end:'200%',
-  //       scrub: 1,
-  //       markers: true,
-  //       pin: true
-  //     }
-  //   })
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.test',
+        start:'top 20%',
+        end:'200%',
+        scrub: 1,
+        markers: false,
+        pin: true
+      }
+    })
 
-  //   tl.to(elipse, {
-  //     left:'50%',
-  //   })
-  // })
+    // tl.to(elipse, {
+    //   left:'50%',
+    // })
+  })
 
   return(
     <section className="c-showcase snow" style={{transition:`all 0.2s ${value}`}}>
@@ -258,14 +263,25 @@ export default function ContactShowcase({ slice }){
           </div>
           <div className="c-showcase-info-right">
             {
-              Info.map((item, i) => {
-                return(
-                  <div key={i} className="c-showcase-info-right-item">
-                    <a className="p-l black-txt" href={`${item.format}:${item.text} `}>
-                      { item.text }
-                    </a>
-                  </div>
-                )
+              slice.items.map((item, i) => {
+
+                if(item.contact[0].text.includes("@")) {
+                  return(
+                    <div key={i} className="c-showcase-info-right-item">
+                      <a href={`mailto: ${item.contact[0].text}`} className="p-l black-txt">
+                        <PrismicRichText field={item.contact} />
+                      </a>                  
+                    </div>
+                  )
+                } else {
+                  return(
+                    <div key={i} className="c-showcase-info-right-item">
+                      <a href={`tel: ${item.contact[0].text}`} className="p-l black-txt">
+                        <PrismicRichText field={item.contact} />
+                      </a>                  
+                    </div>
+                  )
+                }
               })
             }
           </div>

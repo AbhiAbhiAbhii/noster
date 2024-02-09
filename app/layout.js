@@ -86,7 +86,6 @@ export default function RootLayout({ children }) {
       
     })
 
-    console.log(lenis,"newww")
 
     // lenis.on('scroll', (e) => {
     //   console.log(e, "Lenis Scrolling")npm 

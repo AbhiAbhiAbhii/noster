@@ -52,12 +52,12 @@ export default function WorkChildImage({ slice }){
         <Parallax className="desk-parallax" speed={-50} style={{height:'110%', width:'100%'}}>
           <PrismicNextImage className="thumbnail"
             field={slice.primary.image}  
-            style={{height:'100%', width:'100%', objectFit:'cover', scale:'1.4'}} 
+            style={{height:'100%', width:'100%', objectFit:'cover', scale:'1'}} 
             imgixParams={{ar:'3:2'}} loading="eager" />
         </Parallax>
         <PrismicNextImage className="mob-img"
           field={slice.primary.image}  
-          style={{height:'100%', width:'100%', objectFit:'cover', scale:'1.4'}} 
+          style={{height:'100%', width:'100%', objectFit:'cover', scale:'1'}} 
           imgixParams={{ar:'3:2'}} loading="eager" />
       </div>
     </section>

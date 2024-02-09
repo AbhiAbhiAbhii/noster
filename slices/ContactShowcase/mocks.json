@@ -48,7 +48,6 @@
 				]
 			},
 			"cursorimage": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
@@ -66,6 +65,9 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"cta_link": {
@@ -76,6 +78,26 @@
 				}
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"contact",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Dolor duis adipisicing et et laboris ipsum sint aliquip anim ex."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

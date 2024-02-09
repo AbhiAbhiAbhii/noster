@@ -349,6 +349,21 @@ export interface ContactShowcaseSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *ContactShowcase → Items*
+ */
+export interface ContactShowcaseSliceDefaultItem {
+  /**
+   * Contact field in *ContactShowcase → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_showcase.items[].contact
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  contact: prismic.RichTextField;
+}
+
+/**
  * Default variation for ContactShowcase Slice
  *
  * - **API ID**: `default`
@@ -358,7 +373,7 @@ export interface ContactShowcaseSliceDefaultPrimary {
 export type ContactShowcaseSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ContactShowcaseSliceDefaultPrimary>,
-  never
+  Simplify<ContactShowcaseSliceDefaultItem>
 >;
 
 /**
@@ -1300,6 +1315,7 @@ declare module "@prismicio/client" {
       BehindTheScenesSliceDefault,
       ContactShowcaseSlice,
       ContactShowcaseSliceDefaultPrimary,
+      ContactShowcaseSliceDefaultItem,
       ContactShowcaseSliceVariation,
       ContactShowcaseSliceDefault,
       FeaturedWorksShowCaseSlice,
