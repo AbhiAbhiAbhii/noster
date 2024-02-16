@@ -84,7 +84,7 @@ export default function HomeHero({ slice }){
       <section className="home-hero" style={{position:'relative'}}>
         <div className="home-hero-title">
           <h1 className="haffer-R h1-small">
-            <PrismicRichText field={slice.primary.title} />
+            <PrismicRichText field={slice.primary.title} />h
             {/* <div style={{overflow:'hidden', perspective:'0px'}}>
               <p className="target-text" style={{transform:'translateY(-100%)', transition:'all 0.8s cubic-bezier(0.83, 0, 0.17, 1)'}}>
                 Noster Associates is a full service office interior &
