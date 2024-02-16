@@ -642,6 +642,7 @@
         width: 100vw;
         /* padding-left: 2rem; */
         margin: 2em 0;
+        font-size: 3rem;
     } 
     .works-showcase-right-mob  {
         display: flex;
@@ -650,6 +651,7 @@
         width: 100vw;
         /* padding-left: 2rem; */
         margin: 2em 0;
+        font-size: 3rem;
     }
     .works-showcase-right {
         display: none;
