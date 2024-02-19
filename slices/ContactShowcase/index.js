@@ -73,8 +73,10 @@ export default function ContactShowcase({ slice }){
         item.classList.add("snow-txt")
       })
 
-        borderTopRef.current.style.background = "#FFF"
-        borderBottomRef.current.style.background = "#FFF"
+      document.body.classList.add("darkMode")
+
+      borderTopRef.current.style.background = "#FFF"
+      borderBottomRef.current.style.background = "#FFF"
 
     }
 
@@ -86,7 +88,7 @@ export default function ContactShowcase({ slice }){
       text.forEach(item => {
         item.classList.remove("snow-txt")
       })
-
+      document.body.classList.remove("darkMode")
       borderTopRef.current.style.background = "#000"
       borderBottomRef.current.style.background = "#000"
     }
@@ -222,7 +224,7 @@ export default function ContactShowcase({ slice }){
   })
 
   return(
-    <section className="c-showcase snow" style={{transition:`all 0.2s ${value}`}}>
+    <section className="c-showcase snow" style={{transition:`all 0.3s ${value}`}}>
       <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`, position:'relative', border:'1px rgba(255, 255, 255, 0) solid'}}>
         <div ref={borderTopRef} style={{position:'absolute', top:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
         <div ref={borderBottomRef} style={{position:'absolute', bottom:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />

@@ -23,16 +23,16 @@ export default function Footer({style}){
     let FooterLeft = [ // Footer Left Info
         {
             title: 'All rights reserved',
-            list: [{text:'Noster Associates (c) 2023'}]
+            list: [{text:'Noster Associates (c) 2024'}]
         },
-        {
-            title:'Company',
-            list:[
-                {text:'Work', link:'/works'},
-                // {text:'About', link:'/'},
-                // {text:'Blog', link:'/'}
-            ]
-        },
+        // {
+        //     title:'Company',
+        //     list:[
+        //         // {text:'Work', link:'/works'},
+        //         // {text:'About', link:'/'},
+        //         // {text:'Blog', link:'/'}
+        //     ]
+        // },
         {
             title:'Follow us',
             list:[{text:'Instagram', link:'https://www.instagram.com/noster_associates/'},{text:'Linked-in', link:'https://in.linkedin.com/company/noster-associates'}]

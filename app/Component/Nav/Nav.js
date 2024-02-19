@@ -44,10 +44,10 @@ export default function Nav(){
     const arrow = '->'
 
     let NavLink = [
-        {
-            text:'Work',
-            link:'/works'
-        },
+        // {
+        //     text:'Work',
+        //     link:'/works'
+        // },
         // {
         //     text:'About',
         //     link:'/'

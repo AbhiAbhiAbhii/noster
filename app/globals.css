@@ -6,7 +6,8 @@
   --h1-xl: 10.375em; /* H1 166px */
   --h-l: 6.25em;
   --h1-big: 5em; /* H1 80px */
-  --h1-small: 2em; /* H1 32px */
+  /* --h1-small: 2em; H1 32px */
+  --h1-small: 2.6em; /* H1 32px */
   --h2: 40px; /* H2 Font Size */
    /* H3 Font Size */
   --h2-l: 3.75em;
@@ -38,11 +39,11 @@
 /* Background & Text Color */
 .snow {
   background: var(--snow-bg);
-  transition: all var(--transition-quart);
+  transition: all 0.3s var(--transition-quart);
 }
 .darkMode {
   background: #000;
-  transition: all var(--transition-quart);
+  transition: all 0.3s var(--transition-quart);
 }
 .border-white {
   border-top: 2px #FFF solid;
@@ -496,6 +497,7 @@ body {
 body {
   color: rgb(var(--default-rgb));
   background: #FFF;
+  transition: all 0.3s var(--transition-quart);
 }
 a {
   color: inherit;

@@ -100,7 +100,7 @@ export default function WorksShowcaseRight({ slice }){
   return(
     <section className="snow">
       <CursorA />
-      <div className="works-showcase-right">
+      <div className="works-showcase-right snow">
         {
         data.map((item, i) => {
           return(
@@ -120,12 +120,12 @@ export default function WorksShowcaseRight({ slice }){
             <div className="fw-showcase-item-text-wrapper">
               <div className={ activeB === i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
                 <div className="fw-showcase-item-c-name">
-                  <p>
+                  <p className="black-txt">
                     <PrismicRichText field={item.title}  />
                   </p>
                 </div>
                 <div className="fw-showcase-item-desc">
-                  <p>
+                  <p className="black-txt">
                     <PrismicRichText field={item.desc} />
                   </p>
                 </div>

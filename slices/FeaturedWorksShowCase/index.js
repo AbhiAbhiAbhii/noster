@@ -124,7 +124,7 @@ export default function FeaturedWorksShowCase({ slice }){
           :<PrismicRichText field={slice.primary.title} />
           </h1>
         </div>
-        <div className="eyebrow-cta">
+        <div className="eyebrow-cta" style={{display:'none'}}>
           {/* <CTA link={slice.primary.cta_link} text={slice.primary.cta_text} /> */}
           <a href={'/works'}>
             <div style={{display:'flex', alignItems:'center'}}>
@@ -218,7 +218,7 @@ export default function FeaturedWorksShowCase({ slice }){
         }
       </div>
       {/* Works Showcase Desktop end */}
-      <div className="fw-showcase-item-wrapper-mob">
+      {/* <div className="fw-showcase-item-wrapper-mob">
         <Swiper style={{padding:'0 0 6em 0'}}
         slidesPerView={1.1}
         spaceBetween={20} 
@@ -258,6 +258,40 @@ export default function FeaturedWorksShowCase({ slice }){
             })
           }
         </Swiper>
+      </div> */}
+      <div className="snow works-showcase-left-mob">
+        {
+          slice.items.map((item, i) => {
+            return(
+              <div style={{width:'95%', margin:'2em 0'}} key={i}>
+              <a href={`/works/${item.link}`} className="fw-showcase-item-link" >
+                <PrismicNextImage 
+                  style={{height:'100%', width:'100%'}}
+                  sizes="100vw"
+                  loading="eager"
+                  priority={true}
+                  imgixParams={{ar:'3:2'}}
+                  field={item.image}
+                  loader={undefined} />
+              </a>
+              <div className="fw-showcase-item-text-wrapper">
+                <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
+                  <div className="fw-showcase-item-c-name">
+                    <p>
+                      <PrismicRichText field={item.company_name}  />
+                    </p>
+                  </div>
+                  <div className="fw-showcase-item-desc">
+                    <p>
+                      <PrismicRichText field={item.description} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+          })
+        }
       </div>
     </section>
   )
