@@ -136,7 +136,7 @@ export default function WorksShowcaseRight({ slice }){
         })
       }
       </div>
-      <div className="works-showcase-right-mob">
+      <div className="works-showcase-right-mob snow">
         {/* <Swiper style={{padding:'0 0 6em 0'}}
         slidesPerView={1.1}
         spaceBetween={20} 
@@ -195,12 +195,12 @@ export default function WorksShowcaseRight({ slice }){
               <div className="fw-showcase-item-text-wrapper">
                 <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
                   <div className="fw-showcase-item-c-name">
-                    <p>
+                    <p className="black-txt">
                       <PrismicRichText field={item.title}  />
                     </p>
                   </div>
                   <div className="fw-showcase-item-desc">
-                    <p>
+                    <p className="black-txt">
                       <PrismicRichText field={item.desc} />
                     </p>
                   </div>

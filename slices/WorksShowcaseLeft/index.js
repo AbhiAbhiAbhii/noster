@@ -135,7 +135,7 @@ export default function WorksShowcaseLeft({ slice }){
           })
         }
       </div>
-      <div className="works-showcase-left-mob">
+      <div className="works-showcase-left-mob snow">
         {
           data.map((item, i) => {
             return(
@@ -153,12 +153,12 @@ export default function WorksShowcaseLeft({ slice }){
               <div className="fw-showcase-item-text-wrapper">
                 <div className={"fw-showcase-item-text-inner-wrapper active-inner-wrapper"}>
                   <div className="fw-showcase-item-c-name">
-                    <p>
+                    <p className="black-txt">
                       <PrismicRichText field={item.title}  />
                     </p>
                   </div>
                   <div className="fw-showcase-item-desc">
-                    <p>
+                    <p className="black-txt">
                       <PrismicRichText field={item.desc} />
                     </p>
                   </div>
