@@ -23,7 +23,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
 
-  const [ curtain, setCurtain ] = useState(false)
 
   const curtainStart = () => {
     let ourBody = document.body
@@ -57,9 +56,10 @@ export default function RootLayout({ children }) {
   }
 
 
-
-
   useEffect(() => {
+
+  curtainStart()
+  setTimeout(() => curtainEnd(), 2000)
   
   let lenis;
 
@@ -85,11 +85,6 @@ export default function RootLayout({ children }) {
       infinite: false,
       
     })
-
-
-    // lenis.on('scroll', (e) => {
-    //   console.log(e, "Lenis Scrolling")npm 
-    // })
     function raf(time) {
       lenis.raf(time)
       requestAnimationFrame(raf)
@@ -97,11 +92,6 @@ export default function RootLayout({ children }) {
     requestAnimationFrame(raf)
   }
 
-  setTimeout(() => {
-    setCurtain(true)
-  }, 1000)
-
-  {curtain ? curtainEnd() : curtainStart()}
 
   })
 
