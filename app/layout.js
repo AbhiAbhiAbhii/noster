@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
   }
 
   const curtainEnd = () => {
-    let ourCurtain = document.getElementById('curtainRef')
+    let ourCurtain = document.querySelector('.curtain-ref')
     let ourBody = document.body
 
     let nav = document.querySelector('.nav')
