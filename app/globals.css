@@ -498,6 +498,7 @@ body {
   color: rgb(var(--default-rgb));
   background: #FFF;
   transition: all 0.3s var(--transition-quart);
+  position: relative;
 }
 a {
   color: inherit;

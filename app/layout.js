@@ -64,8 +64,8 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
 
-  curtainStart()
-  setTimeout(() => curtainEnd(), 2000)
+  // curtainStart()
+  // setTimeout(() => curtainEnd(), 2000)
   
   let lenis;
 
@@ -122,7 +122,7 @@ export default function RootLayout({ children }) {
           router != "/" ?
           null
           : */}
-          <Curtain />
+          {/* <Curtain /> */}
         {/* } */}
           <ParallaxProvider>
             <Nav />
