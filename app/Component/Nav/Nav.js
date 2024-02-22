@@ -62,6 +62,7 @@ export default function Nav(){
 
         let Section = document.getElementById('homeBrief')
 
+        document.querySelector('.nav').style.opacity = 1
 
         let tl = gsap.timeline({
             scrollTrigger:{

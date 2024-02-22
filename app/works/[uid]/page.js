@@ -14,7 +14,7 @@ export default async function Page({ params }) {
 
   return(
     <>
-    <Curtain />
+    {/* <Curtain /> */}
     <div className="workChildRef" style={{}}>
       <MobNav uid={page.uid} />
       <SliceZone  slices={page.data.slices} components={components} />
