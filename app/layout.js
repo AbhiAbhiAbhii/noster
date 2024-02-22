@@ -17,11 +17,17 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import Curtain from './Component/Curtain/Curtain'
 import MobNav from './Component/Nav/MobNav'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
+// import { useRouter } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
 
 export default function RootLayout({ children }) {
+
+  // const router = useRouter()
+  // console.log(router.asPath, "SKJSAKDJ")
+
 
 
   const curtainStart = () => {
@@ -29,7 +35,7 @@ export default function RootLayout({ children }) {
     let nav = document.querySelector('.nav')
     let footer = document.querySelector('.footer')
 
-    nav.style.opacity = 0
+    nav.style.opacity =  0
     footer.style.opacity = 0
 
 
@@ -58,8 +64,8 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
 
-  // curtainStart()
-  // setTimeout(() => curtainEnd(), 2000)
+  curtainStart()
+  setTimeout(() => curtainEnd(), 2000)
   
   let lenis;
 
@@ -112,7 +118,12 @@ export default function RootLayout({ children }) {
       <meta property="twitter:image" content="/noster-meta.png" />
       {/* </Head> */}
         <body className={inter.className}>
-        <Curtain />
+        {/* {
+          router != "/" ?
+          null
+          : */}
+          <Curtain />
+        {/* } */}
           <ParallaxProvider>
             <Nav />
             <MobNav />
