@@ -4,13 +4,13 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import MobNav from "@/app/Component/Nav/MobNav";
-import Curtain from "@/app/Component/Curtain/Curtain";
 
 export default async function Page({ params }) {
   const client = createClient();
   const page = await client
     .getByUID("works_child", params.uid)
     .catch(() => notFound());
+
 
   return(
     <>

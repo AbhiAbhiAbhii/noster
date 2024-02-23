@@ -10,7 +10,7 @@ export default async function Page() {
 
   return (
     <>
-    <Curtain />
+    {/* <Curtain /> */}
     <SliceZone slices={page.data.slices} components={components} />
     </>
   )

@@ -97,9 +97,7 @@ export default function RootLayout({ children }) {
     }
     requestAnimationFrame(raf)
   }
-
-
-  })
+  }, [])
 
   return (
     <html lang="en">
