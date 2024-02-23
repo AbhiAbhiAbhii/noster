@@ -185,10 +185,11 @@ export default function FeaturedWorksShowCase({ slice }){
           })
           :
           slice.items.map((item, i) => {
+
             return(
               <div onMouseOver={() => handleHover(i)} key={i}
                className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
-                <PrismicLink href={`/works/${item.work_cta_link.uid}`} className="fw-showcase-item-link" field={item.work_cta_link}>
+                <a href={`/works/${item.work_cta_link.uid}`} className="fw-showcase-item-link">
                   <PrismicNextImage 
                     style={{height:'100%', width:'100%'}}
                     sizes="100vw"
@@ -197,7 +198,7 @@ export default function FeaturedWorksShowCase({ slice }){
                     imgixParams={{ar:'3:2'}}
                     field={item.image}
                     loader={undefined} />
-                </PrismicLink>
+                </a>
                 <div className="fw-showcase-item-text-wrapper">
                   <div className={ active == i ? "fw-showcase-item-text-inner-wrapper active-inner-wrapper" : "fw-showcase-item-text-inner-wrapper"}>
                     <div className="fw-showcase-item-c-name">
@@ -262,9 +263,12 @@ export default function FeaturedWorksShowCase({ slice }){
       <div className="snow works-showcase-left-mob">
         {
           slice.items.map((item, i) => {
+
+            console.log(item.work_cta_link.uid, "hiiii")
+
             return(
               <div style={{width:'95%', margin:'2em 0'}} key={i}>
-              <a href={`/works/${item.link}`} className="fw-showcase-item-link" >
+              <a href={`/works/${item.work_cta_link.uid}`} className="fw-showcase-item-link" >
                 <PrismicNextImage 
                   style={{height:'100%', width:'100%'}}
                   sizes="100vw"
