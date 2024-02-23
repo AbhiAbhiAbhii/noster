@@ -807,8 +807,8 @@ h1,h2,h3,h4 {
 
 /* no scroll */
 .no-scroll {
-  overflow: hidden;
-  position: fixed;
+  /* overflow: hidden;
+  position: fixed; */
 }
 
 
