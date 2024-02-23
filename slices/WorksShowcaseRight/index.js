@@ -17,8 +17,6 @@ export default function WorksShowcaseRight({ slice }){
 
   const [ activeB, setActiveB ] = useState(0); 
 
-  console.log(slice,"DJAHJKASHDJ")
-
 
   const handleHoverRight = (i) => {
     setActiveB(i)

@@ -15,10 +15,10 @@ export default async function Page({ params }) {
   return(
     <>
     {/* <Curtain /> */}
-    <div className="" style={{}}>
+    {/* <div> */}
       <MobNav uid={page.uid} />
       <SliceZone  slices={page.data.slices} components={components} />
-    </div>
+    {/* </div> */}
     </>
   )
 }

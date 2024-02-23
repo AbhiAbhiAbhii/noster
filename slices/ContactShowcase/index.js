@@ -267,6 +267,8 @@ export default function ContactShowcase({ slice }){
             {
               slice.items.map((item, i) => {
 
+                console.log(item,"asjdjsa")
+
                 if(item.contact[0].text.includes("@")) {
                   return(
                     <div key={i} className="c-showcase-info-right-item">

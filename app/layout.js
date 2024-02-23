@@ -28,8 +28,6 @@ export default function RootLayout({ children }) {
   // const router = useRouter()
   // console.log(router.asPath, "SKJSAKDJ")
 
-
-
   // const curtainStart = () => {
   //   let ourBody = document.body
   //   let nav = document.querySelector('.nav')
