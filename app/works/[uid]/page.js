@@ -3,7 +3,6 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import MobNav from "@/app/Component/Nav/MobNav";
 
 export default async function Page({ params }) {
   const client = createClient();
@@ -11,16 +10,7 @@ export default async function Page({ params }) {
     .getByUID("works_child", params.uid)
     .catch(() => notFound());
 
-
-  return(
-    <>
-    {/* <Curtain /> */}
-    {/* <div> */}
-      <MobNav uid={page.uid} />
-      <SliceZone  slices={page.data.slices} components={components} />
-    {/* </div> */}
-    </>
-  )
+  return <SliceZone slices={page.data.slices} components={components} />;
 }
 
 export async function generateMetadata({ params }) {
@@ -32,7 +22,6 @@ export async function generateMetadata({ params }) {
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
-    meta_image: page.data.meta_image
   };
 }
 
