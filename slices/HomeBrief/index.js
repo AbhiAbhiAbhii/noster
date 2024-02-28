@@ -12,7 +12,7 @@ export default function HomeBrief({ slice }){
   let value = "cubic-bezier(0.83, 0, 0.17, 1)"
 
   return(
-    <section id="homeBrief" className="home-brief snow" style={{transition:`all 0.2s ${value}`}}>
+    <section  id="homeBrief" className="home-brief snow" style={{transition:`all 0.2s ${value}`}}>
       <div className="home-brief-wrapper">
         <div className="home-brief-title haffer-R">
           <p className="p-tag black-txt">

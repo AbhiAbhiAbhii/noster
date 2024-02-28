@@ -46,7 +46,7 @@ export default function WorkChildBrief({ slice }){
         <div className="work-brief-left">
           <div className="">
             <p className="p-tag black-txt">
-              Our Vision
+              The Project
             </p>
           </div>
           {/* New Insert */}
@@ -56,19 +56,24 @@ export default function WorkChildBrief({ slice }){
             </p>
           </div> */}
           <div className="work-vision-left-description" style={{paddingTop:'1em'}}>
-              <h2 className="h2-l black-txt">
+              {/* <h2 className="h2-l black-txt">
                 <PrismicRichText field={slice.primary.text_left} />
-              </h2>
+              </h2> */}
+               <div className="work-brief-right-top">
+                <p className="p-tag black-txt" style={{color:'black', lineHeight:'144%', letterSpacing: '-0.352px'}}>
+                  <PrismicRichText  field={slice.primary.description} />
+                </p>
+              </div>
           </div>
           {/* New Insert End */}
         </div>
         {/* Modify Here End */}
         <div className="work-brief-right">  
-          <div className="work-brief-right-top">
+          {/* <div className="work-brief-right-top">
             <p className="p-tag black-txt" style={{color:'black', lineHeight:'144%', letterSpacing: '-0.352px'}}>
               <PrismicRichText  field={slice.primary.description} />
             </p>
-          </div>
+          </div> */}
           <div className="work-brief-right-bottom">
            {
             Data.map((item, i) => {
