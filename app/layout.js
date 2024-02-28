@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
 
   const curtain = document.querySelector('.globalLoader')
 
-  setTimeout(curtain.style.top = "-100lvh", 3000)
+  setTimeout(curtain.style.top = "-100lvh", 4000)
   
   let lenis;
 
