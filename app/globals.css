@@ -916,15 +916,56 @@ h1,h2,h3,h4 {
   width: 40%;
 }
 .privacy-policy-right {
-  border: 1px green solid;
   width: 60%;
 }
 .priv-text-slice {
-  border: 1px red solid;
+  padding: 1em 0;
 }
 .priv-text-slice > div > p {
   color: #000;
   line-height: 144%;
   letter-spacing: -0.022rem;
 }
+.priv-title-slice {
+  padding: 1em 0;
+}
+.priv-text-slice-A {
+  padding: 1em 0;
+}
+.priv-text-slice-B {
+  padding: 1em 0;
+}
+.priv-text-slice-A-title {
+  padding: 0 0 1em 0;
+}
+.priv-text-slice-A-title > p {
+  font-size: 1.6em;
+}
+.priv-text-slice-A-desc > p {
+  line-height: 144%;
+  letter-spacing: -0.022rem;
+}
+.priv-text-sub-text > p {
+  font-size: 1.4em;
+}
+.priv-bullets  {
+  padding: 0.5em 2em;
+}
+.priv-bullets > ul > li {
+  padding: 0.45em 0;
+  line-height: 144%;
+  letter-spacing: -0.022rem;
+}
 
+@media(max-width: 580px) {
+  .privacy-policy {
+    font-size: 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 25rem;
+  }
+  .privacy-policy-right, .privacy-policy-left {
+    width: 100%;
+  }
+}
