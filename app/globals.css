@@ -811,7 +811,11 @@ h1,h2,h3,h4 {
   position: fixed; */
 }
 
-
+@media(max-width: 580px) {
+  html, body {
+    overflow: auto;
+  }
+}
 
 /* TESTING */
 .test {
