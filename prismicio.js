@@ -13,6 +13,8 @@ export function linkResolver(doc) {
       return '/works'
     case 'works_child':
       return `/works/${doc.uid}`
+    case 'privacy_policy':
+      return '/privacy_policy'
     default:
       return null
   }

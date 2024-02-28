@@ -26,8 +26,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
 
  
-
-
   useEffect(() => {
 
   const curtain = document.querySelector('.globalLoader')
@@ -93,7 +91,7 @@ export default function RootLayout({ children }) {
           <div className="globalLoader" 
             style={
                 { 
-                  height:'100lvh', transition:'all 0.8s ease 2s', background:'white',
+                  height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', background:'white',
                   zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
                 }
                   } />

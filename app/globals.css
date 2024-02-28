@@ -899,6 +899,30 @@ h1,h2,h3,h4 {
   100% {
     opacity: 1;
   }
+}
 
+
+/* Privacy Policy */
+.privacy-policy {
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 6em 3em;
+}
+.privacy-policy-left {
+  width: 40%;
+}
+.privacy-policy-right {
+  border: 1px green solid;
+  width: 60%;
+}
+.priv-text-slice {
+  height: 100dvh;
+}
+.priv-text-slice > div > p {
+  color: #000;
+  line-height: 144%;
+  letter-spacing: -0.022rem;
 }
 

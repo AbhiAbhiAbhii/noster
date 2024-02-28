@@ -73,6 +73,77 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
+type PrivacyPolicyDocumentDataSlicesSlice =
+  | PrivTextSliceBSlice
+  | PrivTextSliceASlice
+  | PrivTitleSliceSlice
+  | PrivSubTitleSliceSlice
+  | PrivTextSliceSlice;
+
+/**
+ * Content for Privacy Policy documents
+ */
+interface PrivacyPolicyDocumentData {
+  /**
+   * Slice Zone field in *Privacy Policy*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PrivacyPolicyDocumentDataSlicesSlice>
+  /**
+   * Meta Description field in *Privacy Policy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: privacy_policy.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Privacy Policy*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Privacy Policy*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: privacy_policy.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Privacy Policy document from Prismic
+ *
+ * - **API ID**: `privacy_policy`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrivacyPolicyDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PrivacyPolicyDocumentData>,
+    "privacy_policy",
+    Lang
+  >;
+
 type WorksDocumentDataSlicesSlice =
   | WorksShowcaseLeftSlice
   | WorksShowcaseRightSlice;
@@ -222,6 +293,7 @@ export type WorksChildDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | HomeDocument
+  | PrivacyPolicyDocument
   | WorksDocument
   | WorksChildDocument;
 
@@ -708,6 +780,261 @@ type NextProjectLinkSliceVariation = NextProjectLinkSliceDefault;
 export type NextProjectLinkSlice = prismic.SharedSlice<
   "next_project_link",
   NextProjectLinkSliceVariation
+>;
+
+/**
+ * Primary content in *PrivSubTitleSlice → Primary*
+ */
+export interface PrivSubTitleSliceSliceDefaultPrimary {
+  /**
+   * SubTitle field in *PrivSubTitleSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_sub_title_slice.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivSubTitleSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivSubTitleSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivSubTitleSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivSubTitleSlice*
+ */
+type PrivSubTitleSliceSliceVariation = PrivSubTitleSliceSliceDefault;
+
+/**
+ * PrivSubTitleSlice Shared Slice
+ *
+ * - **API ID**: `priv_sub_title_slice`
+ * - **Description**: PrivSubTitleSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivSubTitleSliceSlice = prismic.SharedSlice<
+  "priv_sub_title_slice",
+  PrivSubTitleSliceSliceVariation
+>;
+
+/**
+ * Primary content in *PrivTextSlice → Primary*
+ */
+export interface PrivTextSliceSliceDefaultPrimary {
+  /**
+   * Text field in *PrivTextSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivTextSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivTextSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivTextSlice*
+ */
+type PrivTextSliceSliceVariation = PrivTextSliceSliceDefault;
+
+/**
+ * PrivTextSlice Shared Slice
+ *
+ * - **API ID**: `priv_text_slice`
+ * - **Description**: PrivTextSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceSlice = prismic.SharedSlice<
+  "priv_text_slice",
+  PrivTextSliceSliceVariation
+>;
+
+/**
+ * Primary content in *PrivTextSliceA → Primary*
+ */
+export interface PrivTextSliceASliceDefaultPrimary {
+  /**
+   * Title field in *PrivTextSliceA → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice_a.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Description field in *PrivTextSliceA → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice_a.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivTextSliceA Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceASliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivTextSliceASliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivTextSliceA*
+ */
+type PrivTextSliceASliceVariation = PrivTextSliceASliceDefault;
+
+/**
+ * PrivTextSliceA Shared Slice
+ *
+ * - **API ID**: `priv_text_slice_a`
+ * - **Description**: PrivTextSliceA
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceASlice = prismic.SharedSlice<
+  "priv_text_slice_a",
+  PrivTextSliceASliceVariation
+>;
+
+/**
+ * Primary content in *PrivTextSliceB → Primary*
+ */
+export interface PrivTextSliceBSliceDefaultPrimary {
+  /**
+   * Title field in *PrivTextSliceB → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice_b.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * SubText field in *PrivTextSliceB → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice_b.primary.subtext
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtext: prismic.RichTextField;
+
+  /**
+   * Bullet Points field in *PrivTextSliceB → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_text_slice_b.primary.bullet_points
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  bullet_points: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivTextSliceB Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceBSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivTextSliceBSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivTextSliceB*
+ */
+type PrivTextSliceBSliceVariation = PrivTextSliceBSliceDefault;
+
+/**
+ * PrivTextSliceB Shared Slice
+ *
+ * - **API ID**: `priv_text_slice_b`
+ * - **Description**: PrivTextSliceB
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTextSliceBSlice = prismic.SharedSlice<
+  "priv_text_slice_b",
+  PrivTextSliceBSliceVariation
+>;
+
+/**
+ * Primary content in *PrivTitleSlice → Primary*
+ */
+export interface PrivTitleSliceSliceDefaultPrimary {
+  /**
+   * Title field in *PrivTitleSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: priv_title_slice.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for PrivTitleSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTitleSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PrivTitleSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PrivTitleSlice*
+ */
+type PrivTitleSliceSliceVariation = PrivTitleSliceSliceDefault;
+
+/**
+ * PrivTitleSlice Shared Slice
+ *
+ * - **API ID**: `priv_title_slice`
+ * - **Description**: PrivTitleSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PrivTitleSliceSlice = prismic.SharedSlice<
+  "priv_title_slice",
+  PrivTitleSliceSliceVariation
 >;
 
 /**
@@ -1303,6 +1630,9 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
+      PrivacyPolicyDocument,
+      PrivacyPolicyDocumentData,
+      PrivacyPolicyDocumentDataSlicesSlice,
       WorksDocument,
       WorksDocumentData,
       WorksDocumentDataSlicesSlice,
@@ -1342,6 +1672,26 @@ declare module "@prismicio/client" {
       NextProjectLinkSliceDefaultPrimary,
       NextProjectLinkSliceVariation,
       NextProjectLinkSliceDefault,
+      PrivSubTitleSliceSlice,
+      PrivSubTitleSliceSliceDefaultPrimary,
+      PrivSubTitleSliceSliceVariation,
+      PrivSubTitleSliceSliceDefault,
+      PrivTextSliceSlice,
+      PrivTextSliceSliceDefaultPrimary,
+      PrivTextSliceSliceVariation,
+      PrivTextSliceSliceDefault,
+      PrivTextSliceASlice,
+      PrivTextSliceASliceDefaultPrimary,
+      PrivTextSliceASliceVariation,
+      PrivTextSliceASliceDefault,
+      PrivTextSliceBSlice,
+      PrivTextSliceBSliceDefaultPrimary,
+      PrivTextSliceBSliceVariation,
+      PrivTextSliceBSliceDefault,
+      PrivTitleSliceSlice,
+      PrivTitleSliceSliceDefaultPrimary,
+      PrivTitleSliceSliceVariation,
+      PrivTitleSliceSliceDefault,
       WorkChildBriefSlice,
       WorkChildBriefSliceDefaultPrimary,
       WorkChildBriefSliceVariation,

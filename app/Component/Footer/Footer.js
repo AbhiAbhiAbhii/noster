@@ -79,7 +79,7 @@ export default function Footer({style}){
                         </p>
                     </div>
                     <div className="footer-right-text-B">
-                        <a href="" className="black-txt">
+                        <a href="/privacy_policy" className="black-txt">
                             Privacy Policy
                         </a>
                     </div>
