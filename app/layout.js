@@ -33,6 +33,9 @@ export default function RootLayout({ children }) {
   const curtain = document.querySelector('.globalLoader')
 
   curtain.style.top = "-100lvh"
+
+  document.body.classList.add('no-scroll')
+  setTimeout(() => document.body.classList.remove('no-scroll'), 2000)
   
   let lenis;
 
