@@ -4,7 +4,7 @@
 // }
 
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Lenis from '@studio-freight/lenis'
 import './globals.css'
 import './styles/Home/home.css' 
@@ -30,10 +30,9 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
 
-
   const curtain = document.querySelector('.globalLoader')
 
-  setTimeout(curtain.style.top = "-100lvh", 4000)
+  curtain.style.top = "-100lvh"
   
   let lenis;
 
@@ -67,6 +66,7 @@ export default function RootLayout({ children }) {
   }
   }, [])
 
+
   return (
     <html lang="en">
       {/* <Head> */}
@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
           <div className="globalLoader" 
             style={
                 { 
-                  height:'100lvh', transition:'all 0.8s ease', background:'white',
+                  height:'100lvh', transition:'all 0.8s ease 2s', background:'white',
                   zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
                 }
                   } />
