@@ -25,45 +25,15 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
 
-  // const router = useRouter()
-  // console.log(router.asPath, "SKJSAKDJ")
-
-  // const curtainStart = () => {
-  //   let ourBody = document.body
-  //   let nav = document.querySelector('.nav')
-  //   let footer = document.querySelector('.footer')
-
-  //   nav.style.opacity =  0
-  //   footer.style.opacity = 0
-
-
-  //   console.log("Curtain Start")
-  //   ourBody.classList.add('no-scroll')
-  // }
-
-  // const curtainEnd = () => {
-  //   let ourCurtain = document.querySelector('.curtain-ref')
-  //   let ourBody = document.body
-
-  //   let nav = document.querySelector('.nav')
-  //   let footer = document.querySelector('.footer')
-
-  //   console.log("Curtain End")
-  //   ourBody.classList.remove('no-scroll')
-  //   ourCurtain.style.opacity = 0
-  //   nav.style.opacity = 1
-  //   footer.style.opacity = 1
-
-  //   setTimeout(() => {
-  //     ourCurtain.style.display = 'none'
-  //   }, 2000)
-  // }
+ 
 
 
   useEffect(() => {
 
-  // curtainStart()
-  // setTimeout(() => curtainEnd(), 2000)
+
+  const curtain = document.querySelector('.globalLoader')
+
+  setTimeout(curtain.style.top = "-100lvh", 3000)
   
   let lenis;
 
@@ -114,12 +84,13 @@ export default function RootLayout({ children }) {
       <meta property="twitter:image" content="/noster-meta.png" />
       {/* </Head> */}
         <body className={inter.className}>
-        {/* {
-          router != "/" ?
-          null
-          : */}
-          {/* <Curtain /> */}
-        {/* } */}
+          <div className="globalLoader" 
+            style={
+                { 
+                  height:'100lvh', transition:'all 0.8s ease', background:'white',
+                  zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
+                }
+                  } />
           <ParallaxProvider>
             <Nav />
             <MobNav />
