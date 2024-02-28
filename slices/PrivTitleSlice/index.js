@@ -7,10 +7,10 @@ import { PrismicRichText } from "@prismicio/react";
  */
 const PrivTitleSlice = ({ slice }) => {
   return (
-    <section className="priv-title-slice"
+    <section className="priv-title-slice" style={{border:'1px red solid'}}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}>
-        <div className="haffer-M">
+        <div className="p30 haffer-R" style={{color:'black'}}>
           <PrismicRichText field={slice.primary.title} />
         </div>
     </section>

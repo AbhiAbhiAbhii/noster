@@ -1,5 +1,4 @@
 import { PrismicRichText } from "@prismicio/react";
-
 /**
  * @typedef {import("@prismicio/client").Content.PrivTextSliceSlice} PrivTextSliceSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<PrivTextSliceSlice>} PrivTextSliceProps

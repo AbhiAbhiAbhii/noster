@@ -146,7 +146,9 @@
 .cta-sml {
   font-size: var(--cta);
 }
-
+.p30 {
+  font-size: 1.87em;
+}
 /* Global Font Sizes End */
 
 /* CTA Properties */
@@ -918,7 +920,7 @@ h1,h2,h3,h4 {
   width: 60%;
 }
 .priv-text-slice {
-  height: 100dvh;
+  border: 1px red solid;
 }
 .priv-text-slice > div > p {
   color: #000;
