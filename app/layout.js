@@ -24,16 +24,22 @@ const inter = Inter({ subsets: ['latin'] })
 
 
 export default function RootLayout({ children }) {
+  
+  const ourRoute = children.props.childProp.segment 
 
- 
   useEffect(() => {
+
 
   const curtain = document.querySelector('.globalLoader')
 
-  curtain.style.top = "-100lvh"
+  if(ourRoute === "privacy_policy") {
+    null
+  } else {
+    curtain.style.top = "-100lvh"
 
-  document.body.classList.add('no-scroll')
-  setTimeout(() => document.body.classList.remove('no-scroll'), 2000)
+    document.body.classList.add('no-scroll')
+    setTimeout(() => document.body.classList.remove('no-scroll'), 2000)
+  }
   
   let lenis;
 
@@ -91,7 +97,7 @@ export default function RootLayout({ children }) {
           <div className="globalLoader" 
             style={
                 { 
-                  height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', background:'white',
+                  height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', display: ourRoute === "privacy_policy" ? 'none': 'flex', background:'white',
                   zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
                 }
                   } />
