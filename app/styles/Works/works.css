@@ -154,10 +154,10 @@
     justify-content: space-between;
 }
 .work-brief-left {
-    width: 50%;
+    width: 54%;
 }
 .work-brief-right, .work-vision-right {
-    width: 48.75%;
+    width: 45.75%;
 }
 /* .work-vision-right {
     width: 100%;
@@ -175,9 +175,16 @@
     justify-content: space-between;
 }
 .work-brief-item {
-    width: 30%;
+    width: 42%;
+    /* border: 1px green solid; */
     margin-top: 2.5em;
 }
+/* .work-brief-item:nth-child(even) {
+    border: 1px red solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+} */
 .work-brief-item-content {
     padding-top: 0.5em;
     width: 90%;
