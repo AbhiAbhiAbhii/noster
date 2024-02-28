@@ -907,13 +907,23 @@ h1,h2,h3,h4 {
 /* Privacy Policy */
 .privacy-policy {
   font-size: 1rem;
-  display: flex;
+  /* display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between; */
   padding: 6em 3em;
 }
+.priv-pol-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
 .privacy-policy-left {
-  width: 40%;
+  /* width: 40%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
 }
 .privacy-policy-right {
   width: 60%;
@@ -956,7 +966,9 @@ h1,h2,h3,h4 {
   line-height: 144%;
   letter-spacing: -0.022rem;
 }
-
+.privacy-policy-left-mob {
+  display: none;
+}
 @media(max-width: 580px) {
   .privacy-policy {
     font-size: 3rem;
@@ -965,7 +977,20 @@ h1,h2,h3,h4 {
     justify-content: center;
     padding-top: 25rem;
   }
+  .privacy-policy-left  {
+    position: relative;
+  }
   .privacy-policy-right, .privacy-policy-left {
     width: 100%;
+  }
+  .privacy-policy-left-desk {
+    display: none;
+  }
+  .privacy-policy-left-mob {
+    display: flex;
+  }
+  .priv-pol-wrapper {
+    display: flex;
+    flex-direction: column;
   }
 }
