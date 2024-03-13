@@ -42,7 +42,7 @@
   transition: all 0.3s var(--transition-quart);
 }
 .darkMode {
-  background: #000;
+  background: #000 !important;
   transition: all 0.3s var(--transition-quart);
 }
 .border-white {
