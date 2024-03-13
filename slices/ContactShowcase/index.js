@@ -272,7 +272,7 @@ export default function ContactShowcase({ slice }){
                     <div key={i} className="c-showcase-info-right-item">
                       <a href={`mailto: ${item.contact[0].text}`} className="p-l black-txt">
                         <PrismicRichText field={item.contact} />
-                      </a>hjg
+                      </a>
                     </div>
                   )
                 } else {
