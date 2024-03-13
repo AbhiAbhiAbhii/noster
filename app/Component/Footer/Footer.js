@@ -46,7 +46,7 @@ export default function Footer({style}){
 
     return(
         <footer className="footer snow" style={{position:'relative'}}>
-            <div style={{position:'absolute', height:'1px', width:'97%', top:'0', left:'50%', transform:'translateX(-50%)', background:'#000', display: pathName === "/works" ? '':''}} />
+            <div style={{position:'absolute', height:'1px', width:'97%', top:'0', left:'50%', transform:'translateX(-50%)', background:'#000', display: pathName !== "/" ? 'none':''}} />
             <div className="footer-left">
                 {
                     FooterLeft.map((item, i) => {

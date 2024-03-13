@@ -10,12 +10,12 @@ export default async function Page() {
 
   return (
     <div className="privacy-policy">
-        <div className="priv-pol-wrapper">
-          <PrivacyPolicyText />
-          <div className="privacy-policy-right">
-              <SliceZone slices={page.data.slices} components={components} />
-          </div>
+      <div className="priv-pol-wrapper">
+        <PrivacyPolicyText />
+        <div className="privacy-policy-right">
+            <SliceZone slices={page.data.slices} components={components} />
         </div>
+      </div>
     </div>
   )
 }
