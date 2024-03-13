@@ -362,7 +362,14 @@
     /* Featured Works */
     .fw-showcase {
         font-size: 3rem;
-        padding: 5rem 0 0rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* padding: 5rem 0 0rem 3rem; */
+    }
+    .eyebrow {
+        width: 100%;
     }
     .eyebrow-cta {
         display: none;

@@ -645,8 +645,9 @@
     .works-showcase-left-mob{
         display: flex;
         flex-direction: column;
+        align-items: center;
         /* padding-inline: 2rem; */
-        padding: 2rem;
+        /* padding: 2rem; */
         width: 100vw;
         /* padding-left: 2rem; */
         /* margin: 2em 0 0 0; */
@@ -655,10 +656,11 @@
     .works-showcase-right-mob  {
         display: flex;
         flex-direction: column;
-        padding-inline: 2rem;
+        align-items: center;
+        /* padding-inline: 2rem; */
         width: 100vw;
         /* padding-left: 2rem; */
-        margin: 2em 0;
+        /* margin: 2em 0; */
         font-size: 3rem;
     }
     .works-showcase-right {
