@@ -287,19 +287,18 @@
   transition-delay: 150ms;
 }
 .cursor-A-text-wrapper {
-  /* transition: var(--transition-quint); */
   transition: all 0.2s var(--quint);
   z-index: 500;
 }
 .cursor-A-text-wrapper > p {
   color: var(--cta-anim-black);
-  /* transition: var(--transition-quint); */
   transition: all 0.2s var(--quint);
   z-index: 500;
   transition-delay: 150ms;
 }
 .cursor-A-text-wrapper.cursor-A-text-active > p {
   color: var(--cta-txt-white);
+  color: rgba(211, 253, 94, 1);
   /* transition: var(--transition-quint); */
   transition: all 0.2s var(--quint);
   z-index: 500;
@@ -318,7 +317,7 @@
   left: 0;
   height: 1px;
   width: 0%;
-  background: #FFF;
+  background: rgba(211, 253, 94, 1);
   z-index: 10;
   /* transition: var(--transition-quint); */
   transition: all 0.2s var(--quint);
@@ -336,7 +335,7 @@
   left: 0;
   height: 1px;
   width: 100%;
-  background: #FFF;
+  background: rgba(211, 253, 94, 1);
   z-index: 10;
   /* transition: var(--transition-quart); */
   transition: all 0.2s var(--quint);
@@ -349,7 +348,7 @@
   overflow: hidden;
 }
 .cursor-A-arrow {
-  color: #FFF;
+  color: rgba(211, 253, 94, 1);
   position: relative;
   transform: translateX(-100%);
   /* transition: var(--transition-quint); */
@@ -602,7 +601,7 @@ h1,h2,h3,h4 {
 
 /* Footer */
 .footer {
-  padding: 2rem var(--side-padding) 2rem var(--side-padding);
+  padding: 4rem var(--side-padding) 8rem var(--side-padding);
   font-size: 1rem;
   display: flex;
   align-items: flex-start;

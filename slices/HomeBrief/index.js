@@ -15,13 +15,13 @@ export default function HomeBrief({ slice }){
     <section  id="homeBrief" className="home-brief snow" style={{transition:`all 0.2s ${value}`}}>
       <div className="home-brief-wrapper">
         <div className="home-brief-title haffer-R">
-          <p className="p-tag black-txt">
+          <p className="p-tag" style={{color:'black'}}>
             <PrismicRichText field={slice.primary.title} />
           </p>
         </div>
         <div className="home-brief-desc-wrapper">
           <div className="home-brief-desc haffer-R">
-            <p className="p-tag black-txt">
+            <p className="p-tag" style={{color:'black'}}>
               <PrismicRichText field={slice.primary.description} />
             </p>
           </div>

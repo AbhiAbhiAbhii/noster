@@ -8,7 +8,7 @@ export default function CursorA({ className }){
                     <p className="cursor-A-text cta-sml">
                         View
                         <div className="cursor-A-arrow-wrapper">
-                            <div className="cursor-A-arrow">
+                            <div className="cursor-A-arrow green-txt">
                                 {arrow}
                             </div>
                         </div>

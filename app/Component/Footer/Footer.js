@@ -45,21 +45,21 @@ export default function Footer({style}){
 
 
     return(
-        <footer className="footer snow" style={{position:'relative'}}>
+        <footer className="footer" style={{position:'relative', background: '#FFF'}}>
             <div style={{position:'absolute', height:'1px', width:'97%', top:'0', left:'50%', transform:'translateX(-50%)', background:'#000', display: pathName !== "/" ? 'none':''}} />
             <div className="footer-left">
                 {
                     FooterLeft.map((item, i) => {
                         return(
-                            <div className="footer-left-item black-txt" key={i}>   
-                                <p className="p-r">
+                            <div className="footer-left-item" key={i}>   
+                                <p className="p-r" style={{color:'black'}}>
                                     {item.title}
                                 </p>
                                 <ul className="footer-left-list-items">
                                     {
                                         item.list.map((data, i) => {
                                             return(
-                                                <a href={data.link} className="footer-left-list-item" key={i}>
+                                                <a href={data.link} style={{color:'black'}} className="footer-left-list-item" key={i}>
                                                     {data.text}
                                                 </a>
                                             )
@@ -74,12 +74,12 @@ export default function Footer({style}){
             <div className="footer-right">
                 <div className="footer-right-top">
                     <div className="footer-right-text-A">
-                        <p className="p-r black-txt" style={{opacity:'0'}}>
+                        <p className="p-r " style={{opacity:'0'}}>
                             {Text}
                         </p>
                     </div>
                     <div className="footer-right-text-B">
-                        <a href="/privacy_policy" className="black-txt">
+                        <a href="/privacy_policy" style={{color:'black'}} className="">
                             Privacy Policy
                         </a>
                     </div>
@@ -94,7 +94,7 @@ export default function Footer({style}){
                                 </div>
                             </div>
                            <div style={{position:'absolute', right:'0', bottom:'40%'}}>
-                            <p className="black-txt" style={{fontSize:'0.9em'}}>
+                            <p className="" style={{fontSize:'0.9em', color:'black'}}>
                                 Sign up
                             </p>
                            </div>

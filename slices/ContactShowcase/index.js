@@ -40,7 +40,8 @@ export default function ContactShowcase({ slice }){
   useEffect(() => { // C-Showcase Title Anim Gsap
     const observe = document.querySelector('.c-showcase')
     const bg = document.querySelectorAll('.snow')
-    const text = document.querySelectorAll('.black-txt')
+    const text = document.querySelectorAll('.c-showcase-title')
+    const blckTxt = document.querySelectorAll('.black-txt')
     const border = document.querySelector('.c-showcase-border')
 
     const TxtTop = document.querySelector('.c-showcase-title-top')
@@ -70,6 +71,9 @@ export default function ContactShowcase({ slice }){
       })
 
       text.forEach(item => {
+        item.classList.add("green-txt")
+      })
+      blckTxt.forEach(item => {
         item.classList.add("snow-txt")
       })
 
@@ -108,12 +112,10 @@ export default function ContactShowcase({ slice }){
         {
         scrollTrigger: {
           trigger: observe,
-          // start: `top ${scroll}%`,
           start: 'top 35%',
           onEnter: () => {
             setTimeout(() => AnimTrigger(), 400);
             darkMode();
-            // ScrollTrigger.getById(observe).kill
           },
           onLeaveBack: () => {
             setTimeout(() => lightMode(), 500)
@@ -139,86 +141,8 @@ export default function ContactShowcase({ slice }){
       }
     })
 
-    // Custom CursorB
-    // cursor DOM
-    // let cursorB = document.querySelector('.cursor-B')
-    // let CursorBg = document.querySelector('.cursor-B-bg')
-
-    // let contactArea = document.querySelector('.c-showcase-border')
-    // let TextColor = document.querySelector('.cursor-B-text-wrapper')
-    // let TextBorder = document.querySelector('.cursor-B-text')
-    // let TextArrow = document.querySelector('.cursor-B-arrow')
-
-    // let prevDiv = document.querySelector('.news-showcase')
-
-    // // Cursor BG DOM
-    // let circleImg = document.querySelector('.cursor-b-img-outer')
-
-    // function moveCursorB (e) {
-    //   let x = e.clientX;
-    //   let y = e.clientY;
-    //   circleImg.style.left = `${x}px`;
-    //   circleImg.style.top = `${y}px`;
-    //   // circleImg.style.transform = "translate(-50%, -50%)"
-    // }
-
-    // document.body.addEventListener("mousemove", moveCursorB)
-
-    //   contactArea.addEventListener("mouseenter", () => {
-    //     cursorB.classList.add('cursor-active')
-    //     CursorBg.classList.add('cursor-B-bg-active')
-    //     TextColor.classList.add('cursor-B-text-active')
-    //     TextBorder.classList.add('cursor-B-text-u-active')
-    //     TextArrow.classList.add('cursor-B-arrow-reveal')
-  
-    //     circleImg.classList.add('circle-img-reveal')
-    //   })
-      
-    //   prevDiv.addEventListener("mouseenter", () => {
-    //     cursorB.classList.remove('cursor-active')
-    //     CursorBg.classList.remove('cursor-B-bg-active')
-    //     TextColor.classList.remove('cursor-B-text-active')
-    //     TextBorder.classList.remove('cursor-B-text-u-active')
-    //     TextArrow.classList.remove('cursor-B-arrow-reveal')
-  
-    //     circleImg.classList.remove('circle-img-reveal')
-    //   })
-
-    // contactArea.addEventListener("mouseleave", () => {
-    //   cursorB.classList.remove('cursor-active')
-    //   CursorBg.classList.remove('cursor-B-bg-active')
-    //   TextColor.classList.remove('cursor-B-text-active')
-    //   TextBorder.classList.remove('cursor-B-text-u-active')
-    //   TextArrow.classList.remove('cursor-B-arrow-reveal')
-
-    //   circleImg.classList.remove('circle-img-reveal')
-    // })
-
   })
 
-
-  // TESTING ANIM
-  useEffect(() => {
-
-    const target = document.querySelector('.test')
-
-    const elipse = document.querySelectorAll('.elipse')
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.test',
-        start:'top 20%',
-        end:'200%',
-        scrub: 1,
-        markers: false,
-        pin: true
-      }
-    })
-
-    // tl.to(elipse, {
-    //   left:'50%',
-    // })
-  })
 
   return(
     <section className="c-showcase snow" style={{transition:`all 0.3s ${value}`}}>
