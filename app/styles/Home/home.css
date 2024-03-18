@@ -52,11 +52,55 @@
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s var(--transition-quint);
 }
 .play-btn-container:hover {
     opacity: 0.9;
     scale: 0.99;
+}
+.video-modal-layer-A {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+    overflow: hidden;
+}
+.video-modal-layer-B {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-modal-video-container {
+    width: 30em;
+    height: 96lvh;
+    z-index: 200;
+}
+.video-modal-video-container > video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.close-vid {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    font-size: 1.4em;
+    transition: all 0.5s var(--transition-quart);
+    color: #FFF;
+}
+.close-vid:hover {
+    color: rgba(211, 253, 94, 1);
 }
 /* Hero End */
 
