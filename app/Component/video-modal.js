@@ -1,16 +1,19 @@
 import React from 'react'
+import CloseBtn from './close-btn'
 
-const VideoModal = ({ videoLink, closeModal }) => {
+const VideoModal = ({ videoLink, closeModal, modalVidRef }) => {
   return (
     <div className='video-modal-layer-A'>
         <div onClick={closeModal} className='video-modal-layer-B'>
             <div className='video-modal-video-container'>
-                <video controls autoPlay muted="true" loop="true" preload="metadata" playsInline="true" loading="lazy">
+                <video ref={modalVidRef} controls autoPlay muted="true" loop="true" preload="metadata" playsInline="true" loading="lazy">
                     <source src={videoLink} type="video/mp4" />
                 </video>
             </div>
             <div onClick={closeModal} className='close-vid'>
-                X
+                <div>
+                    <CloseBtn />
+                </div>
             </div>
         </div>
     </div>

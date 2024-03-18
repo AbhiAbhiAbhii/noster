@@ -9,17 +9,21 @@ const Hero = ({ slice }) => {
 
     const [ modal, setModal ] = useState(false)
     const vidRef = useRef()    
+    const modalVidRef = useRef()    
 
-    let videoLink = "/video/home/dspace.mp4"
+    let videoLink = "/video/home/Noster_Website_Video.mp4"
 
    const handleModalClick = () => {
-    setModal(true)
-    vidRef.current.pause()
+        setModal(true)
+        vidRef.current.pause()
+        document.body.classList.add("no-scroll")
    }
 
    const handleCloseModal = () => {
-    setModal(false)
-    vidRef.current.play()
+        setModal(false)
+        vidRef.current.play()
+        modalVidRef.current.play()
+        document.body.classList.remove("no-scroll")
    }
 
 
@@ -31,7 +35,7 @@ const Hero = ({ slice }) => {
             </h1>
         </div>
         <div className="home-hero-vid">
-            <video ref={vidRef} autoPlay= { modal ? 'true' : 'false'} muted="true" loop="true" preload="metadata" playsInline="true" loading="lazy">
+            <video ref={vidRef} autoPlay= { modal ? 'true' : 'false'} muted loop="true" preload="metadata" playsInline="true" loading="lazy">
                 <source src={videoLink} type="video/mp4" />
             </video>
             <div className="home-hero-vid-overlay">
@@ -42,7 +46,7 @@ const Hero = ({ slice }) => {
             </div>
             </div>
         </div>
-        { modal && <VideoModal  closeModal={handleCloseModal} videoLink={videoLink} />}
+        { modal && <VideoModal modalVidRef={modalVidRef} closeModal={handleCloseModal} videoLink={videoLink} />}
     </section>
   )
 }

@@ -16,7 +16,7 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 6rem 2rem 4rem 2rem;
-    background: rgba(20, 18, 14, 1);
+    background: rgba(0, 0, 0, 1);
     overflow: hidden;
 }
 .home-hero-title {
@@ -27,15 +27,14 @@
     letter-spacing:  -0.08rem;
 }
 .home-hero-vid {
-    width: 30%;
-    height: 42em;
-    /* height: 90lvh; */
+    width: 40%;
+    height: 40em;
     position: relative;
 }
 .home-hero-vid > video {
     height: 100%;
     width: 100%;
-    object-fit: fill;
+    object-fit: contain;
 }
 .home-hero-vid-overlay {
     position: absolute;
@@ -68,7 +67,13 @@
     transform: translate(-50%, -50%);
     height: 100%;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    /* background: rgba(0, 0, 0, 0.7); */
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.4);
     z-index: 200;
     overflow: hidden;
 }
@@ -79,9 +84,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
 }
 .video-modal-video-container {
-    width: 30em;
+    width: 28em;
     height: 96lvh;
     z-index: 200;
 }
@@ -98,6 +104,10 @@
     font-size: 1.4em;
     transition: all 0.5s var(--transition-quart);
     color: #FFF;
+}
+.close-vid > div {
+    height: 2em;
+    width: 2em;
 }
 .close-vid:hover {
     color: rgba(211, 253, 94, 1);
@@ -132,7 +142,41 @@
     transition: all 0.8s ease;
 }
 /* Home Brief End */
-
+/* Marquee */
+.marquee-slice {
+    font-size: 1rem;
+    padding: 8rem 0;
+}
+.marquee-text {
+    margin-bottom: 10em;
+}
+.logos {
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent) !important;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent) !important;  
+}
+.logos-slide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: 15s slide infinite linear;
+    z-index: 100;
+}
+.logos-slide > img {
+    height: 4.6em;
+    width: auto;
+    margin-inline: 4em;
+}
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+/* Marquee End */
 /* Featured Works */
 .fw-showcase {
     font-size: 1rem;
@@ -399,7 +443,7 @@
     }
     .video-modal-video-container {
         height: 80lvh;
-        width: 70%;
+        width: 80%;
     }
     /* Home Brief */
     .home-brief {
@@ -415,6 +459,10 @@
     }
     .home-brief-desc-wrapper {
         width: 90%;
+    }
+    .close-vid > div {
+        height: 1.6em;
+        width: 1.6em;
     }
 
     /* Featured Works */
