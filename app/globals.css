@@ -58,6 +58,10 @@
   color: var(--txt-white);
   transition: all var(--transition-quart);
 }
+.green-txt {
+  color: rgba(211, 253, 94, 1);
+  transition: all var(--transition-quart);
+}
 /* Background & Text Color End */
 
 /* Haffer Fonts */

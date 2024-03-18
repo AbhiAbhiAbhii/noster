@@ -12,40 +12,12 @@
 
     overflow-y: hidden;
     position: relative;
-    padding: 10rem 2rem 26rem 2rem;
-}
-.home-hero-vid-main {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -10;
-}
-.home-hero-vid-inner-wrap {
-    position: relative;
-    height: 100%;
-    width: 100%;
-}
-.home-hero-vid-inner-wrap::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(var(--vid-overlay));
-    z-index: 10;
-}
-.home-hero-vid {
-    height: 100%;
-    width: 100%;
-}
-.home-hero-vid > video {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 6rem 2rem 4rem 2rem;
+    background: rgba(20, 18, 14, 1);
+    overflow: hidden;
 }
 .home-hero-title {
     z-index: 10;
@@ -53,6 +25,38 @@
 }
 .home-hero-title > h1 {
     letter-spacing:  -0.08rem;
+}
+.home-hero-vid {
+    width: 30%;
+    height: 42em;
+    /* height: 90lvh; */
+    position: relative;
+}
+.home-hero-vid > video {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.home-hero-vid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 20;
+}
+.play-btn-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all 0.3s var(--transition-quint);
+}
+.play-btn-container:hover {
+    opacity: 0.9;
+    scale: 0.99;
 }
 /* Hero End */
 
@@ -315,7 +319,7 @@
 @media(max-width: 1200px) {
     .home-hero {
         font-size: 1.6rem;
-        padding: 14rem 2rem 34rem 2rem;
+        padding: 14rem 2rem 4rem 2rem;
     }
     .home-hero-title {
         width: 64ch;
@@ -337,12 +341,18 @@
    
     .home-hero  {
         font-size: 3rem;
-        padding: 80rem 3rem 18rem 3rem;
+        /* padding: 80rem 3rem 18rem 3rem;  */
+        padding-inline: 3rem;
+        padding: 38rem 3rem 8rem 3rem;
+        flex-direction: column;
     }
     .home-hero-title {
-        width: 85%;
+        width: 100%;
     }
-
+    .home-hero-vid {
+        width: 70%;
+        margin-top: 5em;
+    }
     /* Home Brief */
     .home-brief {
         font-size: 3rem;
