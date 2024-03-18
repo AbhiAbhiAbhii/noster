@@ -397,6 +397,10 @@
         width: 70%;
         margin-top: 5em;
     }
+    .video-modal-video-container {
+        height: 80lvh;
+        width: 70%;
+    }
     /* Home Brief */
     .home-brief {
         font-size: 3rem;

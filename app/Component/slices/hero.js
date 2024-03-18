@@ -2,7 +2,7 @@
 import PlayBtn from "@/app/Component/play-btn";
 import { PrismicRichText } from "@prismicio/react";
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import VideoModal from "../video-modal";
 
 const Hero = ({ slice }) => {
