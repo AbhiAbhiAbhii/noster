@@ -90,6 +90,10 @@ export default function ContactShowcase({ slice }){
       })
 
       text.forEach(item => {
+        item.classList.remove("green-txt")
+      })
+
+      blckTxt.forEach(item => {
         item.classList.remove("snow-txt")
       })
       document.body.classList.remove("darkMode")
@@ -145,7 +149,7 @@ export default function ContactShowcase({ slice }){
 
 
   return(
-    <section className="c-showcase snow" style={{transition:`all 0.3s ${value}`}}>
+    <section className="c-showcase snow" style={{transition:`all 0.3s ${value}`, overflow:'hidden'}}>
       <div className="c-showcase-border" style={{transition:`all 0.2s ${value}`, position:'relative', border:'1px rgba(255, 255, 255, 0) solid'}}>
         <div ref={borderTopRef} style={{position:'absolute', top:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
         <div ref={borderBottomRef} style={{position:'absolute', bottom:'0', left:'0', height:'2px', width:'0%', background:'#000', transition:`all 0.8s ${value}` }}  />
