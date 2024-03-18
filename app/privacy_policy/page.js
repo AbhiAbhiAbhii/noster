@@ -13,7 +13,7 @@ export default async function Page() {
       <div className="priv-pol-wrapper">
         <PrivacyPolicyText />
         <div className="privacy-policy-right">
-            <SliceZone slices={page.data.slices} components={components} />
+          <SliceZone slices={page.data.slices} components={components} />
         </div>
       </div>
     </div>

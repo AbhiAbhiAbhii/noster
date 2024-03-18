@@ -284,6 +284,7 @@
 }
 .b-scene-cta {
     border-bottom: 1px black solid;
+    border-top: 1px black solid;
     display: flex;
     align-items: center;
     justify-content: center;

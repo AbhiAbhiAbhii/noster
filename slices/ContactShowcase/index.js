@@ -139,7 +139,6 @@ export default function ContactShowcase({ slice }){
       }
     })
 
-
     // Custom CursorB
     // cursor DOM
     // let cursorB = document.querySelector('.cursor-B')
