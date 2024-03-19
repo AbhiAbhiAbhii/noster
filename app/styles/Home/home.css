@@ -15,13 +15,13 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 6rem 2rem 4rem 2rem;
+    padding: 6rem 2rem 6rem 2rem;
     background: rgba(0, 0, 0, 1);
     overflow: hidden;
 }
 .home-hero-title {
     z-index: 10;
-    width: 43%;
+    width: 50%;
 }
 .home-hero-title > h1 {
     letter-spacing:  -0.08rem;
@@ -145,10 +145,11 @@
 /* Marquee */
 .marquee-slice {
     font-size: 1rem;
-    padding: 8rem 0;
+    padding: 8rem 0 12rem 0;
 }
 .marquee-text {
-    margin-bottom: 10em;
+    margin-bottom: 12em;
+    text-align: center;
 }
 .logos {
     overflow: hidden;
@@ -160,11 +161,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    animation: 15s slide infinite linear;
+    animation: 30s slide infinite linear;
     z-index: 100;
 }
 .logos-slide > img {
-    height: 4.6em;
+    height: 3.4em;
     width: auto;
     margin-inline: 4em;
 }
@@ -431,7 +432,7 @@
         font-size: 3rem;
         /* padding: 80rem 3rem 18rem 3rem;  */
         padding-inline: 3rem;
-        padding: 38rem 3rem 8rem 3rem;
+        padding: 38rem 3rem 12rem 3rem;
         flex-direction: column;
     }
     .home-hero-title {
@@ -463,6 +464,17 @@
     .close-vid > div {
         height: 1.6em;
         width: 1.6em;
+    }
+    
+    .marquee-slice  {
+        font-size: 3rem;
+        padding-right: var(--side-padding);  
+        padding-left: var(--side-padding);  
+        padding-bottom: 18rem;
+    }
+    .marquee-text {
+        text-align: left;
+        margin-bottom: 6em;
     }
 
     /* Featured Works */

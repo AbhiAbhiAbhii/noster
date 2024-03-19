@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | MarqueeSliceSlice
   | WorksShowcaseLeftSlice
   | WorksShowcaseRightSlice
   | ContactShowcaseSlice
@@ -655,6 +656,66 @@ type HomeHeroSliceVariation = HomeHeroSliceDefault;
 export type HomeHeroSlice = prismic.SharedSlice<
   "home_hero",
   HomeHeroSliceVariation
+>;
+
+/**
+ * Primary content in *MarqueeSlice → Primary*
+ */
+export interface MarqueeSliceSliceDefaultPrimary {
+  /**
+   * Title field in *MarqueeSlice → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee_slice.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *MarqueeSlice → Items*
+ */
+export interface MarqueeSliceSliceDefaultItem {
+  /**
+   * Marquee Logo field in *MarqueeSlice → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: marquee_slice.items[].marquee_logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  marquee_logo: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for MarqueeSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MarqueeSliceSliceDefaultPrimary>,
+  Simplify<MarqueeSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MarqueeSlice*
+ */
+type MarqueeSliceSliceVariation = MarqueeSliceSliceDefault;
+
+/**
+ * MarqueeSlice Shared Slice
+ *
+ * - **API ID**: `marquee_slice`
+ * - **Description**: MarqueeSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarqueeSliceSlice = prismic.SharedSlice<
+  "marquee_slice",
+  MarqueeSliceSliceVariation
 >;
 
 /**
@@ -1663,6 +1724,11 @@ declare module "@prismicio/client" {
       HomeHeroSliceDefaultPrimary,
       HomeHeroSliceVariation,
       HomeHeroSliceDefault,
+      MarqueeSliceSlice,
+      MarqueeSliceSliceDefaultPrimary,
+      MarqueeSliceSliceDefaultItem,
+      MarqueeSliceSliceVariation,
+      MarqueeSliceSliceDefault,
       NewsAndInsightsSlice,
       NewsAndInsightsSliceDefaultPrimary,
       NewsAndInsightsSliceDefaultItem,

@@ -8,6 +8,7 @@ export const components = {
   featured_works_show_case: dynamic(() => import("./FeaturedWorksShowCase")),
   home_brief: dynamic(() => import("./HomeBrief")),
   home_hero: dynamic(() => import("./HomeHero")),
+  marquee_slice: dynamic(() => import("./MarqueeSlice")),
   news_and_insights: dynamic(() => import("./NewsAndInsights")),
   next_project_link: dynamic(() => import("./NextProjectLink")),
   priv_sub_title_slice: dynamic(() => import("./PrivSubTitleSlice")),

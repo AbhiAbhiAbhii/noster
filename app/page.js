@@ -2,8 +2,6 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import Curtain from "./Component/Curtain/Curtain";
-import Marquee from "./Component/slices/marquee/marquee";
 
 export default async function Page() {
   const client = createClient();
@@ -12,7 +10,6 @@ export default async function Page() {
   return (
     
     <>
-    {/* <Marquee /> */}
     <SliceZone slices={page.data.slices} components={components} />
     </>
   )

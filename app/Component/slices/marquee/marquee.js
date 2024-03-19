@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import { PrismicRichText } from "@prismicio/react"
+import { PrismicNextImage } from "@prismicio/next"
 
-const Marquee = ({ text }) => {
+const Marquee = ({ slice }) => {
 
 
   let images = [
@@ -42,26 +44,36 @@ const Marquee = ({ text }) => {
     
   return (
     <section className='marquee-slice'>
-        <div className='marquee-text' style={{textAlign:'center'}}>
-            <p className='p-tag black-txt'>
-              Our Collaborators
-            </p>
+        <div className='marquee-text side-pad'>
+            <div className='p-tag black-txt'>
+              <PrismicRichText field={slice.primary.title} />
+            </div>
         </div>
         <div className='logos'>
             <div className='logos-slide'>
               {
-                images.map((item, i) => {
+                slice.items.map((item, i) => {
                   return(
-                    <img key={i} src={item.src} alt="img" />
+                    // <img key={i} src={item.src} alt="img" />
+                    <PrismicNextImage 
+                      key={i}
+                      field={item.marquee_logo}
+                      alt=''
+                    />
                   )
                 })
               }
             </div>
             <div className='logos-slide'>
               {
-                images.map((item, i) => {
+                slice.items.map((item, i) => {
                   return(
-                    <img key={i} src={item.src} alt="img" />
+                    // <img key={i} src={item.src} alt="img" />
+                    <PrismicNextImage 
+                      key={i}
+                      field={item.marquee_logo}
+                      alt=''
+                    />
                   )
                 })
               }

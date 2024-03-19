@@ -34,7 +34,7 @@ const Hero = ({ slice }) => {
             <PrismicRichText field={slice.primary.title} />
             </h1>
         </div>
-        <div className="home-hero-vid">
+        <div className="home-hero-vid" style={{width: 'fit-content'}}>
             <video ref={vidRef} autoPlay= { modal ? 'true' : 'false'} muted loop="true" preload="metadata" playsInline="true" loading="lazy">
                 <source src={videoLink} type="video/mp4" />
             </video>

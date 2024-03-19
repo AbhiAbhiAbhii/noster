@@ -1,6 +1,5 @@
 'use client'
 
-import CursorB from "@/app/Component/CustomCursor/CursorB";
 import { PrismicRichText } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
