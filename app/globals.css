@@ -120,6 +120,9 @@
 .h1-xl {
   font-size: var(--h1-xl);
 }
+.h1-var {
+  font-size: 4.92em;
+}
 .h1-big {
   font-size: var(--h1-big);
 }

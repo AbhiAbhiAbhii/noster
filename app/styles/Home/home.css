@@ -21,10 +21,11 @@
 }
 .home-hero-title {
     z-index: 10;
-    width: 50%;
+    width: 70%;
 }
 .home-hero-title > h1 {
     letter-spacing:  -0.08rem;
+    font-size: 4.92em;
 }
 .home-hero-vid {
     width: 40%;
@@ -411,7 +412,9 @@
         padding: 14rem 2rem 4rem 2rem;
     }
     .home-hero-title {
-        width: 64ch;
+        /* width: 64ch; */
+        width: 60%;
+        font-size: 0.8em;
     }
     .home-brief {
         font-size: 1.6rem;

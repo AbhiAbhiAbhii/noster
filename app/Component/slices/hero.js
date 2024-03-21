@@ -30,7 +30,7 @@ const Hero = ({ slice }) => {
   return (
     <section className="home-hero">
         <div className="home-hero-title">
-            <h1 className="haffer-R h1-small green-txt">
+            <h1 className="haffer-R green-txt">
             <PrismicRichText field={slice.primary.title} />
             </h1>
         </div>
