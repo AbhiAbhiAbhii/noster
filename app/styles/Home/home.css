@@ -21,11 +21,12 @@
 }
 .home-hero-title {
     z-index: 10;
-    width: 70%;
+    width: 65%;
+    /* border: 1px red solid; */
 }
 .home-hero-title > h1 {
     letter-spacing:  -0.08rem;
-    font-size: 4.92em;
+    font-size: 4em;
 }
 .home-hero-vid {
     width: 40%;
