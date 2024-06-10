@@ -998,4 +998,7 @@ h1,h2,h3,h4 {
     display: flex;
     flex-direction: column;
   }
+  .c-showcase-info-right {
+    margin-top: 1.1em;
+  }
 }
