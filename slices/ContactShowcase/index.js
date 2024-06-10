@@ -191,24 +191,9 @@ export default function ContactShowcase({ slice }){
         {/* Mob */}
         <div className="c-showcase-info-wrapper">
           <div className="c-showcase-info-left">
-            <p className="p-l black-txt">
+            <p className="p-l black-txt" style={{width: '16ch', letterSpacing: '-0.01em', lineHeight: '100%'}}>
               <PrismicRichText field={slice.primary.contact_info_text} />
             </p>
-            {newAddress.map((address) => (
-              <div  
-                key={address.location}
-                style={{marginTop: '2em'}}
-              >
-                <p className="p-l" style={{marginBottom: '0.25em'}}>
-                  {address.location}
-                </p>
-                <p
-                  style={{letterSpacing: '-0.01em', lineHeight: '1.2em'}}
-                >
-                  {address.description}
-                </p>
-            </div>
-            ))}
           </div>
           <div className="c-showcase-info-right">
             {
