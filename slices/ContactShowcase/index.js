@@ -13,9 +13,6 @@ gsap.registerPlugin(ScrollTrigger)
  */
 export default function ContactShowcase({ slice }){
 
-  const [ scroll, setScroll ] = useState(40)
-
-
   const borderTopRef = useRef()
   const borderBottomRef = useRef()
 
@@ -146,6 +143,17 @@ export default function ContactShowcase({ slice }){
 
   })
 
+  let newAddress = [
+    {
+      location: 'Hyderabad',
+      description: "NOSTER CONCEPTS PRIVATE LIMITED Plot No-219, D No-8-2-293/82, Road No-78, Jubilee Hills,  Hyderabad, Hyderabad, Hyderabad, Telangana, India, 500033"
+    },
+    {
+      location: 'Kochi',
+      description: "Noster Associates Pvt Ltd Emaar Tower at TV Centre, Poyyachira, Kakkanad, CSEZ PO PIN 682037"
+    }
+  ]
+
 
   return(
     <section className="c-showcase snow" style={{transition:`all 0.3s ${value}`, overflow:'hidden'}}>
@@ -186,13 +194,25 @@ export default function ContactShowcase({ slice }){
             <p className="p-l black-txt">
               <PrismicRichText field={slice.primary.contact_info_text} />
             </p>
+            {newAddress.map((address) => (
+              <div  
+                key={address.location}
+                style={{marginTop: '2em'}}
+              >
+                <p className="p-l" style={{marginBottom: '0.25em'}}>
+                  {address.location}
+                </p>
+                <p
+                  style={{letterSpacing: '-0.01em', lineHeight: '1.2em'}}
+                >
+                  {address.description}
+                </p>
+            </div>
+            ))}
           </div>
           <div className="c-showcase-info-right">
             {
               slice.items.map((item, i) => {
-
-                console.log(item,"asjdjsa")
-
                 if(item.contact[0].text.includes("@")) {
                   return(
                     <div key={i} className="c-showcase-info-right-item">
@@ -215,15 +235,6 @@ export default function ContactShowcase({ slice }){
           </div>
         </div>
       </div>
-      {/* TESTING */}
-      {/* <div className="test">
-        <div className="elipse-wrapper">
-          <div className="elipse elipse-A" />
-          <div className="elipse elipse-B" />
-          <div className="elipse elipse-C" />
-          <div className="elipse elipse-D" />
-        </div>
-      </div> */}
     </section>
   )
 }
