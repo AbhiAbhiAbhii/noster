@@ -118,12 +118,13 @@ export default function Footer({style}){
             </form>
         </div>
     </div> */}
+
     return(
         <footer className="footer" style={{position:'relative', background: '#FFF'}}>
             <div
                 className='f-left'
             >
-                <div>
+                <div className="all-rights-desk">
                     <p className="footer-texts haffer-R">
                         All rights reserved
                     </p>
@@ -171,6 +172,14 @@ export default function Footer({style}){
                     >
                     {socials.map(item => <a className="footer-texts haffer-R" target="_blank" style={{textDecoration: 'underline'}} href={item.link} key={item.text}>{item.text}</a>)}
                     </ul>
+                    <div className="all-rights-mob">
+                        <p className="footer-texts haffer-R">
+                            All rights reserved
+                        </p>
+                        <p className="footer-texts haffer-R">
+                            Noster Associates (c) 2024
+                        </p>
+                    </div>  
                 </div>
                 <a href="/privacy_policy" className="footer-texts haffer-R" style={{textDecoration: 'underline'}}>
                     Privacy Policy

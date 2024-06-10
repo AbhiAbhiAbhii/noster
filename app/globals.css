@@ -686,6 +686,13 @@ h1,h2,h3,h4 {
   display: flex;
   gap: 8em;
 }
+.all-rights-desk {
+  display: flex;
+  flex-direction: column;
+}
+.all-rights-mob {
+  display: none;
+}
 .f-left > div:first-child {
   width: 10%;
 }
@@ -763,6 +770,14 @@ h1,h2,h3,h4 {
   /*  */
   .cursor-A {
     display: none;
+  }
+  .all-rights-desk {
+    display: none;
+  }
+  .all-rights-mob {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.8em;
   }
   .mob {
     display: flex;
