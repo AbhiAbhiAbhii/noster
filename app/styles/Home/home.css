@@ -166,10 +166,17 @@
     animation: 30s slide infinite linear;
     z-index: 100;
 }
-.logos-slide > img {
+.logos-slide > div {
     height: 3.4em;
     width: auto;
     margin-inline: 4em;
+}
+.logos-slide > div > img {
+    /* height: 3.4em;
+    width: auto;
+    margin-inline: 4em; */
+    height: 100%;
+    width: auto;
 }
 @keyframes slide {
     from {
