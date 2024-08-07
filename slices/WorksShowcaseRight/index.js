@@ -182,7 +182,7 @@ export default function WorksShowcaseRight({ slice }){
             })
           }
         </Swiper> */}
-        {/* {
+        {
           data.map((item, i) => {
             return(
               <div style={{width:'95%', margin:'2em 0'}} key={i}>
@@ -213,7 +213,7 @@ export default function WorksShowcaseRight({ slice }){
             </div>
             )
           })
-        } */}
+        }
       </div>
   </section>
   )
