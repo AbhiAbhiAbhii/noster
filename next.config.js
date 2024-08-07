@@ -7,7 +7,11 @@ const nextConfig = {
                 hostname:'images.prismic.io'
             }
         ]
-    }
+    },
+    experimental: {
+        serverActions: true,
+        serverActionsBodySizeLimit: "4mb"
+    },
 }
 
 module.exports = nextConfig

@@ -22,6 +22,8 @@ export default function WorksShowcaseRight({ slice }){
     setActiveB(i)
   }
 
+  console.log(slice.primary.company_name_a.length, "RIGHT")
+
   let data = [
     {
       title: slice.primary.company_name_a,
@@ -30,16 +32,16 @@ export default function WorksShowcaseRight({ slice }){
       link: slice.primary.cta_link_a.uid
     },
     {
-      title: slice.primary.company_name_b,
-      desc: slice.primary.description_b,
-      image: slice.primary.image_b,
-      link: slice.primary.cta_link_b.uid
+      title: slice.primary.company_name_b ? slice.primary.company_name_b : null,
+      desc: slice.primary.description_b ? slice.primary.description_b:null,
+      image: slice.primary.image_b ? slice.primary.image_b:null,
+      link: slice.primary.cta_link_b.uid ? slice.primary.cta_link_b.uid:null
     },
     {
-      title: slice.primary.company_name_c,
-      desc: slice.primary.description_c,
-      image: slice.primary.image_c,
-      link: slice.primary.cta_link_c.uid
+      title: slice.primary.company_name_c ? slice.primary.company_name_c: null ,
+      desc: slice.primary.description_c ? slice.primary.description_c : null,
+      image: slice.primary.image_c ? slice.primary.image_c:null,
+      link: slice.primary.cta_link_c.uid ? slice.primary.cta_link_c.uid :null
     }, 
   ]
 
@@ -104,7 +106,11 @@ export default function WorksShowcaseRight({ slice }){
           return(
             <div onMouseOver={() => handleHoverRight(i)} key={i} 
             className={ activeB === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"} 
-            style={{display: slice.primary.company_name_a[0].text === "" ? 'none' :  slice.primary.company_name_b[0].text === "" ? 'none': slice.primary.company_name_c[0].text === "" ? 'none':'' }}>
+            style={{
+                display: ((slice.primary.company_name_a.length === 0) || (slice.primary.company_name_a[0].text === "")) && i === 0  ? 'none' :
+                ((slice.primary.company_name_b.length === 0) || (slice.primary.company_name_b[0].text === "")) && i === 1  ? 'none': 
+                ((slice.primary.company_name_c.length === 0) ||  (slice.primary.company_name_c[0].text === "")) && i === 2 ? 'none':'' 
+              }}>
             <a href={`/works/${item.link}`} className="fw-showcase-item-link">
               <PrismicNextImage 
                 style={{height:'100%', width:'100%'}}
@@ -176,7 +182,7 @@ export default function WorksShowcaseRight({ slice }){
             })
           }
         </Swiper> */}
-        {
+        {/* {
           data.map((item, i) => {
             return(
               <div style={{width:'95%', margin:'2em 0'}} key={i}>
@@ -207,7 +213,7 @@ export default function WorksShowcaseRight({ slice }){
             </div>
             )
           })
-        }
+        } */}
       </div>
   </section>
   )

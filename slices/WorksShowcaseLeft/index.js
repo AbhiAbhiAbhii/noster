@@ -93,7 +93,7 @@ export default function WorksShowcaseLeft({ slice }){
         cursor.classList.add('cursor-active')
       })
     })
-  })
+  }, [])
 
 
   return(
