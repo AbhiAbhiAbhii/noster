@@ -154,12 +154,12 @@ export default function Nav(){
                     })
                 }
             </div>
-            <a href="tel: 1234567890" className="nav-right">
+            <a href="tel:+919656922212" className="nav-right">
                 <div className="nav-right-wrapper">
                     <div className="nav-right-text">
-                        <a href='tel: +91-7025576677' className="p-r">
+                        <p className="p-r">
                             Book an Appointment
-                        </a>
+                        </p>
                     </div>
                     <div className="nav-right-arrow" style={{}}>
                         <p className="p-r" style={{width:'100%', position:'relative', top:'-2%', left:'8%'}}>
