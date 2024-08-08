@@ -14,17 +14,20 @@ export default function Footer({style}){
     const address = [
         {
             location: 'Hyderabad',
-            description: 'Plot 219, D 8-2-293/82 Road Number 78, Jubilee Hills, Hyderabad, Telangana, 500033',
+            description: 'Plot B7, Road Number 92, Journalist Colony, Film Nagar Jubilee Hills Hyderabad, Telengana 500033',
+            contact: '+91 9908808008',
             href: 'https://www.google.com/maps/search/NOSTER+CONCEPTS+PRIVATE+LIMITED+Plot+No-219,+D+No-8-2-293%2F82,+Road+No-78,+Jubilee+Hills,+Hyderabad,+Hyderabad,+Hyderabad,+Telangana,+India,+500033/@17.4163599,78.4008591,18z/data=!3m1!4b1?entry=ttu'
         },
         {
             location: 'Kochi',
             description: 'Emaar Tower, TV Centre, Poyyachira, Kakkanad, 682037',
+            contact: '+91 9656922212',
             href: 'https://www.google.com/maps/search/Noster+Associates+Pvt+Ltd+Emaar+Tower+at+TV+Centre,+Poyyachira,+Kakkanad,+CSEZ+PO+PIN+682037/@10.0047621,76.3380979,16z/data=!3m1!4b1?entry=ttu'
         },
         {
             location: 'Trivandrum',
             description: 'The Atomic, Near Technopark Phase 1 Kazhakootam, 695582',
+            contact: '+91 9496434303',
             href: 'https://www.google.com/maps/place/The+Atomic/@8.5563022,76.8741509,17z/data=!3m1!4b1!4m6!3m5!1s0x3b05bfe3855db083:0xc4ba14818788b1cf!8m2!3d8.5562969!4d76.8767312!16s%2Fg%2F11r40tpmcw?entry=ttu'
         }
     ]
@@ -136,7 +139,7 @@ export default function Footer({style}){
                     className='f-mid'
                 >
                     {/* Map items here */}
-                    {address.map(({location, href, description}) => (    
+                    {address.map(({location, href, description, contact}) => (    
                         <div
                             className="address-item"
                             key={location}
@@ -154,6 +157,14 @@ export default function Footer({style}){
                                 style={{textDecoration: 'underline', fontWeight: '400', display: 'flex', alignItems:'center', gap:'0.26em'}}
                             >
                                 View directions <div className="footer-arrow"><Arrow /></div>
+                            </a>
+                            <a 
+                                className="footer-texts haffer-R" 
+                                href={href} 
+                                target="_blank"
+                                style={{fontWeight: '400', width: '100%', marginTop: '0.8em', display: 'flex', alignItems:'center', gap:'0.26em'}}
+                            >
+                                <u>{contact}</u> (Sales)
                             </a>
                         </div>
                     ))}

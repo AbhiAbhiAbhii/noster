@@ -705,7 +705,7 @@ h1,h2,h3,h4 {
 .f-mid {
   display: flex;
   gap: 4em;
-  width: 52%;
+  width: 55%;
 }
 .address-item {
   display: flex;
