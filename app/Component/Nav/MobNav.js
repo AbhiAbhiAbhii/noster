@@ -33,7 +33,6 @@ export default function MobNav({uid}){
             })
         }, {threshold: 0.3})
         observer.observe(footer)
-
     })
 
 
