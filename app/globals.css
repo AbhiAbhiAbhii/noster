@@ -750,8 +750,11 @@ h1,h2,h3,h4 {
   .footer {
     font-size: 1.2rem;
   }
+  .f-mid {
+    width: 66%;
+  }
   .address-description {
-    width: 80%;
+    width: 90%;
   }
 }
 @media(max-width: 1200px) {
@@ -765,7 +768,7 @@ h1,h2,h3,h4 {
     gap: 2em;
   }
   .f-mid {
-    width: 80%;
+    width: 90%;
     gap: 2em;
   }
 }
