@@ -44,16 +44,9 @@ export default function MobNav({uid}){
                     background:'#FFF', padding:'5px 0 5px 0px', zIndex:'100', 
                 }
             }>
-            {/* <div>
-                <a href="/works" className="haffer-M" style={{fontSize:'16px', color:'#1E1E1E', position:'relative'}}>
-                    { text }
-                    <div style={{opacity: uid ?'1':'0' ,height:'7px', width:'7px', borderRadius:'20em', background:'#000', transition:'all 1s ease', position:'absolute', left:'-12%', top:'55%', transform:'translate(0, -50%)'}}>
-                    </div>
-                </a>
-            </div> */}
             <div style={{display:'flex', alignItems:'center', justifyContent:'center', borderRadius:'20em', width:'', background:'rgba(30, 30, 30, 1)', padding:'14px'}}>
                 <div className="">
-                    <a href='tel: +91-7025576677' className="" style={{fontSize:'16px'}}>
+                    <a href='tel:+91 9656922212' className="" style={{fontSize:'16px'}}>
                         Talk to us
                     </a>
                 </div>

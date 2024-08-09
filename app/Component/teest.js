@@ -1,31 +1,25 @@
 'use client'
+import { useState } from "react";
+export default function Overview({ experience }) {
 
-import { useState } from "react"
-
-export default function JuniorFrontEndDev({ interested, hiring }) {
+    const [skillsRequired, setSkillsRequired] = useState([])
     
-    const [context, setContext] = useState({
-        message: '',
-        status: ''
-    });
-
-    const { message, status } = context;
-
-    if(hiring && interested) {
-        setContext(prevState => ({
-            ...prevState,
-            message: "Looking for a Junior Front-end Developer!",
-            status: "Swipe to know more."
-        }))
+    if((experience >= 1) || (experience === 2)) {
+        setSkillsRequired(() => {
+            return ["Nextjs or Reactjs", "HTML", "Tailwind CSS", "CSS", "JavaScript", "Git/Github"]
+        })
     } else {
         return null
     }
 
-    return(
-        <>
-        <h1>{message}</h1>
-        <p>{status}</p>
-        </>
+    return (
+        <div>
+            <ul>
+                {skillsRequired.map(item => <li key={item}>{item}</li>)}
+            </ul>
+        </div>
     )
 
 }
+
+
