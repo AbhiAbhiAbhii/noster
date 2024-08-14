@@ -104,7 +104,11 @@ export default function WorksShowcaseLeft({ slice }){
           data.map((item, i) => {
 
             return(
-              <div style={{display:  item.title.length === 0 ? 'none':''}} onMouseOver={() => handleHover(i)} key={i}
+              <div style={{
+                display: ((slice.primary.company_name_a.length === 0) || (slice.primary.company_name_a[0].text === "")) && i === 0  ? 'none' :
+                ((slice.primary.company_name_b.length === 0) || (slice.primary.company_name_b[0].text === "")) && i === 1  ? 'none': 
+                ((slice.primary.company_name_c.length === 0) ||  (slice.primary.company_name_c[0].text === "")) && i === 2 ? 'none':'' 
+              }} onMouseOver={() => handleHover(i)} key={i}
               className={ active === i ? "fw-showcase-item expand-fw-showcase-item":"fw-showcase-item"}>
               <a href={`/works/${item.link}`} className="fw-showcase-item-link">
                 <PrismicNextImage 

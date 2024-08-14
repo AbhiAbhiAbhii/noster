@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type HomeDocumentDataSlicesSlice =
+  | FeaturedWorksTitleSlice
   | MarqueeSliceSlice
   | WorksShowcaseLeftSlice
   | WorksShowcaseRightSlice
@@ -556,6 +557,51 @@ type FeaturedWorksShowCaseSliceVariation = FeaturedWorksShowCaseSliceDefault;
 export type FeaturedWorksShowCaseSlice = prismic.SharedSlice<
   "featured_works_show_case",
   FeaturedWorksShowCaseSliceVariation
+>;
+
+/**
+ * Primary content in *FeaturedWorksTitle → Primary*
+ */
+export interface FeaturedWorksTitleSliceDefaultPrimary {
+  /**
+   * Title field in *FeaturedWorksTitle → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_works_title.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+}
+
+/**
+ * Default variation for FeaturedWorksTitle Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedWorksTitleSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedWorksTitleSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeaturedWorksTitle*
+ */
+type FeaturedWorksTitleSliceVariation = FeaturedWorksTitleSliceDefault;
+
+/**
+ * FeaturedWorksTitle Shared Slice
+ *
+ * - **API ID**: `featured_works_title`
+ * - **Description**: FeaturedWorksTitle
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedWorksTitleSlice = prismic.SharedSlice<
+  "featured_works_title",
+  FeaturedWorksTitleSliceVariation
 >;
 
 /**
@@ -1716,6 +1762,10 @@ declare module "@prismicio/client" {
       FeaturedWorksShowCaseSliceDefaultItem,
       FeaturedWorksShowCaseSliceVariation,
       FeaturedWorksShowCaseSliceDefault,
+      FeaturedWorksTitleSlice,
+      FeaturedWorksTitleSliceDefaultPrimary,
+      FeaturedWorksTitleSliceVariation,
+      FeaturedWorksTitleSliceDefault,
       HomeBriefSlice,
       HomeBriefSliceDefaultPrimary,
       HomeBriefSliceVariation,

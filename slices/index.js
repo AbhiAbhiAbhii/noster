@@ -6,6 +6,7 @@ export const components = {
   behind_the_scenes: dynamic(() => import("./BehindTheScenes")),
   contact_showcase: dynamic(() => import("./ContactShowcase")),
   featured_works_show_case: dynamic(() => import("./FeaturedWorksShowCase")),
+  featured_works_title: dynamic(() => import("./FeaturedWorksTitle")),
   home_brief: dynamic(() => import("./HomeBrief")),
   home_hero: dynamic(() => import("./HomeHero")),
   marquee_slice: dynamic(() => import("./MarqueeSlice")),

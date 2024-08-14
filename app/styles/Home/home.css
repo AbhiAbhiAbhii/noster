@@ -192,6 +192,12 @@
     font-size: 1rem;
     padding: 2rem var(--side-padding) 0rem var(--side-padding);
 }
+.featured-title {
+    font-size: 1rem;
+    padding: 0rem var(--side-padding) 0rem var(--side-padding);
+    position: relative;
+    top: 4rem;
+}
 .eyebrow {
     display: flex;
     align-items: flex-start;
@@ -430,6 +436,9 @@
     .fw-showcase {
         padding: 2rem var(--side-padding) 8rem var(--side-padding);
     }
+    .featured-title {
+        padding: 0rem var(--side-padding) 0rem var(--side-padding);
+    }
     .c-showcase {
         font-size: 1.3rem;
     }
@@ -497,6 +506,11 @@
         justify-content: center;
         /* padding: 5rem 0 0rem 3rem; */
         padding: 0 0 0 1rem!important;
+    }
+    .featured-title {
+        font-size: 3rem;
+        top: 0;
+        padding: 0rem var(--side-padding) 0rem var(--side-padding);
     }
     .eyebrow {
         width: 100%;

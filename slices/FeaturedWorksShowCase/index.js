@@ -113,11 +113,9 @@ export default function FeaturedWorksShowCase({ slice }){
 
   let arrow = "->"
 
-  
-
   return(
     <section className="fw-showcase snow" id="fwShowcase" style={{transition:`all 0.2s ${value}`}}>
-      {/* Eyebrow */}
+      {/* Eyebrow asd*/}
       <div className="eyebrow black-txt">
         <div className="eyebrow-title">
           <h1 className="h1-big" style={{display:'flex', alignItems:'center', justifyContent:'flex-start'}}>

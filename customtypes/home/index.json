@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "featured_works_title": {
+              "type": "SharedSlice"
+            },
             "marquee_slice": {
               "type": "SharedSlice"
             },
