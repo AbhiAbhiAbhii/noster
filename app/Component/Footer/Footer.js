@@ -153,14 +153,14 @@ export default function Footer({style}){
                             <p className="footer-texts address-description haffer-R" style={{color: 'grey'}}>
                                 {description}
                             </p>
-                            <a 
+                            {/* <a 
                                 className="footer-texts haffer-R" 
                                 href={href} 
                                 target="_blank"
                                 style={{textDecoration: 'underline', fontWeight: '400', display: 'flex', alignItems:'center', gap:'0.26em'}}
                             >
                                 <b>View directions</b><div className="footer-arrow"><Arrow /></div>
-                            </a>
+                            </a> */}
                             <a 
                                 className="footer-texts haffer-R" 
                                 href={`tel:${contactLink}`} 
