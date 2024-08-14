@@ -165,7 +165,7 @@ export default function Footer({style}){
                                 className="footer-texts haffer-R" 
                                 href={`tel:${contactLink}`} 
                                 target="_blank"
-                                style={{fontWeight: '400', width: '100%', marginTop: '0.8em', display: 'flex', alignItems:'center', gap:'0.26em'}}
+                                style={{fontWeight: '400', width: '100%', marginTop: '0.1em', display: 'flex', alignItems:'center', gap:'0.26em'}}
                             >
                                 <b><u>{contact}</u></b> (Sales)
                             </a>
