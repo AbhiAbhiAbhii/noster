@@ -92,6 +92,8 @@ export default function RootLayout({ children }) {
       <meta property="twitter:url" content="https://noster.in/" />
       <meta property="og:image" content="/noster-meta.png" />
       <meta property="twitter:image" content="/noster-meta.png" />
+      {/* disable auto-rotate */}
+      <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
       {/* </Head> */}
         <body className={inter.className}>
           <div className="globalLoader" 
