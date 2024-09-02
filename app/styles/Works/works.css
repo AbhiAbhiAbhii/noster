@@ -233,7 +233,8 @@
 
 /* Works Image */
 .worksImg {
-    height: 44vw;
+    /* height: 44vw; */
+    height: 55vw;
     padding: 0 2rem;
     display: flex;
     align-items: center;
