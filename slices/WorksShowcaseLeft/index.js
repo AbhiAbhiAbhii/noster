@@ -102,7 +102,6 @@ export default function WorksShowcaseLeft({ slice }){
       <div className="works-showcase-left snow">
         {
           data.map((item, i) => {
-
             return(
               <div style={{
                 display: ((slice.primary.company_name_a.length === 0) || (slice.primary.company_name_a[0].text === "")) && i === 0  ? 'none' :
