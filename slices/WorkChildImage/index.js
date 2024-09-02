@@ -55,7 +55,7 @@ export default function WorkChildImage({ slice }){
             style={{height:'100%', width:'100%', objectFit:'cover', scale:'1'}} 
             imgixParams={{ar:'3:2'}} loading="eager" />
         </Parallax> */}
-        <div className="desk-parallax" style={{height:'110%', width:'100%'}}>
+        <div className="desk-parallax" style={{height:'100%', width:'100%'}}>
           <PrismicNextImage className="thumbnail"
             field={slice.primary.image}  
             style={{height:'100%', width:'100%', objectFit:'contain', scale:'1'}} 
