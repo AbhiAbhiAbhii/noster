@@ -19,7 +19,7 @@ export default function WorkChildVision({ slice }){
 
     let GsapMediaQuery = gsap.matchMedia() // Gsap Media Query
 
-    GsapMediaQuery.add("min-width: 780px", () => {
+    GsapMediaQuery.add("min-width: 680px", () => {
       gsap.to('.work-vision-left-wrapper', {
         scrollTrigger: {
           trigger: trigger,

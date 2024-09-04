@@ -38,7 +38,7 @@ export default function WorkChildImage({ slice }) {
         </div>
         <PrismicNextImage className="mob-img"
           field={slice.primary.image}  
-          style={{height:'110%', width:'100%', objectFit:'cover', scale:'1'}} 
+          style={{height:'100%', width:'100%', objectFit:'cover', scale:'1'}} 
           imgixParams={{ ar: '3:2' }} loading="eager"
           alt=""
         />

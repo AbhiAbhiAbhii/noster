@@ -642,7 +642,7 @@
         font-size: 1.4rem;
     }
 }
-@media(max-width: 780px) {
+@media(max-width: 680px) {
     .work-vision-left-description {
         padding: 1em 0 2em 0 !important;
     }
@@ -738,7 +738,6 @@
     .worksImg  {
         padding: 0 1.7rem;
     }
-
     /* Behind the Scenes */
     .b-scene {
         font-size: 3rem;

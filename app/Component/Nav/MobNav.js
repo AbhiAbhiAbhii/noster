@@ -39,7 +39,7 @@ export default function MobNav({uid}){
     return(
         <nav className="mobile-Nav" style={
                 {
-                    border:'1px rgba(0, 0, 0, 0.17) solid', height:'65px', width:'150px', borderRadius:'20em',
+                    border:'1px rgba(0, 0, 0, 0.17) solid', borderRadius:'20em',
                     background:'#FFF', padding:'5px 0 5px 0px', zIndex:'100', 
                 }
             }>

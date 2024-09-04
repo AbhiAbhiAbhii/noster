@@ -446,7 +446,7 @@
         font-size: 86px;
     }
 }
-@media(max-width: 780px) {
+@media(max-width: 680px) {
    
     .home-hero  {
         font-size: 3rem;
