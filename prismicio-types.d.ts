@@ -1145,6 +1145,36 @@ export type PrivTitleSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for VerticalImages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VerticalImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *VerticalImages*
+ */
+type VerticalImagesSliceVariation = VerticalImagesSliceDefault;
+
+/**
+ * VerticalImages Shared Slice
+ *
+ * - **API ID**: `vertical_images`
+ * - **Description**: VerticalImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VerticalImagesSlice = prismic.SharedSlice<
+  "vertical_images",
+  VerticalImagesSliceVariation
+>;
+
+/**
  * Primary content in *Vision → Primary*
  */
 export interface WorkChildBriefSliceDefaultPrimary {
@@ -1808,6 +1838,9 @@ declare module "@prismicio/client" {
       PrivTitleSliceSliceDefaultPrimary,
       PrivTitleSliceSliceVariation,
       PrivTitleSliceSliceDefault,
+      VerticalImagesSlice,
+      VerticalImagesSliceVariation,
+      VerticalImagesSliceDefault,
       WorkChildBriefSlice,
       WorkChildBriefSliceDefaultPrimary,
       WorkChildBriefSliceVariation,

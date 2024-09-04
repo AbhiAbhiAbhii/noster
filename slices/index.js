@@ -17,6 +17,7 @@ export const components = {
   priv_text_slice_a: dynamic(() => import("./PrivTextSliceA")),
   priv_text_slice_b: dynamic(() => import("./PrivTextSliceB")),
   priv_title_slice: dynamic(() => import("./PrivTitleSlice")),
+  vertical_images: dynamic(() => import("./VerticalImages")),
   work_child_brief: dynamic(() => import("./Vision")),
   work_child_hero: dynamic(() => import("./WorkChildHero")),
   work_child_image: dynamic(() => import("./WorkChildImage")),
