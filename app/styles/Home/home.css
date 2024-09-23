@@ -13,6 +13,7 @@
     overflow-y: hidden;
     position: relative;
     display: flex;
+    height: 50em;
     align-items: flex-end;
     justify-content: space-between;
     padding: 6rem 2rem 6rem 2rem;
@@ -21,22 +22,33 @@
 }
 .home-hero-title {
     z-index: 10;
-    width: 65%;
+    width: 60%;
+    z-index: 20;
     /* border: 1px red solid; */
 }
 .home-hero-title > h1 {
-    letter-spacing:  -0.08rem;
-    font-size: 4em;
+    letter-spacing: -0.08rem;
+    line-height: 100%;
+    font-size: 3em;
+    z-index: 20;
 }
-.home-hero-vid {
+/* .home-hero-vid {
     width: 40%;
     height: 40em;
     position: relative;
-}
+} */
+ .home-hero-vid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+ }
 .home-hero-vid > video {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 .home-hero-vid-overlay {
     position: absolute;
@@ -453,13 +465,13 @@
         /* padding: 80rem 3rem 18rem 3rem;  */
         padding-inline: 3rem;
         padding: 38rem 3rem 12rem 3rem;
-        flex-direction: column;
+        height: 40em;
     }
     .home-hero-title {
         width: 100%;
     }
     .home-hero-vid {
-        width: 70%;
+        width: 100%;
         margin-top: 5em;
     }
     .video-modal-video-container {

@@ -11,7 +11,7 @@ const Hero = ({ slice }) => {
     const vidRef = useRef()    
     const modalVidRef = useRef()    
 
-    let videoLink = "/video/home/Noster_Website_Video.mp4"
+    let videoLink = "/video/home/GeekyWolf_LowRes.mp4"
 
    const handleModalClick = () => {
         setModal(true)
@@ -34,19 +34,19 @@ const Hero = ({ slice }) => {
             <PrismicRichText field={slice.primary.title} />
             </h1>
         </div>
-        <div className="home-hero-vid" style={{width: 'fit-content'}}>
+        <div className="home-hero-vid">
             <video ref={vidRef} autoPlay= { modal ? 'true' : 'false'} muted loop="true" preload="metadata" playsInline="true" loading="lazy">
                 <source src={videoLink} type="video/mp4" />
             </video>
             <div className="home-hero-vid-overlay">
-            <div style={{position: 'relative', height:'100%', width:'100%'}}>
-                <div onClick={handleModalClick} className="play-btn-container">
-                    <PlayBtn />
-                </div>
-            </div>
+                {/* <div style={{position: 'relative', height:'100%', width:'100%'}}>
+                    <div onClick={handleModalClick} className="play-btn-container">
+                        <PlayBtn />
+                    </div>
+                </div> */}
             </div>
         </div>
-        { modal && <VideoModal modalVidRef={modalVidRef} closeModal={handleCloseModal} videoLink={videoLink} />}
+        {/* { modal && <VideoModal modalVidRef={modalVidRef} closeModal={handleCloseModal} videoLink={videoLink} />} */}
     </section>
   )
 }
