@@ -11,7 +11,7 @@ const Hero = ({ slice }) => {
     const vidRef = useRef()    
     const modalVidRef = useRef()    
 
-    let videoLink = "/video/home/GeekyWolf_LowRes.mp4"
+    let videoLink = "/video/home/geeky-wolf-hero-video.mp4"
 
    const handleModalClick = () => {
         setModal(true)

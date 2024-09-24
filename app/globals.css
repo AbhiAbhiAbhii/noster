@@ -586,6 +586,7 @@ h1,h2,h3,h4 {
 }
 .nav-logo-svg {
   color: white;
+  
   transition: var(--transition-quint);
 }
 .nav-logo-svg.white-section {

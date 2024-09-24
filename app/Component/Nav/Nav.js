@@ -107,7 +107,7 @@ export default function Nav(){
             background: '#000'
         }
         )
-    })
+    }, []);
 
 
     return(
