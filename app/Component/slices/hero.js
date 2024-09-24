@@ -33,6 +33,17 @@ const Hero = ({ slice }) => {
             <h1 className="haffer-R green-txt">
             <PrismicRichText field={slice.primary.title} />
             </h1>
+            <button 
+                className="custom-button haffer-R"
+                onClick={(e) => {
+                    e.preventDefault();
+                    setModal(() => true);
+                }}
+            >
+                <p>
+                    View Showreel
+                </p>
+            </button>
         </div>
         <div className="home-hero-vid">
             <video ref={vidRef} autoPlay= { modal ? 'true' : 'false'} muted loop="true" preload="metadata" playsInline="true" loading="lazy">
@@ -46,7 +57,7 @@ const Hero = ({ slice }) => {
                 </div> */}
             </div>
         </div>
-        {/* { modal && <VideoModal modalVidRef={modalVidRef} closeModal={handleCloseModal} videoLink={videoLink} />} */}
+        { modal && <VideoModal modalVidRef={modalVidRef} closeModal={handleCloseModal} videoLink={videoLink} />}
     </section>
   )
 }

@@ -6,6 +6,20 @@
     --transition-quint: all 0.8s cubic-bezier(0.85, 0, 0.15, 1);
     --transition-quart: all 0.8s cubic-bezier(0.76, 0.00, 0.24, 1);
 }
+.custom-button {
+    background: black;
+    color: #FFF;
+    padding: 1em;
+    outline: none;
+    border: none;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: all 0.3s var(--transition-quart);
+}
+.custom-button:hover {
+    scale: 0.96;
+    opacity: 0.9;
+}
 /* Hero */
 .home-hero {
     font-size: 1rem;
@@ -101,8 +115,8 @@
     z-index: 100;
 }
 .video-modal-video-container {
-    width: 28em;
-    height: 96lvh;
+    width: 90%;
+    height: 90%;
     z-index: 200;
 }
 .video-modal-video-container > video {
