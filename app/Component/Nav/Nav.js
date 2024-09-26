@@ -24,7 +24,7 @@ export default function Nav(){
         if(!hbActive) {
             setTimeout(() => {
                 bottom.style.transform = 'translate(-50%,-50%) rotate(45deg)'
-                top.style.transform = 'translate(-50%,-50%) rotate(-45deg)'
+                top.style.transform = 'translate(-50%,-50%) rotate(-45deg)';
                 bottom.style.background = '#000'
                 top.style.background = '#000'
                 logo.style.color = '#000'
