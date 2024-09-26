@@ -9,10 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Nav(){
 
     const [ hbActive, setHbActive ] = useState(false);
-    const [mount, setMount] = useState(false);
+    // const [mount, setMount] = useState(false);
 
-    const path = usePathname();
-    const isHome = path === '/';
+    // const path = usePathname();
+    // const isHome = path === '/';
 
     const handleHbClick = () => {
         setHbActive(!hbActive)
@@ -63,44 +63,44 @@ export default function Nav(){
     ]
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if(!mount) {
-            setMount(true);
-            return;
-        }
-        const navLogoSvg = document.querySelector('.nav-logo-svg');
-        const bookText = document.querySelector('.nav-right-text');
-        const arrow = document.querySelector('.nav-right-arrow');
+    //     if(!mount) {
+    //         setMount(true);
+    //         return;
+    //     }
+    //     const navLogoSvg = document.querySelector('.nav-logo-svg');
+    //     const bookText = document.querySelector('.nav-right-text');
+    //     const arrow = document.querySelector('.nav-right-arrow');
 
-        if(isHome) {
-            const observer = new IntersectionObserver((entries) => {
+    //     if(isHome) {
+    //         const observer = new IntersectionObserver((entries) => {
 
     
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        navLogoSvg.style.color = '#ffffff';
-                        bookText.style.color = '#ffffff';
-                        arrow.style.color = '#000000';
-                        arrow.style.backgroundColor = '#ffffff';
-                    } else {
-                        navLogoSvg.style.color = '#000000';
-                        bookText.style.color = '#000000';
-                        arrow.style.color = '#ffffff';
-                        arrow.style.backgroundColor = '#000000';
-                    }
-                });
-            });
-            observer.observe(document.querySelector('.home-hero'));
+    //             entries.forEach(entry => {
+    //                 if(entry.isIntersecting) {
+    //                     navLogoSvg.style.color = '#ffffff';
+    //                     bookText.style.color = '#ffffff';
+    //                     arrow.style.color = '#000000';
+    //                     arrow.style.backgroundColor = '#ffffff';
+    //                 } else {
+    //                     navLogoSvg.style.color = '#000000';
+    //                     bookText.style.color = '#000000';
+    //                     arrow.style.color = '#ffffff';
+    //                     arrow.style.backgroundColor = '#000000';
+    //                 }
+    //             });
+    //         });
+    //         observer.observe(document.querySelector('.home-hero'));
             
-        } else {
-            // navLogoSvg.style.color = '#000000';
-            // bookText.style.color = '#000000';
-            // arrow.style.color = '#ffffff';
-            // arrow.style.backgroundColor = '#000000';
-        }
+    //     } else {
+    //         // navLogoSvg.style.color = '#000000';
+    //         // bookText.style.color = '#000000';
+    //         // arrow.style.color = '#ffffff';
+    //         // arrow.style.backgroundColor = '#000000';
+    //     }
 
-    }, [mount]);
+    // }, [mount]);
 
     // useEffect(() => {
 
@@ -192,7 +192,7 @@ export default function Nav(){
             <a href="tel:+919656922212" className="nav-right">
                 <div className="nav-right-wrapper">
                     <div className="nav-right-text">
-                        <p className="p-r">
+                        <p className="p-r exclusion">
                             Book an Appointment
                         </p>
                     </div>
