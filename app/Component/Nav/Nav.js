@@ -12,9 +12,10 @@ export default function Nav(){
     // const [mount, setMount] = useState(false);
 
     // const path = usePathname();
-    // const isHome = path === '/';
+    // const isHome = path === '/'
 
     const handleHbClick = () => {
+        
         setHbActive(!hbActive)
 
         let bottom = document.querySelector('.line-bottom')
