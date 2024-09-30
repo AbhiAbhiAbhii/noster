@@ -40,7 +40,7 @@ export default function Nav(){
             top.style.background = '#FFF'
             bottom.style.width = '100%'
             top.style.width = '100%'
-            logo.style.color = '#FFF'
+            logo.style.color = '#FFF';
         }
 
     }
