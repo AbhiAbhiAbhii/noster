@@ -42,7 +42,7 @@ export default function Nav(){
             top.style.width = '100%'
             logo.style.color = '#FFF';
         }
-
+// 
     }
 
 
