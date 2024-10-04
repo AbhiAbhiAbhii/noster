@@ -25,56 +25,23 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   
-  const ourRoute = children.props.childProp.segment 
+  // const ourRoute = children.props.childProp.segment 
 
-  useEffect(() => {
-
-
-  const curtain = document.querySelector('.globalLoader')
-
-  if(ourRoute === "privacy_policy") {
-    null
-  } else {
-    curtain.style.top = "-100lvh"
-
-    document.body.classList.add('no-scroll')
-    setTimeout(() => document.body.classList.remove('no-scroll'), 2000)
-  }
-  
-  let lenis;
-
-  // var speed;
-
-  // if(window.innerWidth <= 780) {
-  //   speed = 1
-  // } else speed = 1.001
+  // useEffect(() => {
 
 
-  // if (typeof window !== "undefined") {
-  //   if(window.innerWidth >= 580) {
-  //     lenis = new Lenis({
-  //       duration: 1.2,
-  //       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-  //       // https://www.desmos.com/calculator/brs54l4xou
-  //       direction: 'vertical', // vertical, horizontal
-  //       gestureDirection: 'vertical', // vertical, horizontal, both
-  //       smooth: true,
-  //       mouseMultiplier: 1,
-  //       smoothTouch: true,
-  //       touchMultiplier: 2,
-  //       infinite: false,
-        
-  //     })
-  //     function raf(time) {
-  //       lenis.raf(time)
-  //       requestAnimationFrame(raf)
-  //     }
-  //     requestAnimationFrame(raf)
-  //   } else  {
-  //     null
-  //   }
+  // const curtain = document.querySelector('.globalLoader')
+
+  // if(ourRoute === "privacy_policy") {
+  //   null
+  // } else {
+  //   curtain.style.top = "-100lvh"
+
+  //   document.body.classList.add('no-scroll')
+  //   setTimeout(() => document.body.classList.remove('no-scroll'), 2000)
   // }
-  }, [])
+  
+  // }, [])
 
 
   return (
@@ -96,13 +63,6 @@ export default function RootLayout({ children }) {
       <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
       {/* </Head> */}
         <body className={inter.className}>
-          <div className="globalLoader" 
-            style={
-                { 
-                  height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', display: ourRoute === "privacy_policy" ? 'none': 'flex', background:'white',
-                  zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
-                }
-                  } />
           <ParallaxProvider>
             <Nav />
             <MobNav />
