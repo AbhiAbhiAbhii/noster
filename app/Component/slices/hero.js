@@ -28,31 +28,31 @@ const Hero = ({ slice }) => {
         document.body.classList.remove("no-scroll")
    }
 
-   useEffect(() => {
+//    useEffect(() => {
 
-    if(!onMount) {
-        setOnMount(() => true);
-        return;
-    }
+//     if(!onMount) {
+//         setOnMount(() => true);
+//         return;
+//     }
 
-    curtainRef.current.style.top = '-100vh';
-    document.body.classList.add('no-scroll');
-    setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
+//     curtainRef.current.style.top = '-100vh';
+//     document.body.classList.add('no-scroll');
+//     setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
 
 
-   }, [onMount]);
+//    }, [onMount]);
 
 
   return (
     <section className="home-hero">
-         <div className="globalLoader" 
+         {/* <div className="globalLoader" 
             ref={curtainRef}
             style={
                 { 
                   height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', background:'white',
                   zIndex: "500", position:'absolute', top:'0', left:'0', width:'100vw'
                 }
-        } />
+        } /> */}
         <div className="home-hero-title">
             <h1 className="haffer-R green-txt">
             <PrismicRichText field={slice.primary.title} />
