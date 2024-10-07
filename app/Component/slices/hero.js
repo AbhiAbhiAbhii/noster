@@ -47,6 +47,7 @@ const Hero = ({ slice }) => {
     <section className="home-hero">
          {/* <div className="globalLoader" 
             ref={curtainRef}
+            //
             style={
                 { 
                   height:'100lvh', transition:'all 0.8s cubic-bezier(0, 0.55, 0.45, 1) 2s', background:'white',
