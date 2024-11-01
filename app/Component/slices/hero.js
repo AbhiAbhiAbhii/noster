@@ -40,7 +40,7 @@ const Hero = ({ slice }) => {
 //     setTimeout(() => document.body.classList.remove('no-scroll'), 1000);
 
 
-//    }, [onMount]);
+//    }, [onMount])
 
 
   return (
