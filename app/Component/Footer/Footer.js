@@ -21,7 +21,7 @@ export default function Footer({style}){
         },
         {
             location: 'Kochi',
-            description: 'Emaar Tower, TV Centre, Poyyachira, Kakkanad, 682037',
+            description: 'Noster Associates Pvt Ltd, Plot no. 16, Ground floor, Geo infopark, infopark campus, Kakkanad Kochi 682042',
             contact: '+91 9656922212', // SHAFEEQ NUMBER
             contactLink: '+919656922212',
             href: 'https://www.google.com/maps/search/Noster+Associates+Pvt+Ltd+Emaar+Tower+at+TV+Centre,+Poyyachira,+Kakkanad,+CSEZ+PO+PIN+682037/@10.0047621,76.3380979,16z/data=!3m1!4b1?entry=ttu'
